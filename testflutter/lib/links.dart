@@ -15,7 +15,7 @@ class _linksState extends State<links> {
         preferredSize: Size.fromHeight(60.0),
         child: AppBar(
           backgroundColor: Color(0xFFb3b3b3),
-          title: Text("Linkss"),
+          title: Text("Links"),
           centerTitle: true,
         ),
       ),
