@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class links extends StatefulWidget {
-  const links({Key? key}) : super(key: key);
+class home extends StatefulWidget {
+  const home({ Key? key }) : super(key: key);
 
   @override
-  _linksState createState() => _linksState();
+  _HomeState createState() => _HomeState();
 }
 
-class _linksState extends State<links> {
+class _HomeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class _linksState extends State<links> {
         preferredSize: Size.fromHeight(60.0),
         child: AppBar(
           backgroundColor: Color(0xFFb3b3b3),
-          title: Text("Links"),
+          title: Text("Home"),
           centerTitle: true,
         ),
       ),

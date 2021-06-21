@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/icons.dart';
-// import 'package:testflutter/links.dart';
+import 'package:testflutter/links.dart';
+import 'package:testflutter/home.dart';
+import 'package:testflutter/student.dart';
+import 'package:testflutter/clubs.dart';
+import 'package:testflutter/settings.dart';
 
 class Nav extends StatefulWidget {
   // const Nav({ Key? key }) : super(key: key);
@@ -12,15 +16,11 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
   int _selectedInd = 0;
   List<Widget> _widgetOptions = <Widget>[
-    ListView(
-      children: [
-        
-      ],
-    ),
+    home(),
     links(),
-    Text("studet"),
-    Text("clubs"),
-    Text("settings"),
+    student(),
+    clubs(),
+    settings(),
   ];
 
   void _ontap(int index) {
@@ -66,20 +66,36 @@ class _NavState extends State<Nav> {
   }
 }
 
-class links extends StatefulWidget {
-  const links({Key? key}) : super(key: key);
+// class links extends StatefulWidget {
+//   const links({Key? key}) : super(key: key);
 
-  @override
-  _linksState createState() => _linksState();
-}
+//   @override
+//   _linksState createState() => _linksState();
+// }
 
-class _linksState extends State<links> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Links"),
-      ),
-    );
-  }
-}
+// class _linksState extends State<links> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: new Container(
+//         child: _ListView(),
+//       )
+//     );
+//   }
+// }
+
+// ListView _ListView() {
+//   return ListView.builder(
+//     itemBuilder: (_, index) {
+
+//     }
+//   );
+// }
+// class listdatalinks extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+
+//     throw UnimplementedError();
+//   }
+
+// }
