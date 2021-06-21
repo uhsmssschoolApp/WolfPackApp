@@ -19,6 +19,14 @@ class _linksState extends State<links> {
           centerTitle: true,
         ),
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            
+          ],
+        ),
+      ),
     );
   }
 }
