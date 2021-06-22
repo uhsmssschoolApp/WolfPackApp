@@ -1,8 +1,5 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:testflutter/icons.dart';
-// ignore: import_of_legacy_library_into_null_safe
 // import 'package:url_launcher/url_launcher.dart';
 
 // reminder to handle ON TAPS LATER
@@ -84,9 +81,17 @@ class _linksState extends State<links> {
                     trailing: arrowRight,
                   ),
                   ListTile(
-                    leading: Icon(LinksIcon.graduation_cap),
+                    leading: Icon(LinksIcon.road),
                     title: Text(
                       "My Pathway Planner",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
+                  ),
+                  ListTile(
+                    leading: Icon(LinksIcon.graduation_cap),
+                    title: Text(
+                      "OUAC",
                       style: linkTiles,
                     ),
                     trailing: arrowRight,

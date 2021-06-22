@@ -46,4 +46,6 @@ class LinksIcon {
       IconData(0xf16d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData graduation_cap =
       IconData(0xf19d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData road =
+      IconData(0xf018, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
