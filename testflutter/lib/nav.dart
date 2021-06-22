@@ -65,37 +65,3 @@ class _NavState extends State<Nav> {
     );
   }
 }
-
-// class links extends StatefulWidget {
-//   const links({Key? key}) : super(key: key);
-
-//   @override
-//   _linksState createState() => _linksState();
-// }
-
-// class _linksState extends State<links> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: new Container(
-//         child: _ListView(),
-//       )
-//     );
-//   }
-// }
-
-// ListView _ListView() {
-//   return ListView.builder(
-//     itemBuilder: (_, index) {
-
-//     }
-//   );
-// }
-// class listdatalinks extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-
-//     throw UnimplementedError();
-//   }
-
-// }

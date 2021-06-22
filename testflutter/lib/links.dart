@@ -1,13 +1,16 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:testflutter/icons.dart';
-// import 'package:testflutter/redirect.dart';
-import 'package:url_launcher/url_launcher.dart';
+// ignore: import_of_legacy_library_into_null_safe
+// import 'package:url_launcher/url_launcher.dart';
 
+// reminder to handle ON TAPS LATER
 Color grey = const Color(0xFF6b6b6b);
 EdgeInsets usualMargin = const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0);
 String ta = "https://ta.yrdsb.ca/yrdsb/";
+TextStyle linkTiles = const TextStyle(fontSize: 15.0);
+Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
 
 class links extends StatefulWidget {
   const links({Key? key}) : super(key: key);
@@ -59,21 +62,128 @@ class _linksState extends State<links> {
                     leading: Icon(LinksIcon.pencil_squared),
                     title: Text(
                       "TeachAssist",
-                      style: TextStyle(fontSize: 15.0),
+                      style: linkTiles,
                     ),
-                    trailing: Icon(LinksIcon.keyboard_arrow_right),
-                    onTap: launchTA(ta),
+                    trailing: arrowRight,
+                    // onTap: launchTA(ta),
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.child),
                     title: Text(
                       "Guidance",
-                      style: TextStyle(fontSize: 15.0),
+                      style: linkTiles,
                     ),
-                    trailing: Icon(LinksIcon.keyboard_arrow_right),
+                    trailing: arrowRight,
+                  ),
+                  ListTile(
+                    leading: Icon(LinksIcon.money),
+                    title: Text(
+                      "School Cash Online",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
+                  ),
+                  ListTile(
+                    leading: Icon(LinksIcon.graduation_cap),
+                    title: Text(
+                      "My Pathway Planner",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
                   )
                 ],
               ),
+            ),
+            Container(
+              margin: usualMargin,
+              child: ListTile(
+                title: Text(
+                  "Contact",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17.0,
+                    color: grey,
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              margin: usualMargin,
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: Icon(LinksIcon.email),
+                    title: Text(
+                      "GAPPS Inbox",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
+                  ),
+                  ListTile(
+                    leading: Icon(LinksIcon.instagram),
+                    title: Text(
+                      "@Samthewolf",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
+                  ),
+                  ListTile(
+                    leading: Icon(LinksIcon.paper_plane),
+                    title: Text(
+                      "Teacher Contact",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: usualMargin,
+              child: ListTile(
+                title: Text(
+                  "Other",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17.0,
+                    color: grey,
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              margin: usualMargin,
+              child: Column(
+                children: <Widget>[
+                  ListTile(
+                    leading: Icon(LinksIcon.account_balance),
+                    title: Text(
+                      "YRDSB Website",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
+                  ),
+                  ListTile(
+                    leading: Icon(LinksIcon.link),
+                    title: Text(
+                      "UHS Website",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
+                  ),
+                  ListTile(
+                    leading: Icon(LinksIcon.exclamation_triangle),
+                    title: Text(
+                      "REPORT IT",
+                      style: linkTiles,
+                    ),
+                    trailing: arrowRight,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: usualMargin,
             )
           ],
         ),
@@ -82,10 +192,10 @@ class _linksState extends State<links> {
   }
 }
 
-launchTA(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw "Can't open";
-  }
-}
+// launchTA(String url) async {
+//   if (await canLaunch(url)) {
+//     await launch(url);
+//   } else {
+//     throw "Can't open";
+//   }
+// }
