@@ -1,13 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/icons.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // reminder to handle ON TAPS LATER
 Color grey = const Color(0xFF6b6b6b);
 EdgeInsets usualMargin = const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0);
-String ta = "https://ta.yrdsb.ca/yrdsb/";
 TextStyle linkTiles = const TextStyle(fontSize: 15.0);
 Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
+
+// urls
+String ta = "https://ta.yrdsb.ca/yrdsb/";
+String guidance =
+    "http://www.yrdsb.ca/schools/unionville.hs/guidance/Pages/default.aspx";
+String schoolCashOnline = "https://yrdsb.schoolcashonline.com/Home/SignIn";
+String pathwayPlanner =
+    "https://mypathwayplanner.yrdsb.ca/LoginFormIdentityProvider/Login.aspx?ReturnUrl=/LoginFormIdentityProvider/Default.aspx";
+String ouac = "https://www.ouac.on.ca/";
+String gapps = "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
+String samtheWolf = "https://www.instagram.com/samthewolfofficial/";
+String teacherContact =
+    "http://www.yrdsb.ca/schools/unionville.hs/info/Pages/Staff.aspx";
+String yrdsbWebsite = "https://www2.yrdsb.ca/";
+String reportIt =
+    "https://secure.yrdsb.ca/Forms/ReportIt/_layouts/FormServer.aspx?XsnLocation=https://secure.yrdsb.ca/FormServerTemplates/ReportItv2.xsn&Source=https://secure.yrdsb.ca&DefaultItemOpen=1";
 
 class links extends StatefulWidget {
   const links({Key? key}) : super(key: key);
@@ -62,7 +77,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
-                    // onTap: launchTA(ta),
+                    onTap: () {
+                      launchURL(ta);
+                    },
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.child),
@@ -71,6 +88,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(guidance);
+                    },
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.money),
@@ -79,6 +99,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(schoolCashOnline);
+                    },
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.road),
@@ -87,6 +110,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(pathwayPlanner);
+                    },
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.graduation_cap),
@@ -95,6 +121,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(ouac);
+                    },
                   )
                 ],
               ),
@@ -123,6 +152,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(gapps);
+                    },
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.instagram),
@@ -131,6 +163,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(samtheWolf);
+                    },
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.paper_plane),
@@ -139,6 +174,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(teacherContact);
+                    },
                   ),
                 ],
               ),
@@ -167,6 +205,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(yrdsbWebsite);
+                    },
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.link),
@@ -175,6 +216,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      // launchURL(url)
+                    },
                   ),
                   ListTile(
                     leading: Icon(LinksIcon.exclamation_triangle),
@@ -183,6 +227,9 @@ class _linksState extends State<links> {
                       style: linkTiles,
                     ),
                     trailing: arrowRight,
+                    onTap: () {
+                      launchURL(reportIt);
+                    },
                   )
                 ],
               ),
@@ -197,10 +244,6 @@ class _linksState extends State<links> {
   }
 }
 
-// launchTA(String url) async {
-//   if (await canLaunch(url)) {
-//     await launch(url);
-//   } else {
-//     throw "Can't open";
-//   }
-// }
+launchURL(String url) async {
+  launch(url);
+}
