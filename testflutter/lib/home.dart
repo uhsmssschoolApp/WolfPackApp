@@ -1,4 +1,8 @@
+import 'dart:async';
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'consts.dart';
 
 class home extends StatefulWidget {
@@ -9,8 +13,12 @@ class home extends StatefulWidget {
 }
 
 class _HomeState extends State<home> {
+  String curTime = "pee";
+  String curDate = "";
+
   @override
   Widget build(BuildContext context) {
+    // DateTime now = DateTime.now();
     return Scaffold(
       appBar: AppBar(
         bottom: PreferredSize(
@@ -69,7 +77,7 @@ class _HomeState extends State<home> {
                           child: Container(
                             alignment: Alignment.bottomLeft,
                             child: Text(
-                              "Wed June 24",
+                              "hi",
                               style: TextStyle(
                                 fontSize: 16.0,
                                 color: maroon,
@@ -128,7 +136,7 @@ class _HomeState extends State<home> {
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(15))),
                               child: Text(
-                                "9:41 AM",
+                                curTime,
                                 style: TextStyle(
                                   fontSize: 48.0,
                                   fontWeight: FontWeight.w800,
@@ -180,4 +188,21 @@ class _HomeState extends State<home> {
       ),
     );
   }
+
+  // void getTime() {
+  //   DateTime now = DateTime.now();
+  //   String time = DateFormat.jm(now).toString();
+  //   setState(() {
+  //     curTime = time;
+  //   });
+  // }
+
+  // @override
+  // void initState() {
+  //   curTime = DateFormat.jm(DateTime.now()).toString();
+  //   Timer.periodic(Duration(seconds: 1), (timer) {
+  //     getTime();
+  //   });
+  //   super.initState();
+  // }
 }
