@@ -11,11 +11,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "testing",
       theme: ThemeData(
-          // fontFamily: "wingding"
-          scaffoldBackgroundColor: const Color(0xFFcfcfcf),
-          appBarTheme: AppBarTheme(
-            elevation: 0,
-          )),
+        // fontFamily: "wingding"
+        scaffoldBackgroundColor: const Color(0xFFdadada),
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+        ),
+      ),
       home: Nav(),
       debugShowCheckedModeBanner: false,
     );

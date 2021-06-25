@@ -1,28 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/icons.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-// reminder to handle ON TAPS LATER
-Color grey = const Color(0xFF6b6b6b);
-EdgeInsets usualMargin = const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0);
-TextStyle linkTiles = const TextStyle(fontSize: 15.0);
-Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
-
-// urls
-String ta = "https://ta.yrdsb.ca/yrdsb/";
-String guidance =
-    "http://www.yrdsb.ca/schools/unionville.hs/guidance/Pages/default.aspx";
-String schoolCashOnline = "https://yrdsb.schoolcashonline.com/Home/SignIn";
-String pathwayPlanner =
-    "https://mypathwayplanner.yrdsb.ca/LoginFormIdentityProvider/Login.aspx?ReturnUrl=/LoginFormIdentityProvider/Default.aspx";
-String ouac = "https://www.ouac.on.ca/";
-String gapps = "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
-String samtheWolf = "https://www.instagram.com/samthewolfofficial/";
-String teacherContact =
-    "http://www.yrdsb.ca/schools/unionville.hs/info/Pages/Staff.aspx";
-String yrdsbWebsite = "https://www2.yrdsb.ca/";
-String reportIt =
-    "https://secure.yrdsb.ca/Forms/ReportIt/_layouts/FormServer.aspx?XsnLocation=https://secure.yrdsb.ca/FormServerTemplates/ReportItv2.xsn&Source=https://secure.yrdsb.ca&DefaultItemOpen=1";
+import 'consts.dart';
 
 class links extends StatefulWidget {
   const links({Key? key}) : super(key: key);
@@ -35,19 +14,23 @@ class _linksState extends State<links> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60.0),
-        child: AppBar(
-          backgroundColor: Color(0xFFe0e0e0),
-          title: Text(
-            "Links",
-            style: TextStyle(
-              color: grey,
-              fontSize: 20.0,
-            ),
+      appBar: AppBar(
+        bottom: PreferredSize(
+          child: Container(
+            color: Colors.black,
+            height: 0.4,
           ),
-          centerTitle: true,
+          preferredSize: Size.fromHeight(4.0),
         ),
+        backgroundColor: Color(0xFFeeeeee),
+        title: Text(
+          "Links",
+          style: TextStyle(
+            color: grey,
+            fontSize: 20.0,
+          ),
+        ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(
