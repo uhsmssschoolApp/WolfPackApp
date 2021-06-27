@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/icons.dart';
 
+// colours
 Color grey = const Color(0xFF454545);
-EdgeInsets usualMargin = const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0);
-TextStyle linkTiles = const TextStyle(fontSize: 15.0);
-Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
-EdgeInsets homeMargin = const EdgeInsets.only(left: 16.0, top: 16.0);
 Color maroon = const Color(0xFF701313);
+Color lightGrey = const Color(0xFFdadada);
+
+// text styles
+TextStyle linkTiles = const TextStyle(fontSize: 15.0, fontFamily: "SF");
+
+// icons
+Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
+
+// margins
+EdgeInsets hometileMargin = const EdgeInsets.only(left: 28.0, top: 8.0);
+EdgeInsets homeMargin = const EdgeInsets.only(left: 16.0, top: 16.0);
+EdgeInsets usualMargin = const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0);
 
 // urls
 String ta = "https://ta.yrdsb.ca/yrdsb/";

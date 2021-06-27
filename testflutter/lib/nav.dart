@@ -22,7 +22,7 @@ class _NavState extends State<Nav> {
     clubs(),
     settings(),
   ];
-
+  
   void _ontap(int index) {
     setState(() {
       _selectedInd = index;

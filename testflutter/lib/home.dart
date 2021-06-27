@@ -13,11 +13,20 @@ class home extends StatefulWidget {
 }
 
 class _HomeState extends State<home> {
-  String curTime = "pee";
+  String curTime = "6:00 PM";
   String curDate = "";
+
+  // convert time later ?
+  double periodProgress(double curElapsed, int curPeriod) {
+    if (curPeriod < 6) {
+      return (curElapsed / 120) * 300;
+    }
+    return 300.0;
+  }
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     // DateTime now = DateTime.now();
     return Scaffold(
       appBar: AppBar(
@@ -34,6 +43,7 @@ class _HomeState extends State<home> {
           style: TextStyle(
             color: grey,
             fontSize: 20.0,
+            fontFamily: "SFBold",
           ),
         ),
         centerTitle: true,
@@ -77,12 +87,12 @@ class _HomeState extends State<home> {
                           child: Container(
                             alignment: Alignment.bottomLeft,
                             child: Text(
-                              "hi",
+                              "date",
                               style: TextStyle(
-                                fontSize: 16.0,
-                                color: maroon,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                  fontSize: 16.0,
+                                  color: maroon,
+                                  // fontWeight: FontWeight.bold,
+                                  fontFamily: "SFBold"),
                             ),
                           ),
                         ),
@@ -95,8 +105,9 @@ class _HomeState extends State<home> {
                               "Good Morning!",
                               style: TextStyle(
                                 fontSize: 30.0,
-                                fontWeight: FontWeight.w800,
+                                // fontWeight: FontWeight.w600,
                                 color: const Color(0xFF404040),
+                                fontFamily: "SFBold",
                               ),
                             ),
                           ),
@@ -109,12 +120,12 @@ class _HomeState extends State<home> {
             ),
             Container(
               margin: EdgeInsets.only(top: 16.0),
-              width: MediaQuery.of(context).size.width,
-              height: 300,
+              width: screenWidth,
+              height: 250,
               // color: Colors.red,
               child: Center(
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.9,
+                  width: screenWidth * 0.9,
                   height: 300,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -139,7 +150,8 @@ class _HomeState extends State<home> {
                                 curTime,
                                 style: TextStyle(
                                   fontSize: 48.0,
-                                  fontWeight: FontWeight.w800,
+                                  // fontWeight: FontWeight.w800,
+                                  fontFamily: "SFBold",
                                   color: Colors.white,
                                   shadows: <Shadow>[
                                     Shadow(
@@ -155,32 +167,128 @@ class _HomeState extends State<home> {
                         ),
                       ),
                       Expanded(
-                        flex: 2,
+                        flex: 1,
                         child: Container(
-                            // color: Colors.orange,
+                          // color: Colors.orange,
+                          margin: hometileMargin,
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Current Rotation",
+                            style: TextStyle(
+                              color: const Color(0xFF252525),
+                              // fontWeight: FontWeight.w600,
+                              fontSize: 24.0,
+                              fontFamily: "SFBold",
                             ),
+                          ),
+                        ),
                       ),
                       Expanded(
                         flex: 1,
                         child: Container(
-                            // color: Colors.yellow,
+                          margin: hometileMargin,
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Period",
+                            style: TextStyle(
+                              color: const Color(0xFF656565),
+                              fontSize: 16.0,
+                              fontFamily: "SFBold",
                             ),
+                          ),
+                          // color: Colors.yellow,
+                        ),
+                      ),
+                      Container(
+                        // flex: 1,
+                        height: 10.0,
+                        width: 300,
+                        alignment: Alignment.topLeft,
+                        decoration: BoxDecoration(
+                          color: lightGrey,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(20)),
+                        ),
+                        child: Container(
+                          height: 10.0,
+                          width: 150,
+                          // color: Colors.red,
+                          decoration: BoxDecoration(
+                            color: maroon,
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(20)),
+                          ),
+                        ),
                       ),
                       Expanded(
                         flex: 1,
                         child: Container(
-                            // color: Colors.green,
+                          margin: hometileMargin,
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "8:30-9:45",
+                            style: TextStyle(
+                              fontFamily: "SF",
+                              fontSize: 14.0,
+                              color: grey,
                             ),
+                          ),
+                        ),
                       ),
-                      Expanded(
-                        flex: 3,
-                        child: Container(
-                            // color: Colors.blue,
-                            ),
-                      ),
+                      // Container(
+                      //   margin: const EdgeInsets.only(top: 16.0),
+                      //   width: screenWidth * 0.9,
+                      //   height: 100,
+                      //   color: Colors.black,
+                      // ),
                     ],
                   ),
                 ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 32.0, left: 16.0),
+              width: screenWidth * 0.9,
+              height: 50,
+              child: Text(
+                "More",
+                style: TextStyle(
+                    fontFamily: "SFBold", fontSize: 20.0, color: grey),
+              ),
+              // color: Colors.black,
+            ),
+            Center(
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 12.0),
+                    width: screenWidth * 0.9,
+                    height: 100,
+                    // color: Colors.blue,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 12.0),
+                    width: screenWidth * 0.9,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                    width: screenWidth * 0.9,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

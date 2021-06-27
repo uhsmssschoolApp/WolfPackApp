@@ -71,15 +71,21 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: wingding
+    - family: SF
       fonts:
-        - asset: assets/wingding.ttf
+        - asset: assets/SF-UI-Display-Regular.ttf
     - family: MyFlutterApp
       fonts:
         - asset: assets/MyFlutterApp.ttf
     - family: LinksIcon
       fonts:
         - asset: assets/LinksIcon.ttf
+    - family: SFBlack
+      fonts: 
+        - asset: assets/SF-UI-Display-Black.ttf
+    - family: SFBold
+      fonts:
+        - asset: assets/SF-UI-Display-Bold.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

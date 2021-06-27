@@ -44,7 +44,8 @@ class _linksState extends State<links> {
                   style: TextStyle(
                     fontSize: 17.0,
                     color: grey,
-                    fontWeight: FontWeight.bold,
+                    // fontWeight: FontWeight.bold,
+                    fontFamily: "SFBold",
                   ),
                 ),
               ),
@@ -117,7 +118,7 @@ class _linksState extends State<links> {
                 title: Text(
                   "Contact",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontFamily: "SFBold",
                     fontSize: 17.0,
                     color: grey,
                   ),
@@ -170,7 +171,7 @@ class _linksState extends State<links> {
                 title: Text(
                   "Other",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontFamily: "SFBold",
                     fontSize: 17.0,
                     color: grey,
                   ),
