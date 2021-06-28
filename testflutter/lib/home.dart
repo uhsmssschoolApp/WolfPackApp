@@ -24,7 +24,7 @@ class _HomeState extends State<home> {
     return 300.0;
   }
 
-  void announcements () {
+  void announcements() {
     // write on tap later?
   }
 
