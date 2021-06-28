@@ -24,6 +24,10 @@ class _HomeState extends State<home> {
     return 300.0;
   }
 
+  void announcements () {
+    // write on tap later?
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -65,8 +69,7 @@ class _HomeState extends State<home> {
                         width: 80,
                         decoration: BoxDecoration(
                           color: maroon,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(15)),
+                          borderRadius: homeCorners,
                         ),
                         child: Image(
                           image: AssetImage("assets/wave.png"),
@@ -129,7 +132,13 @@ class _HomeState extends State<home> {
                   height: 300,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: const BorderRadius.all(Radius.circular(15)),
+                    borderRadius: homeCorners,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 7,
+                          offset: Offset(0, 5))
+                    ],
                   ),
                   child: Column(
                     children: [
@@ -261,13 +270,108 @@ class _HomeState extends State<home> {
               child: Column(
                 children: [
                   Container(
+                    // wrap in gesture thing to add on tap
                     margin: EdgeInsets.only(top: 12.0),
                     width: screenWidth * 0.9,
                     height: 100,
                     // color: Colors.blue,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderRadius: homeCorners,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 7,
+                            offset: Offset(0, 5)),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 16.0, right: 16.0),
+                          alignment: Alignment.center,
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            color: maroon,
+                            borderRadius: homeCorners,
+                          ),
+                          child: Container(
+                            child: Image.asset(
+                              "assets/cheering-megaphone_1f4e3.png",
+                              height: 35,
+                              width: 35,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 6,
+                          child: Container(
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    alignment: Alignment.bottomLeft,
+                                    child: Text(
+                                      "Announcements",
+                                      style: TextStyle(
+                                        fontFamily: "SFBold",
+                                        color: const Color(0xFF252525),
+                                        fontSize: 18.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  height: 10.0,
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    alignment: Alignment.topLeft,
+                                    child: Text(
+                                      "Get all your latest updates here!",
+                                      style: TextStyle(
+                                        fontFamily: "SF",
+                                        color: const Color(0xFF858585),
+                                        fontSize: 14.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(top: 24.0),
+                                  alignment: Alignment.center,
+                                  height: 20,
+                                  width: 20,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: maroon,
+                                  ),
+                                  child: Text(
+                                    ">",
+                                    style: TextStyle(
+                                      fontFamily: "SFBold",
+                                      fontSize: 14.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Container(
@@ -276,7 +380,7 @@ class _HomeState extends State<home> {
                     height: 100,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderRadius: homeCorners,
                     ),
                   ),
                   Container(
@@ -285,7 +389,7 @@ class _HomeState extends State<home> {
                     height: 100,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      borderRadius: homeCorners,
                     ),
                   ),
                 ],

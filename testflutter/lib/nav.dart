@@ -37,6 +37,7 @@ class _NavState extends State<Nav> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        // change accent colour?
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(MyFlutterApp.home),
