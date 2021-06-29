@@ -409,10 +409,16 @@ class _HomeState extends State<home> {
                   Container(
                     margin: EdgeInsets.only(top: 12.0, bottom: 12.0),
                     width: screenWidth * 0.9,
-                    height: 400,
-                    child: WebView(
-                      initialUrl: "https://www.youtube.com/",
-                      javascriptMode: JavascriptMode.unrestricted,
+                    height: 450,
+                    alignment: Alignment.center,
+                    child: Container(
+                      height: 400,
+                      // color: Colors.red,
+                      child: WebView(
+                        initialUrl:
+                            "https://calendar.google.com/calendar/u/0/r?cid=unionville.hs@gapps.yrdsb.ca&pli=1",
+                        javascriptMode: JavascriptMode.unrestricted,
+                      ),
                     ),
                     decoration: BoxDecoration(
                       color: Colors.white,
