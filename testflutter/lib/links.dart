@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/icons.dart';
+import 'package:testflutter/nav.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'consts.dart';
 
@@ -14,6 +15,7 @@ class _linksState extends State<links> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Nav(),
       appBar: AppBar(
         bottom: PreferredSize(
           child: Container(

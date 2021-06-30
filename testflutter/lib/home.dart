@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:testflutter/nav.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'consts.dart';
 
@@ -14,8 +15,9 @@ class home extends StatefulWidget {
 }
 
 class _HomeState extends State<home> {
-  String curTime = "6:00 PM";
+  String curTime = "";
   String curDate = "";
+  String announcementDate = "";
 
   // convert time later ?
   double periodProgress(double curElapsed, int curPeriod) {
@@ -34,6 +36,7 @@ class _HomeState extends State<home> {
     double screenWidth = MediaQuery.of(context).size.width;
     // DateTime now = DateTime.now();
     return Scaffold(
+      bottomNavigationBar: Nav(),
       appBar: AppBar(
         bottom: PreferredSize(
           child: Container(
@@ -91,7 +94,7 @@ class _HomeState extends State<home> {
                           child: Container(
                             alignment: Alignment.bottomLeft,
                             child: Text(
-                              "date",
+                              curDate,
                               style: TextStyle(
                                   fontSize: 16.0,
                                   color: maroon,
@@ -163,13 +166,13 @@ class _HomeState extends State<home> {
                                   // fontWeight: FontWeight.w800,
                                   fontFamily: "SFBold",
                                   color: Colors.white,
-                                  shadows: <Shadow>[
-                                    Shadow(
-                                      offset: Offset(2.0, 2.0),
-                                      blurRadius: 10.0,
-                                      color: Colors.black,
-                                    ),
-                                  ],
+                                  // shadows: <Shadow>[
+                                  //   Shadow(
+                                  //     offset: Offset(2.0, 2.0),
+                                  //     blurRadius: 10.0,
+                                  //     color: Colors.black,
+                                  //   ),
+                                  // ],
                                 ),
                               ),
                             ),
@@ -381,7 +384,7 @@ class _HomeState extends State<home> {
                                     width: 50,
                                     // color: Colors.black,
                                     child: Text(
-                                      "06-28",
+                                      announcementDate,
                                       style: TextStyle(
                                         fontFamily: "SF",
                                         fontSize: 12.0,
@@ -416,7 +419,7 @@ class _HomeState extends State<home> {
                       // color: Colors.red,
                       child: WebView(
                         initialUrl:
-                            "https://calendar.google.com/calendar/u/0/r?cid=unionville.hs@gapps.yrdsb.ca&pli=1",
+                            "https://sarinali.github.io/webview_flutter/",
                         javascriptMode: JavascriptMode.unrestricted,
                       ),
                     ),
@@ -434,20 +437,33 @@ class _HomeState extends State<home> {
     );
   }
 
-  // void getTime() {
-  //   DateTime now = DateTime.now();
-  //   String time = DateFormat.jm(now).toString();
-  //   setState(() {
-  //     curTime = time;
-  //   });
-  // }
+  void getTime() {
+    DateTime now = DateTime.now();
+    String time = (DateFormat.jm().format(now));
+    setState(() {
+      curTime = time;
+    });
+  }
 
-  // @override
-  // void initState() {
-  //   curTime = DateFormat.jm(DateTime.now()).toString();
-  //   Timer.periodic(Duration(seconds: 1), (timer) {
-  //     getTime();
-  //   });
-  //   super.initState();
-  // }
+  void getDate() {
+    DateTime now = DateTime.now();
+    String date = (DateFormat('EEEE MMMM d').format(now));
+    String aDate = (DateFormat('M-d').format(now));
+    setState(() {
+      curDate = date;
+      announcementDate = aDate;
+    });
+  }
+
+  @override
+  void initState() {
+    curTime = DateTime.now().toString();
+    curDate = DateTime.now().toString();
+    announcementDate = DateTime.now().toString();
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      getTime();
+      getDate();
+    });
+    super.initState();
+  }
 }

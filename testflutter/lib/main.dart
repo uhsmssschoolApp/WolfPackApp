@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:testflutter/nav.dart';
+import 'package:testflutter/clubs.dart';
+// import 'package:testflutter/nav.dart';
+import 'package:testflutter/home.dart';
+import 'links.dart';
+import 'student.dart';
+import 'student.dart';
+import 'settings.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,8 +23,15 @@ class MyApp extends StatelessWidget {
           elevation: 0,
         ),
       ),
-      home: Nav(),
+      home: home(),
       debugShowCheckedModeBanner: false,
+      routes: {
+        "/home": (context) => home(),
+        "/links": (context) => links(),
+        "/student": (context) => student(),
+        "/clubs": (context) => clubs(),
+        "/settings": (context) => settings(),
+      },
     );
   }
 }

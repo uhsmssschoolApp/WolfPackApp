@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/nav.dart';
 
 class settings extends StatelessWidget {
   const settings({Key? key}) : super(key: key);
@@ -6,6 +7,7 @@ class settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Nav(),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60.0),
         child: AppBar(

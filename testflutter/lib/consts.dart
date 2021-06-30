@@ -32,6 +32,8 @@ String teacherContact =
 String yrdsbWebsite = "https://www2.yrdsb.ca/";
 String reportIt =
     "https://secure.yrdsb.ca/Forms/ReportIt/_layouts/FormServer.aspx?XsnLocation=https://secure.yrdsb.ca/FormServerTemplates/ReportItv2.xsn&Source=https://secure.yrdsb.ca&DefaultItemOpen=1";
+const String twitterURL = "https://uhsmssschoolapp.github.io/twitterfeed/";
+const String uhsURL = "https://uhsmssschoolapp.github.io/twitterUHSfeed/";
 
 // edge radius
 BorderRadius homeCorners = const BorderRadius.all(Radius.circular(15));
