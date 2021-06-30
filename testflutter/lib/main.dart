@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:testflutter/clubs.dart';
+import 'package:testflutter/pages/clubs.dart';
 // import 'package:testflutter/nav.dart';
-import 'package:testflutter/home.dart';
-import 'links.dart';
-import 'student.dart';
-import 'student.dart';
-import 'settings.dart';
+import 'package:testflutter/pages/home.dart';
+import 'pages/links.dart';
+import 'pages/student.dart';
+// import 'student.dart';
+import 'pages/settings.dart';
 
 void main() {
   runApp(MyApp());

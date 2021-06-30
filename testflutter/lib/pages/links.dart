@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:testflutter/icons.dart';
+import 'package:testflutter/constants/icons.dart';
 import 'package:testflutter/nav.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'consts.dart';
+import '../appbar.dart';
+import '../constants/consts.dart';
 
 class links extends StatefulWidget {
   const links({Key? key}) : super(key: key);
@@ -16,24 +17,7 @@ class _linksState extends State<links> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Nav(),
-      appBar: AppBar(
-        bottom: PreferredSize(
-          child: Container(
-            color: Colors.black,
-            height: 0.4,
-          ),
-          preferredSize: Size.fromHeight(4.0),
-        ),
-        backgroundColor: Color(0xFFeeeeee),
-        title: Text(
-          "Links",
-          style: TextStyle(
-            color: grey,
-            fontSize: 20.0,
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: mainAppBar("Links"),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

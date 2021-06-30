@@ -1,11 +1,14 @@
 import 'dart:async';
 // import 'dart:html';
 
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:testflutter/appbar.dart';
+import 'package:testflutter/connectivity.dart';
 import 'package:testflutter/nav.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'consts.dart';
+import '../constants/consts.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -18,7 +21,7 @@ class _HomeState extends State<home> {
   String curTime = "";
   String curDate = "";
   String announcementDate = "";
-
+  bool cond = false;
   // convert time later ?
   double periodProgress(double curElapsed, int curPeriod) {
     if (curPeriod < 6) {
@@ -37,25 +40,7 @@ class _HomeState extends State<home> {
     // DateTime now = DateTime.now();
     return Scaffold(
       bottomNavigationBar: Nav(),
-      appBar: AppBar(
-        bottom: PreferredSize(
-          child: Container(
-            color: Colors.black,
-            height: 0.4,
-          ),
-          preferredSize: Size.fromHeight(4.0),
-        ),
-        backgroundColor: Color(0xFFeeeeee),
-        title: Text(
-          "Home",
-          style: TextStyle(
-            color: grey,
-            fontSize: 20.0,
-            fontFamily: "SFBold",
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: mainAppBar("Home"),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -209,11 +194,9 @@ class _HomeState extends State<home> {
                               fontFamily: "SFBold",
                             ),
                           ),
-                          // color: Colors.yellow,
                         ),
                       ),
                       Container(
-                        // flex: 1,
                         height: 10.0,
                         width: 300,
                         alignment: Alignment.topLeft,
@@ -225,7 +208,6 @@ class _HomeState extends State<home> {
                         child: Container(
                           height: 10.0,
                           width: 150,
-                          // color: Colors.red,
                           decoration: BoxDecoration(
                             color: maroon,
                             borderRadius:
@@ -248,12 +230,6 @@ class _HomeState extends State<home> {
                           ),
                         ),
                       ),
-                      // Container(
-                      //   margin: const EdgeInsets.only(top: 16.0),
-                      //   width: screenWidth * 0.9,
-                      //   height: 100,
-                      //   color: Colors.black,
-                      // ),
                     ],
                   ),
                 ),
@@ -417,11 +393,8 @@ class _HomeState extends State<home> {
                     child: Container(
                       height: 400,
                       // color: Colors.red,
-                      child: WebView(
-                        initialUrl:
-                            "https://sarinali.github.io/webview_flutter/",
-                        javascriptMode: JavascriptMode.unrestricted,
-                      ),
+
+                      child: yrdsbCalendar(),
                     ),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -432,6 +405,39 @@ class _HomeState extends State<home> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  // Widget homeCheck() {
+  //   // if true display the calendar webview
+  //   if (cond) {
+  //     return yrdsbCalendar();
+  //     // if false display no internet container
+  //   } else {
+  //     return noInternet();
+  //   }
+  // }
+
+  Widget yrdsbCalendar() {
+    return WebView(
+      initialUrl: "https://sarinali.github.io/webview_flutter/",
+      javascriptMode: JavascriptMode.unrestricted,
+    );
+  }
+
+  Widget noInternet() {
+    return Center(
+      child: Container(
+        color: Colors.grey[300],
+        alignment: Alignment.center,
+        child: Text(
+          "No Connection!",
+          style: TextStyle(
+            fontFamily: "SFBold",
+            fontSize: 30,
+          ),
         ),
       ),
     );
@@ -466,4 +472,17 @@ class _HomeState extends State<home> {
     });
     super.initState();
   }
+
+  // void checkInternet() async {
+  //   var connectivityResult = await (Connectivity().checkConnectivity());
+  //   print(connectivityResult.toString());
+  //   if (connectivityResult == ConnectivityResult.none) {
+  //     cond = false;
+  //     // print("yes we are conneccted");
+  //     // return Future<bool>.value(false);
+  //   } else {
+  //     cond = true;
+  //     // return Future<bool>.value(true);
+  //   }
+  // }
 }

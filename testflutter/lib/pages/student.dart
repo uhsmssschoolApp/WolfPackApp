@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:testflutter/appbar.dart';
 import 'package:testflutter/nav.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'consts.dart';
+import '../constants/consts.dart';
 
 class student extends StatefulWidget {
   const student({Key? key}) : super(key: key);
@@ -37,25 +38,7 @@ class _studentState extends State<student> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Nav(),
-      appBar: AppBar(
-        bottom: PreferredSize(
-          child: Container(
-            color: Colors.black,
-            height: 0.4,
-          ),
-          preferredSize: Size.fromHeight(4.0),
-        ),
-        backgroundColor: Color(0xFFeeeeee),
-        title: Text(
-          "Student",
-          style: TextStyle(
-            color: grey,
-            fontSize: 20.0,
-            fontFamily: "SFBold",
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: mainAppBar("Student"),
       body: Column(
         children: [
           Expanded(
