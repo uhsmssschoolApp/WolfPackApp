@@ -6,9 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:testflutter/appbar.dart';
 import 'package:testflutter/connectivity.dart';
+import 'package:testflutter/homeutils/yrdsbcalendar.dart';
 import 'package:testflutter/nav.dart';
+import 'package:testflutter/homeutils/time.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../constants/consts.dart';
+import 'package:testflutter/homeutils/weather.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -21,14 +24,9 @@ class _HomeState extends State<home> {
   String curTime = "";
   String curDate = "";
   String announcementDate = "";
-  bool cond = false;
-  // convert time later ?
-  double periodProgress(double curElapsed, int curPeriod) {
-    if (curPeriod < 6) {
-      return (curElapsed / 120) * 300;
-    }
-    return 300.0;
-  }
+  // bool cond = false;
+  int minutesTime = 0;
+  // int curPeriod = 0;
 
   void announcements() {
     // write on tap later?
@@ -37,7 +35,6 @@ class _HomeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    // DateTime now = DateTime.now();
     return Scaffold(
       bottomNavigationBar: Nav(),
       appBar: mainAppBar("Home"),
@@ -51,7 +48,6 @@ class _HomeState extends State<home> {
                   child: Container(
                     margin: homeMargin,
                     height: 120,
-                    // color: Colors.blue,
                     child: Center(
                       child: Container(
                         height: 80,
@@ -70,7 +66,7 @@ class _HomeState extends State<home> {
                 Expanded(
                   flex: 2,
                   child: Container(
-                    margin: const EdgeInsets.only(left: 16.0, top: 16.0),
+                    margin: const EdgeInsets.only(left: 6.0, top: 16.0),
                     height: 120,
                     child: Column(
                       children: [
@@ -83,7 +79,6 @@ class _HomeState extends State<home> {
                               style: TextStyle(
                                   fontSize: 16.0,
                                   color: maroon,
-                                  // fontWeight: FontWeight.bold,
                                   fontFamily: "SFBold"),
                             ),
                           ),
@@ -94,10 +89,9 @@ class _HomeState extends State<home> {
                             margin: EdgeInsets.only(top: 8.0),
                             alignment: Alignment.topLeft,
                             child: Text(
-                              "Good Morning!",
+                              greetingMessage(minutesTime),
                               style: TextStyle(
                                 fontSize: 30.0,
-                                // fontWeight: FontWeight.w600,
                                 color: const Color(0xFF404040),
                                 fontFamily: "SFBold",
                               ),
@@ -114,7 +108,6 @@ class _HomeState extends State<home> {
               margin: EdgeInsets.only(top: 16.0),
               width: screenWidth,
               height: 250,
-              // color: Colors.red,
               child: Center(
                 child: Container(
                   width: screenWidth * 0.9,
@@ -148,16 +141,8 @@ class _HomeState extends State<home> {
                                 curTime,
                                 style: TextStyle(
                                   fontSize: 48.0,
-                                  // fontWeight: FontWeight.w800,
                                   fontFamily: "SFBold",
                                   color: Colors.white,
-                                  // shadows: <Shadow>[
-                                  //   Shadow(
-                                  //     offset: Offset(2.0, 2.0),
-                                  //     blurRadius: 10.0,
-                                  //     color: Colors.black,
-                                  //   ),
-                                  // ],
                                 ),
                               ),
                             ),
@@ -187,7 +172,7 @@ class _HomeState extends State<home> {
                           margin: hometileMargin,
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "Period",
+                            periodNumber(findPeriod(minutesTime)),
                             style: TextStyle(
                               color: const Color(0xFF656565),
                               fontSize: 16.0,
@@ -207,7 +192,8 @@ class _HomeState extends State<home> {
                         ),
                         child: Container(
                           height: 10.0,
-                          width: 150,
+                          width: periodProgress(
+                              minutesTime, findPeriod(minutesTime)),
                           decoration: BoxDecoration(
                             color: maroon,
                             borderRadius:
@@ -221,7 +207,7 @@ class _HomeState extends State<home> {
                           margin: hometileMargin,
                           alignment: Alignment.topLeft,
                           child: Text(
-                            "8:30-9:45",
+                            timeStamps(findPeriod(minutesTime)),
                             style: TextStyle(
                               fontFamily: "SF",
                               fontSize: 14.0,
@@ -377,14 +363,24 @@ class _HomeState extends State<home> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 12.0),
-                    width: screenWidth * 0.9,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: homeCorners,
-                    ),
-                  ),
+                      margin: EdgeInsets.only(top: 12.0),
+                      width: screenWidth * 0.9,
+                      height: 275,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: homeCorners,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 7,
+                              offset: Offset(0, 5)),
+                        ],
+                      ),
+                      child: Container(
+                        child: weatherView(),
+                        height: 220,
+                      )),
                   Container(
                     margin: EdgeInsets.only(top: 12.0, bottom: 12.0),
                     width: screenWidth * 0.9,
@@ -392,13 +388,17 @@ class _HomeState extends State<home> {
                     alignment: Alignment.center,
                     child: Container(
                       height: 400,
-                      // color: Colors.red,
-
-                      child: yrdsbCalendar(),
+                      child: yrdsbCalendarView(),
                     ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: homeCorners,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 7,
+                            offset: Offset(0, 5)),
+                      ],
                     ),
                   ),
                 ],
@@ -419,13 +419,6 @@ class _HomeState extends State<home> {
   //     return noInternet();
   //   }
   // }
-
-  Widget yrdsbCalendar() {
-    return WebView(
-      initialUrl: "https://sarinali.github.io/webview_flutter/",
-      javascriptMode: JavascriptMode.unrestricted,
-    );
-  }
 
   Widget noInternet() {
     return Center(
@@ -458,6 +451,7 @@ class _HomeState extends State<home> {
     setState(() {
       curDate = date;
       announcementDate = aDate;
+      minutesTime = findTime();
     });
   }
 
@@ -466,6 +460,7 @@ class _HomeState extends State<home> {
     curTime = DateTime.now().toString();
     curDate = DateTime.now().toString();
     announcementDate = DateTime.now().toString();
+    minutesTime = findTime();
     Timer.periodic(Duration(seconds: 1), (timer) {
       getTime();
       getDate();

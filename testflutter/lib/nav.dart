@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/constants/icons.dart';
 // import 'package:testflutter/links.dart';
 // import 'package:testflutter/home.dart';
@@ -77,6 +78,7 @@ class _NavState extends State<Nav> {
       ],
       onTap: _ontap,
       currentIndex: prev(),
+      selectedItemColor: maroon,
     );
   }
 }

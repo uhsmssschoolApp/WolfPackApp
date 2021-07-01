@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testflutter/pages/clubs.dart';
 // import 'package:testflutter/nav.dart';
 import 'package:testflutter/pages/home.dart';
+import 'package:testflutter/homeutils/time.dart';
 import 'pages/links.dart';
 import 'pages/student.dart';
 // import 'student.dart';
@@ -14,6 +15,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // timeCheck();
     return MaterialApp(
       title: "testing",
       theme: ThemeData(
