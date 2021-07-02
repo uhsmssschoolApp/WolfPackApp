@@ -2,10 +2,12 @@ import 'dart:async';
 // import 'dart:html';
 
 import 'package:connectivity/connectivity.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:testflutter/appbar.dart';
 import 'package:testflutter/connectivity.dart';
+import 'package:testflutter/homeutils/expand.dart';
 import 'package:testflutter/homeutils/yrdsbcalendar.dart';
 import 'package:testflutter/nav.dart';
 import 'package:testflutter/homeutils/time.dart';
@@ -26,6 +28,7 @@ class _HomeState extends State<home> {
   String announcementDate = "";
   // bool cond = false;
   int minutesTime = 0;
+  DateTime now = DateTime.now();
   // int curPeriod = 0;
 
   void announcements() {
@@ -234,153 +237,157 @@ class _HomeState extends State<home> {
             Center(
               child: Column(
                 children: [
-                  InkWell(
-                    // the ANNOUNCEMENTS box
-                    onTap: () {
-                      // write code later
-                      // print("hi");
-                    },
-                    child: Container(
-                      // wrap in gesture thing to add on tap
-                      margin: EdgeInsets.only(top: 12.0),
-                      width: screenWidth * 0.9,
-                      height: 100,
-                      // color: Colors.blue,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: homeCorners,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 7,
-                              offset: Offset(0, 5)),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(left: 16.0, right: 16.0),
-                            alignment: Alignment.center,
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              color: maroon,
-                              borderRadius: homeCorners,
-                            ),
-                            child: Container(
-                              child: Image.asset(
-                                "assets/cheering-megaphone_1f4e3.png",
-                                height: 35,
-                                width: 35,
+                  Container(
+                    // wrap in gesture thing to add on tap
+                    margin: EdgeInsets.only(top: 12.0),
+                    width: screenWidth * 0.9,
+                    height: 300,
+                    // color: Colors.blue,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: homeCorners,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 7,
+                            offset: Offset(0, 5)),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(
+                                  left: 16.0, right: 16.0, top: 16.0),
+                              alignment: Alignment.center,
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                color: maroon,
+                                borderRadius: homeCorners,
+                              ),
+                              child: Container(
+                                child: Image.asset(
+                                  "assets/cheering-megaphone_1f4e3.png",
+                                  height: 35,
+                                  width: 35,
+                                ),
                               ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 6,
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      alignment: Alignment.bottomLeft,
-                                      child: Text(
-                                        "Announcements",
-                                        style: TextStyle(
-                                          fontFamily: "SFBold",
-                                          color: const Color(0xFF252525),
-                                          fontSize: 18.0,
-                                        ),
-                                      ),
+                            Column(
+                              children: [
+                                Container(
+                                  alignment: Alignment.bottomLeft,
+                                  height: 30,
+                                  width: 200,
+                                  child: Text(
+                                    "Announcements",
+                                    style: TextStyle(
+                                      fontFamily: "SFBold",
+                                      color: const Color(0xFF252525),
+                                      fontSize: 18.0,
                                     ),
                                   ),
-                                  Container(
-                                    height: 10.0,
-                                  ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      alignment: Alignment.topLeft,
-                                      child: Text(
-                                        "Get all your latest updates here!",
-                                        style: TextStyle(
-                                          fontFamily: "SF",
-                                          color: const Color(0xFF858585),
-                                          fontSize: 14.0,
-                                        ),
-                                      ),
+                                  // color: Colors.black,
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomLeft,
+                                  margin: const EdgeInsets.only(top: 6),
+                                  height: 15,
+                                  width: 200,
+                                  child: Text(
+                                    "Get all your latest updates here!",
+                                    style: TextStyle(
+                                      fontFamily: "SF",
+                                      color: const Color(0xFF858585),
+                                      fontSize: 14.0,
                                     ),
                                   ),
-                                ],
+                                  // color: Colors.pink,
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 15),
+                              // color: Colors.black,
+                              height: 30,
+                              width: 20,
+                              alignment: Alignment.center,
+                              child: RawMaterialButton(
+                                elevation: 2,
+                                // padding: const EdgeInsets.only(right: 4),
+                                onPressed: () {},
+                                fillColor: Colors.red,
+                                shape: const CircleBorder(),
+                                child: const Icon(
+                                  Icons.chevron_left,
+                                  size: 20,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.only(top: 24.0),
-                                    alignment: Alignment.center,
-                                    height: 20,
-                                    width: 20,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: maroon,
-                                    ),
-                                    child: Text(
-                                      ">",
-                                      style: TextStyle(
-                                        fontFamily: "SFBold",
-                                        fontSize: 14.0,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    alignment: Alignment.bottomRight,
-                                    margin: const EdgeInsets.only(
-                                        top: 16.0, right: 20.0),
-                                    height: 30,
-                                    width: 50,
-                                    // color: Colors.black,
-                                    child: Text(
-                                      announcementDate,
-                                      style: TextStyle(
-                                        fontFamily: "SF",
-                                        fontSize: 12.0,
-                                        color: const Color(0xFF858585),
-                                      ),
-                                    ),
-                                  ),
-                                ],
+                            Container(
+                              height: 30,
+                              width: 120,
+                              alignment: Alignment.center,
+                              margin: const EdgeInsets.only(left: 20, top: 15),
+                              child: Text(
+                                announcementDate,
+                                style: TextStyle(
+                                  fontFamily: "SFBold",
+                                ),
+                              ),
+                              // color: Colors.pink,
+                            ),
+                            Container(
+                              margin: const EdgeInsets.only(left: 20, top: 15),
+                              // color: Colors.black,
+                              height: 30,
+                              width: 20,
+                              child: RawMaterialButton(
+                                elevation: 2,
+                                onPressed: () {},
+                                fillColor: Colors.red,
+                                shape: const CircleBorder(),
+                                child: const Icon(
+                                  Icons.chevron_right,
+                                  size: 20,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
+                          ],
+                        ),
+                        expandTile(context),
+                      ],
                     ),
                   ),
                   Container(
-                      margin: EdgeInsets.only(top: 12.0),
-                      width: screenWidth * 0.9,
-                      height: 275,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: homeCorners,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 7,
-                              offset: Offset(0, 5)),
-                        ],
-                      ),
-                      child: Container(
-                        child: weatherView(),
-                        height: 220,
-                      )),
+                    margin: EdgeInsets.only(top: 12.0),
+                    width: screenWidth * 0.9,
+                    height: 275,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: homeCorners,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 7,
+                            offset: Offset(0, 5)),
+                      ],
+                    ),
+                    child: Container(
+                      child: weatherView(),
+                      height: 220,
+                    ),
+                  ),
                   Container(
                     margin: EdgeInsets.only(top: 12.0, bottom: 12.0),
                     width: screenWidth * 0.9,
@@ -401,6 +408,48 @@ class _HomeState extends State<home> {
                       ],
                     ),
                   ),
+                  GestureDetector(
+                    onTap: () {
+                      print("pressed");
+                    },
+                    child: Container(
+                        alignment: Alignment.topLeft,
+                        margin: EdgeInsets.only(bottom: 12.0),
+                        width: screenWidth * 0.9,
+                        height: 400,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: homeCorners,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 7,
+                                offset: Offset(0, 5)),
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(
+                                  left: 16.0, right: 16.0, top: 16.0),
+                              alignment: Alignment.center,
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                color: maroon,
+                                borderRadius: homeCorners,
+                              ),
+                              child: Container(
+                                child: Image.asset(
+                                  "hand.png",
+                                  height: 35,
+                                  width: 35,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )),
+                  )
                 ],
               ),
             ),
@@ -437,7 +486,7 @@ class _HomeState extends State<home> {
   }
 
   void getTime() {
-    DateTime now = DateTime.now();
+    now = DateTime.now();
     String time = (DateFormat.jm().format(now));
     setState(() {
       curTime = time;
@@ -445,13 +494,13 @@ class _HomeState extends State<home> {
   }
 
   void getDate() {
-    DateTime now = DateTime.now();
+    now = DateTime.now();
     String date = (DateFormat('EEEE MMMM d').format(now));
-    String aDate = (DateFormat('M-d').format(now));
+    String aDate = (DateFormat('EE MMM dd').format(now));
     setState(() {
       curDate = date;
       announcementDate = aDate;
-      minutesTime = findTime();
+      minutesTime = findTime(now);
     });
   }
 
@@ -460,7 +509,7 @@ class _HomeState extends State<home> {
     curTime = DateTime.now().toString();
     curDate = DateTime.now().toString();
     announcementDate = DateTime.now().toString();
-    minutesTime = findTime();
+    minutesTime = findTime(now);
     Timer.periodic(Duration(seconds: 1), (timer) {
       getTime();
       getDate();
