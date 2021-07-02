@@ -441,14 +441,15 @@ class _HomeState extends State<home> {
                               ),
                               child: Container(
                                 child: Image.asset(
-                                  "hand.png",
-                                  height: 35,
-                                  width: 35,
+                                  "assets/hand.png",
+                                  height: 30,
+                                  width: 30,
                                 ),
                               ),
                             ),
                           ],
-                        )),
+                          ),
+                        ),
                   )
                 ],
               ),
