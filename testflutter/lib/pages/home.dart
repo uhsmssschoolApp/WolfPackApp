@@ -11,6 +11,7 @@ import 'package:testflutter/homeutils/expand.dart';
 import 'package:testflutter/homeutils/yrdsbcalendar.dart';
 import 'package:testflutter/nav.dart';
 import 'package:testflutter/homeutils/time.dart';
+import 'package:testflutter/pages/links.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../constants/consts.dart';
 import 'package:testflutter/homeutils/weather.dart';
@@ -371,7 +372,7 @@ class _HomeState extends State<home> {
                   Container(
                     margin: EdgeInsets.only(top: 12.0),
                     width: screenWidth * 0.9,
-                    height: 275,
+                    height: 350,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -383,9 +384,95 @@ class _HomeState extends State<home> {
                             offset: Offset(0, 5)),
                       ],
                     ),
-                    child: Container(
-                      child: weatherView(),
-                      height: 220,
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(
+                                    left: 16.0,
+                                    right: 16.0,
+                                    top: 16.0,
+                                  ),
+                                  alignment: Alignment.center,
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    color: maroon,
+                                    borderRadius: homeCorners,
+                                  ),
+                                  child: Container(
+                                    child: Image.asset(
+                                      "assets/weather.png",
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Container(
+                                  alignment: Alignment.bottomLeft,
+                                  height: 30,
+                                  width: 200,
+                                  margin: const EdgeInsets.only(top: 8),
+                                  child: Text(
+                                    "Weather",
+                                    style: TextStyle(
+                                      fontFamily: "SFBold",
+                                      color: const Color(0xFF252525),
+                                      fontSize: 18.0,
+                                    ),
+                                  ),
+                                  // color: Colors.black,
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomLeft,
+                                  margin: const EdgeInsets.only(top: 6),
+                                  height: 15,
+                                  width: 200,
+                                  child: Text(
+                                    "The weather for this week.",
+                                    style: TextStyle(
+                                      fontFamily: "SF",
+                                      color: const Color(0xFF858585),
+                                      fontSize: 14.0,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 10),
+                          height: 225,
+                          alignment: Alignment.center,
+                          // color: Colors.yellow,
+                          child: weatherView(),
+                        ),
+                        Container(
+                          width: screenWidth * 0.7,
+                          height: 30,
+                          margin: const EdgeInsets.only(top: 4),
+                          // color: Colors.black,
+                          child: OutlinedButton(
+                              onPressed: () {
+                                launchURL(weather);
+                              },
+                              child: Text(
+                                "View More Details",
+                                style: TextStyle(
+                                  fontFamily: "SFBold",
+                                  color: Colors.grey[700],
+                                ),
+                              )),
+                        ),
+                      ],
                     ),
                   ),
                   Container(
@@ -413,43 +500,84 @@ class _HomeState extends State<home> {
                       print("pressed");
                     },
                     child: Container(
-                        alignment: Alignment.topLeft,
-                        margin: EdgeInsets.only(bottom: 12.0),
-                        width: screenWidth * 0.9,
-                        height: 400,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: homeCorners,
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 7,
-                                offset: Offset(0, 5)),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 16.0, right: 16.0, top: 16.0),
-                              alignment: Alignment.center,
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                color: maroon,
-                                borderRadius: homeCorners,
-                              ),
-                              child: Container(
-                                child: Image.asset(
-                                  "assets/hand.png",
-                                  height: 30,
-                                  width: 30,
+                      alignment: Alignment.topLeft,
+                      margin: const EdgeInsets.only(bottom: 12.0),
+                      width: screenWidth * 0.9,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: homeCorners,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 7,
+                              offset: Offset(0, 5)),
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(
+                                  left: 16.0,
+                                  right: 16.0,
+                                  top: 16.0,
+                                ),
+                                alignment: Alignment.center,
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  color: maroon,
+                                  borderRadius: homeCorners,
+                                ),
+                                child: Container(
+                                  child: Image.asset(
+                                    "assets/hand.png",
+                                    height: 30,
+                                    width: 30,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
                           ),
-                        ),
+                          Column(
+                            children: [
+                              Container(
+                                alignment: Alignment.bottomLeft,
+                                height: 30,
+                                width: 200,
+                                margin: const EdgeInsets.only(top: 8),
+                                child: Text(
+                                  "FAQ",
+                                  style: TextStyle(
+                                    fontFamily: "SFBold",
+                                    color: const Color(0xFF252525),
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                                // color: Colors.black,
+                              ),
+                              Container(
+                                alignment: Alignment.bottomLeft,
+                                margin: const EdgeInsets.only(top: 6),
+                                height: 30,
+                                width: 200,
+                                child: Text(
+                                  "Visit a document with answers to frequently asked questions!",
+                                  style: TextStyle(
+                                    fontFamily: "SF",
+                                    color: const Color(0xFF858585),
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                                // color: Colors.pink,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
