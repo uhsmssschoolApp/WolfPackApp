@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/pages/clubs.dart';
 // import 'package:testflutter/nav.dart';
 import 'package:testflutter/pages/home.dart';
@@ -15,7 +16,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // testtime();
+    // DateTime now = DateTime.now();
+    // initDates(now);
     return MaterialApp(
       title: "testing",
       theme: ThemeData(
@@ -24,6 +26,11 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           elevation: 0,
         ),
+      ),
+      // do this later
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Colors.grey[900],
       ),
       home: home(),
       debugShowCheckedModeBanner: false,

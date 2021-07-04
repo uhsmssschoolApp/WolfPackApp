@@ -27,6 +27,7 @@ class _HomeState extends State<home> {
   String curTime = "";
   String curDate = "";
   String announcementDate = "";
+  int dateIndex = 4;
   // bool cond = false;
   int minutesTime = 0;
   DateTime now = DateTime.now();
@@ -322,8 +323,10 @@ class _HomeState extends State<home> {
                               alignment: Alignment.center,
                               child: RawMaterialButton(
                                 elevation: 2,
-                                // padding: const EdgeInsets.only(right: 4),
-                                onPressed: () {},
+                                padding: const EdgeInsets.only(right: 4),
+                                onPressed: () {
+                                  navLeft();
+                                },
                                 fillColor: Colors.red,
                                 shape: const CircleBorder(),
                                 child: const Icon(
@@ -353,7 +356,9 @@ class _HomeState extends State<home> {
                               width: 20,
                               child: RawMaterialButton(
                                 elevation: 2,
-                                onPressed: () {},
+                                onPressed: () {
+                                  navRight();
+                                },
                                 fillColor: Colors.red,
                                 shape: const CircleBorder(),
                                 child: const Icon(
@@ -497,7 +502,8 @@ class _HomeState extends State<home> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("pressed");
+                      //lmfao doesnt work yet
+                      launchURL(faqDoc);
                     },
                     child: Container(
                       alignment: Alignment.topLeft,
@@ -628,13 +634,14 @@ class _HomeState extends State<home> {
     String aDate = (DateFormat('EE MMM dd').format(now));
     setState(() {
       curDate = date;
-      announcementDate = aDate;
+      announcementDate = dates[dateIndex];
       minutesTime = findTime(now);
     });
   }
 
   @override
   void initState() {
+    initDates(now);
     curTime = DateTime.now().toString();
     curDate = DateTime.now().toString();
     announcementDate = DateTime.now().toString();
@@ -658,4 +665,15 @@ class _HomeState extends State<home> {
   //     // return Future<bool>.value(true);
   //   }
   // }
+  void navLeft() {
+    if (dateIndex > 0) {
+      dateIndex--;
+    } else {}
+  }
+
+  void navRight() {
+    if (dateIndex < 4) {
+      dateIndex++;
+    }
+  }
 }

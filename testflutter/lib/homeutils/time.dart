@@ -1,6 +1,8 @@
 import 'package:intl/intl.dart';
 import 'package:testflutter/pages/home.dart';
 
+List<String> dates = List.filled(5, "", growable: false);
+
 int findTime(DateTime now) {
   // converts the time to mintues unit which can be used as
   String date = (DateFormat('Hm').format(now));
@@ -113,8 +115,18 @@ double periodProgress(int time, int curPeriod) {
   }
 }
 
-// void testtime() {
-//   DateTime before = DateTime.now().subtract(Duration(days: 1));
-//   String aDate = (DateFormat('EE MMM dd').format(before));
-//   print(aDate);
-// }
+String goBack(int day, DateTime now) {
+  DateTime before = DateTime.now().subtract(Duration(days: day));
+  String aDate = DateFormat('EE MMM dd').format(before);
+  return aDate;
+}
+
+// temporary function
+void initDates(DateTime now) {
+  dates[4] = DateFormat('EE MMM dd').format(now);
+  for (int i = 0; i < 4; i++) {
+    dates[i] = goBack(4 - i, now);
+    print(dates[i]);
+  }
+  print(dates[4]);
+}

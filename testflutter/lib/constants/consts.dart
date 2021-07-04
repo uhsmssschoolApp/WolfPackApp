@@ -36,6 +36,8 @@ const String twitterURL = "https://uhsmssschoolapp.github.io/twitterfeed/";
 const String uhsURL = "https://uhsmssschoolapp.github.io/twitterUHSfeed/";
 const String weather =
     "https://www.theweathernetwork.com/ca/weather/ontario/markham";
+const String faqDoc =
+    "https://docs.google.com/document/d/12i2Cvw95v0wMpFtVnh2ev-O_QgJvuDzzBHDrLHrkMno/edit?usp=sharing";
 
 // edge radius
 BorderRadius homeCorners = const BorderRadius.all(Radius.circular(15));
