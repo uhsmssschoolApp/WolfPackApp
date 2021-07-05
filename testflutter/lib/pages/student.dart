@@ -19,6 +19,9 @@ List<Widget> screenDisplays = [
   ),
 ];
 
+int activePageNumber = 1; //the page that the user is on
+Widget curView = webviewDisplay();
+
 class _studentState extends State<student> {
   final Map<int, Widget> segControl = const <int, Widget>{
     0: Text(
@@ -32,7 +35,7 @@ class _studentState extends State<student> {
       ),
     ),
   };
-  int curDisplay = 0;
+  int curDisplay = 0; //don't touch this >:(
   int? i;
   @override
   Widget build(BuildContext context) {
@@ -69,7 +72,27 @@ class _studentState extends State<student> {
   }
 }
 
-int i = 0;
+void webPageChanger(int page) {
+  activePageNumber = page;
+}
+
+Widget webviewDisplay() {
+  if (activePageNumber == 1) {
+    return WebView(
+      initialUrl: twitterURL,
+      javascriptMode: JavascriptMode.unrestricted,
+    );
+  } else if (activePageNumber == 2) {
+    print("inti2");
+    return WebView(
+      initialUrl: uhsURL,
+      javascriptMode: JavascriptMode.unrestricted,
+    );
+  } else {
+    print("uh oh");
+    return Container();
+  }
+}
 
 Widget feed() {
   return Column(
@@ -84,32 +107,46 @@ Widget feed() {
               width: 90,
               // color: Colors.black,
               child: OutlinedButton(
-                onPressed: () {},
-                child: Text(
-                  "@YRDSB",
-                  style: 
-                  TextStyle(
-                    fontFamily: "SFBold",
-                    color: Colors.indigo,
-                  ),
-                )
-                ),
+                  onPressed: () {
+                    webPageChanger(1);
+                    curView = webviewDisplay();
+                  },
+                  child: Text(
+                    "@YRDSB",
+                    style: TextStyle(
+                      fontFamily: "SFBold",
+                      color: Colors.indigo,
+                    ),
+                  )),
               margin: const EdgeInsets.only(left: 8),
-            )
+            ),
+            Container(
+              height: 30,
+              width: 90,
+              child: OutlinedButton(
+                  onPressed: () {
+                    webPageChanger(2);
+                    curView = webviewDisplay();
+                  },
+                  child: Text("@UHS",
+                      style: TextStyle(
+                        fontFamily: "SFBold",
+                        color: Colors.indigo,
+                      ))),
+              margin: const EdgeInsets.only(left: 8),
+            ),
           ],
         ),
       ),
-      const Expanded(
+      Expanded(
         flex: 1,
-        child: WebView(
-          initialUrl: twitterURL,
-          javascriptMode: JavascriptMode.unrestricted,
-        ),
+        child: curView,
       ),
     ],
   );
 }
 
+//int i = 0;
 // WebView cond() {
 //   if (i==0) {
 //     return twitterYRDSB();

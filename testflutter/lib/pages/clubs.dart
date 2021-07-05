@@ -18,7 +18,7 @@ class clubs extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           // children: <ExpansionPanelList>[
-          //   ExpansionPanel(headerBuilder: "headerBuilder", body: text("Open"))
+          //   ExpansionPanel(headerBuilder: "headerBuilder", body: Text("Open"))
           // ],
         ),
       ),
