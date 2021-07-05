@@ -8,6 +8,10 @@ Color lightGrey = const Color(0xFFdadada);
 
 // text styles
 TextStyle linkTiles = const TextStyle(fontSize: 15.0, fontFamily: "SF");
+TextStyle settingTiles = const TextStyle(
+  fontFamily: "SF",
+  color: Color(0xFF454545),
+);
 
 // icons
 Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
@@ -38,6 +42,8 @@ const String weather =
     "https://www.theweathernetwork.com/ca/weather/ontario/markham";
 const String faqDoc =
     "https://docs.google.com/document/d/12i2Cvw95v0wMpFtVnh2ev-O_QgJvuDzzBHDrLHrkMno/edit?usp=sharing";
+const String uhsRedirect =
+    "http://www.yrdsb.ca/schools/unionville.hs/Pages/default.aspx";
 
 // edge radius
 BorderRadius homeCorners = const BorderRadius.all(Radius.circular(15));

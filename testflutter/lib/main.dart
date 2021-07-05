@@ -7,7 +7,7 @@ import 'package:testflutter/homeutils/time.dart';
 import 'pages/links.dart';
 import 'pages/student.dart';
 // import 'student.dart';
-import 'pages/settings.dart';
+import 'pages/more.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         "/links": (context) => links(),
         "/student": (context) => student(),
         "/clubs": (context) => clubs(),
-        "/settings": (context) => settings(),
+        "/more": (context) => more(),
       },
     );
   }

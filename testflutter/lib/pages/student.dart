@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testflutter/appbar.dart';
 import 'package:testflutter/nav.dart';
+import 'package:testflutter/studentutils/feed.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../constants/consts.dart';
 import 'dart:async';
@@ -13,21 +14,25 @@ class student extends StatefulWidget {
   _studentState createState() => _studentState();
 }
 
+
+
 List<Widget> screenDisplays = [
-  twitterFeed(),
+  feed(),
   Center(
     child: Text("1"),
   ),
 ];
 
-int activePageNumber = 1; //the page that the user is on
+
+int activePageNumber = 0; //the page that the user is on
 // Widget curView = webviewDisplay();
-WebView feedDisplay = WebView(
-  initialUrl: twitterURL,
-  javascriptMode: JavascriptMode.unrestricted,
-);
 
 class _studentState extends State<student> {
+  // @override
+  // void initState() {
+  //   activePageNumber = 0;
+  //   super.initState();
+  // }
   final Map<int, Widget> segControl = const <int, Widget>{
     0: Text(
       "Twitter",
@@ -71,74 +76,6 @@ class _studentState extends State<student> {
       ),
     );
   }
-}
-
-Widget webviewDisplay(int activePageNumber) {
-  if (activePageNumber == 1) {
-    return WebView(
-      initialUrl: twitterURL,
-      javascriptMode: JavascriptMode.unrestricted,
-    );
-  } else if (activePageNumber == 2) {
-    return WebView(
-      initialUrl: uhsURL,
-      javascriptMode: JavascriptMode.unrestricted,
-    );
-  } else {
-    return Container();
-  }
-}
-
-
-Widget twitterFeed() {
-  return Column(
-    children: [
-      Container(
-        height: 40,
-        // color: Colors.black,
-        child: Row(
-          children: [
-            Container(
-              height: 30,
-              width: 90,
-              // color: Colors.black,
-              child: OutlinedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "@YRDSB",
-                    style: TextStyle(
-                      fontFamily: "SFBold",
-                      color: Colors.indigo,
-                    ),
-                  )),
-              margin: const EdgeInsets.only(left: 8),
-            ),
-            Container(
-              height: 30,
-              width: 90,
-              child: OutlinedButton(
-                onPressed: () {
-                  
-                },
-                child: Text(
-                  "@UHS",
-                  style: TextStyle(
-                    fontFamily: "SFBold",
-                    color: Colors.indigo,
-                  ),
-                ),
-              ),
-              margin: const EdgeInsets.only(left: 8),
-            ),
-          ],
-        ),
-      ),
-      Expanded(
-        flex: 1,
-        child: feedDisplay,
-      ),
-    ],
-  );
 }
 
 //int i = 0;

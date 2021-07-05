@@ -22,7 +22,7 @@ class _NavState extends State<Nav> {
     "/links",
     "/student",
     "/clubs",
-    "/settings",
+    "/more",
   ];
 
   void _ontap(int index) {
@@ -73,7 +73,7 @@ class _NavState extends State<Nav> {
         ),
         BottomNavigationBarItem(
           icon: Icon(MyFlutterApp.more_horiz),
-          label: "Settings",
+          label: "More",
         ),
       ],
       onTap: _ontap,

@@ -483,12 +483,8 @@ class _HomeState extends State<home> {
                   Container(
                     margin: EdgeInsets.only(top: 12.0, bottom: 12.0),
                     width: screenWidth * 0.9,
-                    height: 450,
+                    height: 530,
                     alignment: Alignment.center,
-                    child: Container(
-                      height: 400,
-                      child: yrdsbCalendarView(),
-                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: homeCorners,
@@ -497,6 +493,96 @@ class _HomeState extends State<home> {
                             color: Colors.grey,
                             blurRadius: 7,
                             offset: Offset(0, 5)),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Column(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(
+                                    left: 16.0,
+                                    right: 16.0,
+                                    top: 16.0,
+                                  ),
+                                  alignment: Alignment.center,
+                                  height: 50,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    color: maroon,
+                                    borderRadius: homeCorners,
+                                  ),
+                                  child: Container(
+                                    child: Image.asset(
+                                      "assets/calendar_1f4c5.png",
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Container(
+                                  alignment: Alignment.bottomLeft,
+                                  height: 30,
+                                  width: 200,
+                                  margin: const EdgeInsets.only(top: 8),
+                                  child: Text(
+                                    "School Calendar",
+                                    style: TextStyle(
+                                      fontFamily: "SFBold",
+                                      color: const Color(0xFF252525),
+                                      fontSize: 18.0,
+                                    ),
+                                  ),
+                                  // color: Colors.black,
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomLeft,
+                                  margin: const EdgeInsets.only(top: 6),
+                                  height: 15,
+                                  width: 200,
+                                  child: Text(
+                                    "Latest events here!",
+                                    style: TextStyle(
+                                      fontFamily: "SF",
+                                      color: const Color(0xFF858585),
+                                      fontSize: 14.0,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 10),
+                          height: 400,
+                          alignment: Alignment.center,
+                          // color: Colors.yellow,
+                          child: yrdsbCalendarView(),
+                        ),
+                        Container(
+                          width: screenWidth * 0.7,
+                          height: 30,
+                          margin: const EdgeInsets.only(top: 8),
+                          // color: Colors.black,
+                          child: OutlinedButton(
+                              onPressed: () {
+                                launchURL(uhsRedirect);
+                              },
+                              child: Text(
+                                "Open in Browser",
+                                style: TextStyle(
+                                  fontFamily: "SFBold",
+                                  color: Colors.grey[700],
+                                ),
+                              )),
+                        ),
                       ],
                     ),
                   ),
