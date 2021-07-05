@@ -4,6 +4,7 @@ import 'package:testflutter/appbar.dart';
 import 'package:testflutter/nav.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../constants/consts.dart';
+import 'dart:async';
 
 class student extends StatefulWidget {
   const student({Key? key}) : super(key: key);
@@ -13,14 +14,18 @@ class student extends StatefulWidget {
 }
 
 List<Widget> screenDisplays = [
-  feed(),
+  twitterFeed(),
   Center(
     child: Text("1"),
   ),
 ];
 
 int activePageNumber = 1; //the page that the user is on
-Widget curView = webviewDisplay();
+// Widget curView = webviewDisplay();
+WebView feedDisplay = WebView(
+  initialUrl: twitterURL,
+  javascriptMode: JavascriptMode.unrestricted,
+);
 
 class _studentState extends State<student> {
   final Map<int, Widget> segControl = const <int, Widget>{
@@ -58,10 +63,6 @@ class _studentState extends State<student> {
                   }),
             ),
           ),
-          // Container(
-          //   height: 40,
-          //   color: Colors.black,
-          // ),
           Expanded(
             flex: 7,
             child: screenDisplays[curDisplay],
@@ -72,29 +73,24 @@ class _studentState extends State<student> {
   }
 }
 
-void webPageChanger(int page) {
-  activePageNumber = page;
-}
-
-Widget webviewDisplay() {
+Widget webviewDisplay(int activePageNumber) {
   if (activePageNumber == 1) {
     return WebView(
       initialUrl: twitterURL,
       javascriptMode: JavascriptMode.unrestricted,
     );
   } else if (activePageNumber == 2) {
-    print("inti2");
     return WebView(
       initialUrl: uhsURL,
       javascriptMode: JavascriptMode.unrestricted,
     );
   } else {
-    print("uh oh");
     return Container();
   }
 }
 
-Widget feed() {
+
+Widget twitterFeed() {
   return Column(
     children: [
       Container(
@@ -107,10 +103,7 @@ Widget feed() {
               width: 90,
               // color: Colors.black,
               child: OutlinedButton(
-                  onPressed: () {
-                    webPageChanger(1);
-                    curView = webviewDisplay();
-                  },
+                  onPressed: () {},
                   child: Text(
                     "@YRDSB",
                     style: TextStyle(
@@ -124,15 +117,17 @@ Widget feed() {
               height: 30,
               width: 90,
               child: OutlinedButton(
-                  onPressed: () {
-                    webPageChanger(2);
-                    curView = webviewDisplay();
-                  },
-                  child: Text("@UHS",
-                      style: TextStyle(
-                        fontFamily: "SFBold",
-                        color: Colors.indigo,
-                      ))),
+                onPressed: () {
+                  
+                },
+                child: Text(
+                  "@UHS",
+                  style: TextStyle(
+                    fontFamily: "SFBold",
+                    color: Colors.indigo,
+                  ),
+                ),
+              ),
               margin: const EdgeInsets.only(left: 8),
             ),
           ],
@@ -140,7 +135,7 @@ Widget feed() {
       ),
       Expanded(
         flex: 1,
-        child: curView,
+        child: feedDisplay,
       ),
     ],
   );
