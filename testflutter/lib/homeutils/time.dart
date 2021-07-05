@@ -126,7 +126,7 @@ void initDates(DateTime now) {
   dates[4] = DateFormat('EE MMM dd').format(now);
   for (int i = 0; i < 4; i++) {
     dates[i] = goBack(4 - i, now);
-    print(dates[i]);
+    // print(dates[i]);
   }
-  print(dates[4]);
+  // print(dates[4]);
 }

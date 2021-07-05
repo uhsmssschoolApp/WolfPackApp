@@ -17,9 +17,9 @@ class clubs extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <ExpansionPanelList>[
-            ExpansionPanel(headerBuilder: "headerBuilder", body: text("Open"))
-          ],
+          // children: <ExpansionPanelList>[
+          //   ExpansionPanel(headerBuilder: "headerBuilder", body: text("Open"))
+          // ],
         ),
       ),
     );

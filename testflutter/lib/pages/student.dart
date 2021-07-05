@@ -79,36 +79,23 @@ Widget feed() {
         // color: Colors.black,
         child: Row(
           children: [
-            OutlinedButton(
-              onPressed: () {
-                // i = 1;
-              },
-              style: OutlinedButton.styleFrom(
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-              ),
-              child: Text(
-                "@YRDSB",
-                style: TextStyle(
-                  fontFamily: 'SF',
+            Container(
+              height: 30,
+              width: 90,
+              // color: Colors.black,
+              child: OutlinedButton(
+                onPressed: () {},
+                child: Text(
+                  "@YRDSB",
+                  style: 
+                  TextStyle(
+                    fontFamily: "SFBold",
+                    color: Colors.indigo,
+                  ),
+                )
                 ),
-              ),
-            ),
-            OutlinedButton(
-              onPressed: () {
-                // i = 1;
-              },
-              style: OutlinedButton.styleFrom(
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(15))),
-              ),
-              child: Text(
-                "@UHSUpdates",
-                style: TextStyle(
-                  fontFamily: 'SF',
-                ),
-              ),
-            ),
+              margin: const EdgeInsets.only(left: 8),
+            )
           ],
         ),
       ),
