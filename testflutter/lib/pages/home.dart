@@ -1,18 +1,18 @@
 import 'dart:async';
 // import 'dart:html';
 
-import 'package:connectivity/connectivity.dart';
+// import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:testflutter/appbar.dart';
-import 'package:testflutter/connectivity.dart';
+// import 'package:testflutter/connectivity.dart';
 import 'package:testflutter/homeutils/expand.dart';
 import 'package:testflutter/homeutils/yrdsbcalendar.dart';
 import 'package:testflutter/nav.dart';
 import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/links.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
 import '../constants/consts.dart';
 import 'package:testflutter/homeutils/weather.dart';
 

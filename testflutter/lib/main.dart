@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:testflutter/constants/consts.dart';
+// import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/pages/clubs.dart';
 // import 'package:testflutter/nav.dart';
 import 'package:testflutter/pages/home.dart';
-import 'package:testflutter/homeutils/time.dart';
+// import 'package:testflutter/homeutils/time.dart';
 import 'pages/links.dart';
 import 'pages/student.dart';
 // import 'student.dart';
 import 'pages/more.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 
-Future<void> main() async {
+void main() {
   //await Firebase.initializeApp();
   runApp(MyApp());
 }
