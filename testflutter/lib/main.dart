@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/more/theme.dart';
 // import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/pages/clubs.dart';
 // import 'package:testflutter/nav.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: "testing",
       theme: ThemeData(
         // fontFamily: "wingding"
-        scaffoldBackgroundColor: const Color(0xFFdadada),
+        // scaffoldBackgroundColor: const Color(0xFFdadada),
         appBarTheme: AppBarTheme(
           elevation: 0,
         ),
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         "/student": (context) => student(),
         "/clubs": (context) => clubs(),
         "/more": (context) => more(),
+        "/themesettings": (context) => theme(),
       },
     );
   }

@@ -9,6 +9,9 @@ class more extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> morePaths = <String>[
+      "/themesettings",
+    ];
     return Scaffold(
       bottomNavigationBar: Nav(),
       appBar: mainAppBar("More"),
@@ -42,6 +45,9 @@ class more extends StatelessWidget {
             child: ListTile(
               leading: Icon(Icons.settings_display),
               trailing: arrowRight,
+              onTap: () {
+                Navigator.pushNamed(context, morePaths[0]);
+              },
               title: Text(
                 "Theme",
                 style: settingTiles,
