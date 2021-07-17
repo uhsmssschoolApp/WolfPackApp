@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/more/notifications.dart';
 import 'package:testflutter/more/theme.dart';
 // import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/pages/clubs.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         "/clubs": (context) => clubs(),
         "/more": (context) => more(),
         "/themesettings": (context) => theme(),
+        "/notifications": (context) => notifications(),
       },
     );
   }
