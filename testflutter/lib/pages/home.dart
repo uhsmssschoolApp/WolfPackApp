@@ -586,91 +586,91 @@ class _HomeState extends State<home> {
                       ],
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      //lmfao doesnt work yet
-                      launchURL(faqDoc);
-                    },
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      margin: const EdgeInsets.only(bottom: 12.0),
-                      width: screenWidth * 0.9,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: homeCorners,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 7,
-                              offset: Offset(0, 5)),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Column(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(
-                                  left: 16.0,
-                                  right: 16.0,
-                                  top: 16.0,
-                                ),
-                                alignment: Alignment.center,
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  color: maroon,
-                                  borderRadius: homeCorners,
-                                ),
-                                child: Container(
-                                  child: Image.asset(
-                                    "assets/hand.png",
-                                    height: 30,
-                                    width: 30,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Container(
-                                alignment: Alignment.bottomLeft,
-                                height: 30,
-                                width: 200,
-                                margin: const EdgeInsets.only(top: 8),
-                                child: Text(
-                                  "FAQ",
-                                  style: TextStyle(
-                                    fontFamily: "SFBold",
-                                    color: const Color(0xFF252525),
-                                    fontSize: 18.0,
-                                  ),
-                                ),
-                                // color: Colors.black,
-                              ),
-                              Container(
-                                alignment: Alignment.bottomLeft,
-                                margin: const EdgeInsets.only(top: 6),
-                                height: 30,
-                                width: 200,
-                                child: Text(
-                                  "Visit a document with answers to frequently asked questions!",
-                                  style: TextStyle(
-                                    fontFamily: "SF",
-                                    color: const Color(0xFF858585),
-                                    fontSize: 14.0,
-                                  ),
-                                ),
-                                // color: Colors.pink,
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     //lmfao doesnt work yet
+                  //     launchURL(faqDoc);
+                  //   },
+                  //   child: Container(
+                  //     alignment: Alignment.topLeft,
+                  //     margin: const EdgeInsets.only(bottom: 12.0),
+                  //     width: screenWidth * 0.9,
+                  //     height: 100,
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.white,
+                  //       borderRadius: homeCorners,
+                  //       boxShadow: [
+                  //         BoxShadow(
+                  //             color: Colors.grey,
+                  //             blurRadius: 7,
+                  //             offset: Offset(0, 5)),
+                  //       ],
+                  //     ),
+                  //     child: Row(
+                  //       children: [
+                  //         Column(
+                  //           children: [
+                  //             Container(
+                  //               margin: EdgeInsets.only(
+                  //                 left: 16.0,
+                  //                 right: 16.0,
+                  //                 top: 16.0,
+                  //               ),
+                  //               alignment: Alignment.center,
+                  //               height: 50,
+                  //               width: 50,
+                  //               decoration: BoxDecoration(
+                  //                 color: maroon,
+                  //                 borderRadius: homeCorners,
+                  //               ),
+                  //               child: Container(
+                  //                 child: Image.asset(
+                  //                   "assets/hand.png",
+                  //                   height: 30,
+                  //                   width: 30,
+                  //                 ),
+                  //               ),
+                  //             ),
+                  //           ],
+                  //         ),
+                  //         Column(
+                  //           children: [
+                  //             Container(
+                  //               alignment: Alignment.bottomLeft,
+                  //               height: 30,
+                  //               width: 200,
+                  //               margin: const EdgeInsets.only(top: 8),
+                  //               child: Text(
+                  //                 "FAQ",
+                  //                 style: TextStyle(
+                  //                   fontFamily: "SFBold",
+                  //                   color: const Color(0xFF252525),
+                  //                   fontSize: 18.0,
+                  //                 ),
+                  //               ),
+                  //               // color: Colors.black,
+                  //             ),
+                  //             Container(
+                  //               alignment: Alignment.bottomLeft,
+                  //               margin: const EdgeInsets.only(top: 6),
+                  //               height: 30,
+                  //               width: 200,
+                  //               child: Text(
+                  //                 "Visit a document with answers to frequently asked questions!",
+                  //                 style: TextStyle(
+                  //                   fontFamily: "SF",
+                  //                   color: const Color(0xFF858585),
+                  //                   fontSize: 14.0,
+                  //                 ),
+                  //               ),
+                  //               // color: Colors.pink,
+                  //             )
+                  //           ],
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // )
                 ],
               ),
             ),

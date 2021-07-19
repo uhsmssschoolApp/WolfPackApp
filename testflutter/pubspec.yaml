@@ -36,6 +36,7 @@ dependencies:
   flutter_switch: ^0.3.2
   firebase_database: ^7.1.1
   cloud_firestore: ^2.3.0
+  shared_preferences: ^2.0.6
   # firebase_core: ^1.0.3
   # stack: ^0.2.1
 

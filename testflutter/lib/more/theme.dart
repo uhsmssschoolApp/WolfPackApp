@@ -25,10 +25,7 @@ class _themeState extends State<theme> {
             margin: const EdgeInsets.only(left: 16),
             child: Text(
               "Appearance",
-              style: TextStyle(
-                fontFamily: "SFBold",
-                fontSize: 17,
-              ),
+              style: subTitle,
             ),
           ),
           ListTile(

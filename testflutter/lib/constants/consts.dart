@@ -12,6 +12,12 @@ TextStyle settingTiles = const TextStyle(
   fontFamily: "SF",
   color: Color(0xFF454545),
 );
+TextStyle subTitle = const TextStyle(
+  fontFamily: "SFBold",
+  fontSize: 17,
+);
+TextStyle cardTitle = const TextStyle(fontFamily: "SF", color: Color(0xFF454545), fontSize: 16);
+TextStyle cardSubTitle = const TextStyle(fontFamily: "SF", color: Color(0xFF454545), fontSize: 12);
 
 // icons
 Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);

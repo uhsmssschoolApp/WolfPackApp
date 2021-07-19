@@ -9,9 +9,7 @@ class more extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> morePaths = <String>[
-      "/themesettings",
-    ];
+    List<String> morePaths = <String>["/themesettings", "/notifications"];
     return Scaffold(
       bottomNavigationBar: Nav(),
       appBar: mainAppBar("More"),
@@ -23,10 +21,7 @@ class more extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               "General Settings",
-              style: TextStyle(
-                fontFamily: "SFBold",
-                fontSize: 17,
-              ),
+              style: subTitle,
             ),
           ),
           Card(
@@ -38,7 +33,9 @@ class more extends StatelessWidget {
                 "Notifications",
                 style: settingTiles,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, morePaths[1]);
+              },
             ),
           ),
           Card(
@@ -60,10 +57,7 @@ class more extends StatelessWidget {
             margin: const EdgeInsets.only(left: 16),
             child: Text(
               "Your Voice",
-              style: TextStyle(
-                fontFamily: "SFBold",
-                fontSize: 17,
-              ),
+              style: subTitle,
             ),
           ),
           Card(
@@ -88,6 +82,16 @@ class more extends StatelessWidget {
           ),
           Card(
             child: ListTile(
+              leading: Icon(Icons.help),
+              title: Text(
+                "FAQ",
+                style: settingTiles,
+              ),
+              trailing: arrowRight,
+            ),
+          ),
+          Card(
+            child: ListTile(
               leading: Icon(Icons.emoji_people_rounded),
               title: Text(
                 "Get Invovled!",
@@ -95,7 +99,7 @@ class more extends StatelessWidget {
               ),
               trailing: arrowRight,
             ),
-          )
+          ),
         ],
       ),
     );
