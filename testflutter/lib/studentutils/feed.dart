@@ -1,12 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
-// import 'package:testflutter/pages/student.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
-// List<String> urlList = [
-//   twitterURL,
-//   uhsURL,
-// ];
 
 class feed extends StatefulWidget {
   const feed({Key? key}) : super(key: key);
@@ -18,14 +14,10 @@ class feed extends StatefulWidget {
 class _feedState extends State<feed> {
   // int activePage = 0;
   String url = twitterURL;
-
+  Completer<WebViewController> completer= Completer<WebViewController>();
   @override
   Widget build(BuildContext context) {
-    WebView feedDisplay = WebView(
-      initialUrl: url,
-      javascriptMode: JavascriptMode.unrestricted,
-    );
-    // print("Rebuilt");
+    // print(url);
     return Column(
       children: [
         Container(
@@ -41,7 +33,7 @@ class _feedState extends State<feed> {
                     onPressed: () {
                       setState(() {
                         // activePage = 0;
-                        url = twitterURL;
+                        completer.future.then((controller) => controller.loadUrl(twitterURL));
                       });
                     },
                     child: Text(
@@ -60,7 +52,8 @@ class _feedState extends State<feed> {
                   onPressed: () {
                     setState(() {
                       // activePage = 1;
-                      url = uhsURL;
+                      // url = uhsURL;
+                      completer.future.then((controller) => controller.loadUrl(uhsURL));
                       // print("Displaying uhs");
                     });
                   },
@@ -79,7 +72,15 @@ class _feedState extends State<feed> {
         ),
         Expanded(
           flex: 1,
-          child:feedDisplay,
+          child: WebView(
+            initialUrl: url,
+            onWebViewCreated: (WebViewController controller) {
+              try {
+                completer.complete(controller);
+              } on StateError catch (_) {}
+            },
+            javascriptMode: JavascriptMode.unrestricted,
+          ),
         ),
       ],
     );
