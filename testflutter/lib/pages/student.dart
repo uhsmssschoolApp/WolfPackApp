@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:testflutter/appbar.dart';
 import 'package:testflutter/nav.dart';
 import 'package:testflutter/studentutils/feed.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-import '../constants/consts.dart';
-import 'dart:async';
 
 class student extends StatefulWidget {
   const student({Key? key}) : super(key: key);
@@ -21,15 +18,9 @@ List<Widget> screenDisplays = [
   ),
 ];
 
-// int activePageNumber = 1; //the page that the user is on
-// Widget curView = webviewDisplay(1);
 
 class _studentState extends State<student> {
-  // @override
-  // void initState() {
-  //   activePageNumber = 0;
-  //   super.initState();
-  // }
+
   final Map<int, Widget> segControl = const <int, Widget>{
     0: Text(
       "Twitter",
@@ -65,10 +56,7 @@ class _studentState extends State<student> {
                   }),
             ),
           ),
-          // Container(
-          //   height: 40,
-          //   color: Colors.black,
-          // ),
+
           Expanded(
             flex: 7,
             child: screenDisplays[curDisplay],
@@ -78,100 +66,3 @@ class _studentState extends State<student> {
     );
   }
 }
-
-// void webPageChanger(int page) {
-//   activePageNumber = page;
-// }
-
-// Widget webviewDisplay(int activePageNumber) {
-//   if (activePageNumber == 1) {
-//     return WebView(
-//       initialUrl: twitterURL,
-//       javascriptMode: JavascriptMode.unrestricted,
-//     );
-//   } else if (activePageNumber == 2) {
-//     print("inti2");
-//     return WebView(
-//       initialUrl: uhsURL,
-//       javascriptMode: JavascriptMode.unrestricted,
-//     );
-//   } else {
-//     print("uh oh");
-//     return Container();
-//   }
-// }
-
-// Widget feed() {
-//   return Column(
-//     children: [
-//       Container(
-//         height: 40,
-//         // color: Colors.black,
-//         child: Row(
-//           children: [
-//             Container(
-//               height: 30,
-//               width: 90,
-//               // color: Colors.black,
-//               child: OutlinedButton(
-//                   onPressed: () {
-//                     // webPageChanger(1);
-//                     curView = webviewDisplay(1);
-//                   },
-//                   child: Text(
-//                     "@YRDSB",
-//                     style: TextStyle(
-//                       fontFamily: "SFBold",
-//                       color: Colors.indigo,
-//                     ),
-//                   )),
-//               margin: const EdgeInsets.only(left: 8),
-//             ),
-//             Container(
-//               height: 30,
-//               width: 90,
-//               child: OutlinedButton(
-//                   onPressed: () {
-//                     // webPageChanger(2);
-                    
-//                     curView = webviewDisplay(2);
-//                   },
-//                   child: Text("@UHS",
-//                       style: TextStyle(
-//                         fontFamily: "SFBold",
-//                         color: Colors.indigo,
-//                       ))),
-//               margin: const EdgeInsets.only(left: 8),
-//             ),
-//           ],
-//         ),
-//       ),
-//       Expanded(
-//         flex: 1,
-//         child: curView,
-//       ),
-//     ],
-//   );
-// }
-
-//int i = 0;
-// WebView cond() {
-//   if (i==0) {
-//     return twitterYRDSB();
-//   } else {
-//     return twitterUHS();
-//   }
-// }
-// WebView twitterUHS(){
-//   return WebView(
-//     initialUrl: uhsURL,
-//     javascriptMode: JavascriptMode.unrestricted,
-//   )
-// }
-
-// WebView twitterYRDSB() {
-//   return WebView(
-//     initialUrl: twitterURL,
-//     javascriptMode: JavascriptMode.unrestricted,
-//   )
-// }
