@@ -16,8 +16,10 @@ TextStyle subTitle = const TextStyle(
   fontFamily: "SFBold",
   fontSize: 17,
 );
-TextStyle cardTitle = const TextStyle(fontFamily: "SF", color: Color(0xFF454545), fontSize: 16);
-TextStyle cardSubTitle = const TextStyle(fontFamily: "SF", color: Color(0xFF454545), fontSize: 12);
+TextStyle cardTitle =
+    const TextStyle(fontFamily: "SF", color: Color(0xFF454545), fontSize: 16);
+TextStyle cardSubTitle =
+    const TextStyle(fontFamily: "SF", color: Color(0xFF454545), fontSize: 12);
 
 // icons
 Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
@@ -26,6 +28,7 @@ Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
 EdgeInsets hometileMargin = const EdgeInsets.only(left: 28.0, top: 8.0);
 EdgeInsets homeMargin = const EdgeInsets.only(left: 16.0, top: 16.0);
 EdgeInsets usualMargin = const EdgeInsets.only(left: 8.0, top: 8.0, right: 8.0);
+EdgeInsets topMargin = const EdgeInsets.only(top: 16.0);
 
 // urls
 String ta = "https://ta.yrdsb.ca/yrdsb/";

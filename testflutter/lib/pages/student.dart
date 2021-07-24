@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:testflutter/appbar.dart';
 import 'package:testflutter/nav.dart';
 import 'package:testflutter/studentutils/feed.dart';
+import 'package:testflutter/studentutils/inbox.dart';
 
 class student extends StatefulWidget {
   const student({Key? key}) : super(key: key);
@@ -13,9 +14,7 @@ class student extends StatefulWidget {
 
 List<Widget> screenDisplays = [
   feed(),
-  Center(
-    child: Text("1"),
-  ),
+  inbox(),
 ];
 
 
