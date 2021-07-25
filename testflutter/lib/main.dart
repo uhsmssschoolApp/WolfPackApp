@@ -6,11 +6,11 @@ import 'package:testflutter/pages/clubs.dart';
 // import 'package:testflutter/nav.dart';
 import 'package:testflutter/pages/home.dart';
 // import 'package:testflutter/homeutils/time.dart';
+import 'more/resources.dart';
 import 'pages/links.dart';
 import 'pages/student.dart';
-// import 'student.dart';
+import 'themes/mythemes.dart';
 import 'pages/more.dart';
-// import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   //await Firebase.initializeApp();
@@ -24,18 +24,10 @@ class MyApp extends StatelessWidget {
     // initDates(now);
     return MaterialApp(
       title: "testing",
-      theme: ThemeData(
-        // fontFamily: "wingding"
-        // scaffoldBackgroundColor: const Color(0xFFdadada),
-        appBarTheme: AppBarTheme(
-          elevation: 0,
-        ),
-      ),
+      theme: MyThemes.lightTheme,
       // do this later
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: Colors.grey[900],
-      ),
+      // themeMode: ThemeMode.system,
+      // darkTheme: MyThemes.darkTheme,
       home: home(),
       debugShowCheckedModeBanner: false,
       routes: {
@@ -46,6 +38,7 @@ class MyApp extends StatelessWidget {
         "/more": (context) => more(),
         "/themesettings": (context) => theme(),
         "/notifications": (context) => notifications(),
+        "/resources": (context) => resources(),
       },
     );
   }

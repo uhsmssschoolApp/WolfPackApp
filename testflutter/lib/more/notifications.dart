@@ -10,6 +10,7 @@ class notifications extends StatefulWidget {
   @override
   _notificationsState createState() => _notificationsState();
 }
+
 // note to self : broken please fix
 class _notificationsState extends State<notifications> {
   // List<bool> preferencesState = <bool>[
@@ -140,27 +141,27 @@ class _notificationsState extends State<notifications> {
                   }),
             ),
           ),
-          Card(
-            child: ListTile(
-              title: Text(
-                "Admin and Office Updates",
-                style: cardTitle,
-              ),
-              subtitle: Text(
-                "Messages from school admin and staff",
-                style: cardSubTitle,
-              ),
-              trailing: CupertinoSwitch(
-                  value: adminUpdates,
-                  activeColor: maroon,
-                  onChanged: (bool val) {
-                    setState(() {
-                      adminUpdates = val;
-                    });
-                    // print(val);
-                  }),
-            ),
-          ),
+          // Card(
+          //   child: ListTile(
+          //     title: Text(
+          //       "Admin and Office Updates",
+          //       style: cardTitle,
+          //     ),
+          //     subtitle: Text(
+          //       "Messages from school admin and staff",
+          //       style: cardSubTitle,
+          //     ),
+          //     trailing: CupertinoSwitch(
+          //         value: adminUpdates,
+          //         activeColor: maroon,
+          //         onChanged: (bool val) {
+          //           setState(() {
+          //             adminUpdates = val;
+          //           });
+          //           // print(val);
+          //         }),
+          //   ),
+          // ),
           Card(
             child: ListTile(
               title: Text(
