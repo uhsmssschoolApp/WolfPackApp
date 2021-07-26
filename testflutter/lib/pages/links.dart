@@ -29,7 +29,6 @@ class _linksState extends State<links> {
                   "School",
                   style: TextStyle(
                     fontSize: 17.0,
-                    color: grey,
                     // fontWeight: FontWeight.bold,
                     fontFamily: "SFBold",
                   ),
@@ -106,7 +105,7 @@ class _linksState extends State<links> {
                   style: TextStyle(
                     fontFamily: "SFBold",
                     fontSize: 17.0,
-                    color: grey,
+                    // color: grey,
                   ),
                 ),
               ),
@@ -159,7 +158,7 @@ class _linksState extends State<links> {
                   style: TextStyle(
                     fontFamily: "SFBold",
                     fontSize: 17.0,
-                    color: grey,
+                    // color: grey,
                   ),
                 ),
               ),

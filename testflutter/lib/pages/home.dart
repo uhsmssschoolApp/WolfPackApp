@@ -9,6 +9,7 @@ import 'package:testflutter/appbar.dart';
 // import 'package:testflutter/connectivity.dart';
 import 'package:testflutter/homeutils/expand.dart';
 import 'package:testflutter/homeutils/yrdsbcalendar.dart';
+import 'package:testflutter/more/theme.dart';
 import 'package:testflutter/nav.dart';
 import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/links.dart';
@@ -118,11 +119,11 @@ class _HomeState extends State<home> {
                   width: screenWidth * 0.9,
                   height: 300,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Theme.of(context).primaryColor,
                     borderRadius: homeCorners,
                     boxShadow: [
                       BoxShadow(
-                          color: Colors.grey,
+                          color: Theme.of(context).shadowColor,
                           blurRadius: 7,
                           offset: Offset(0, 5))
                     ],

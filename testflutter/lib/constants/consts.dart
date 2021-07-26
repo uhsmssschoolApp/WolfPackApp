@@ -3,7 +3,8 @@ import 'package:testflutter/constants/icons.dart';
 
 // colours
 Color grey = const Color(0xFF454545);
-Color maroon = const Color(0xFF701313);
+// Color maroon = const Color(0xFF701313);
+Color maroon = const Color(0xFFf04c41);
 Color lightGrey = const Color(0xFFdadada);
 
 // text styles
