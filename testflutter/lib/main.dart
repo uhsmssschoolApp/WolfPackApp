@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     // initDates(now);
     return MaterialApp(
       title: "testing",
-      theme: MyThemes.darkTheme,
+      theme: MyThemes.lightTheme,
       // do this later
       // themeMode: ThemeMode.system,
       // darkTheme: MyThemes.darkTheme,

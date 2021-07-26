@@ -62,6 +62,7 @@ class MyThemes {
     scaffoldBackgroundColor: Colors.white,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
+      unselectedItemColor: Colors.grey,
     ),
     appBarTheme: AppBarTheme(
       backwardsCompatibility: false,
