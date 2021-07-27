@@ -98,7 +98,7 @@ class _HomeState extends State<home> {
                               greetingMessage(minutesTime),
                               style: TextStyle(
                                 fontSize: 30.0,
-                                color: const Color(0xFF404040),
+                                // color: const Color(0xFF404040),
                                 fontFamily: "SFBold",
                               ),
                             ),
@@ -119,7 +119,7 @@ class _HomeState extends State<home> {
                   width: screenWidth * 0.9,
                   height: 300,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).cardColor,
                     borderRadius: homeCorners,
                     boxShadow: [
                       BoxShadow(
@@ -164,7 +164,7 @@ class _HomeState extends State<home> {
                           child: Text(
                             "Current Rotation",
                             style: TextStyle(
-                              color: const Color(0xFF252525),
+                              // color: const Color(0xFF252525),
                               // fontWeight: FontWeight.w600,
                               fontSize: 24.0,
                               fontFamily: "SFBold",
@@ -180,7 +180,7 @@ class _HomeState extends State<home> {
                           child: Text(
                             periodNumber(findPeriod(minutesTime)),
                             style: TextStyle(
-                              color: const Color(0xFF656565),
+                              // color: const Color(0xFF656565),
                               fontSize: 16.0,
                               fontFamily: "SFBold",
                             ),
@@ -234,7 +234,9 @@ class _HomeState extends State<home> {
               child: Text(
                 "More",
                 style: TextStyle(
-                    fontFamily: "SFBold", fontSize: 20.0, color: grey),
+                  fontFamily: "SFBold", fontSize: 20.0,
+                  // color: grey
+                ),
               ),
             ),
             Center(
@@ -247,11 +249,11 @@ class _HomeState extends State<home> {
                     height: 300,
                     // color: Colors.blue,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context).cardColor,
                       borderRadius: homeCorners,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey,
+                            color: Theme.of(context).shadowColor,
                             blurRadius: 7,
                             offset: Offset(0, 5)),
                       ],
@@ -288,7 +290,7 @@ class _HomeState extends State<home> {
                                     "Announcements",
                                     style: TextStyle(
                                       fontFamily: "SFBold",
-                                      color: const Color(0xFF252525),
+                                      // color: const Color(0xFF252525),
                                       fontSize: 18.0,
                                     ),
                                   ),
@@ -303,7 +305,7 @@ class _HomeState extends State<home> {
                                     "Get all your latest updates here!",
                                     style: TextStyle(
                                       fontFamily: "SF",
-                                      color: const Color(0xFF858585),
+                                      // color: const Color(0xFF858585),
                                       fontSize: 14.0,
                                     ),
                                   ),
@@ -381,11 +383,11 @@ class _HomeState extends State<home> {
                     height: 350,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context).cardColor,
                       borderRadius: homeCorners,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey,
+                            color: Theme.of(context).shadowColor,
                             blurRadius: 7,
                             offset: Offset(0, 5)),
                       ],
@@ -430,7 +432,7 @@ class _HomeState extends State<home> {
                                     "Weather",
                                     style: TextStyle(
                                       fontFamily: "SFBold",
-                                      color: const Color(0xFF252525),
+                                      // color: const Color(0xFF252525),
                                       fontSize: 18.0,
                                     ),
                                   ),
@@ -445,7 +447,7 @@ class _HomeState extends State<home> {
                                     "The weather for this week.",
                                     style: TextStyle(
                                       fontFamily: "SF",
-                                      color: const Color(0xFF858585),
+                                      // color: const Color(0xFF858585),
                                       fontSize: 14.0,
                                     ),
                                   ),
@@ -464,7 +466,7 @@ class _HomeState extends State<home> {
                         Container(
                           width: screenWidth * 0.7,
                           height: 30,
-                          margin: const EdgeInsets.only(top: 4),
+                          margin: const EdgeInsets.only(top: 8),
                           // color: Colors.black,
                           child: OutlinedButton(
                               onPressed: () {
@@ -474,7 +476,8 @@ class _HomeState extends State<home> {
                                 "View More Details",
                                 style: TextStyle(
                                   fontFamily: "SFBold",
-                                  color: Colors.grey[700],
+                                  color: maroon,
+                                  // color: Colors.grey[700],
                                 ),
                               )),
                         ),
@@ -487,11 +490,11 @@ class _HomeState extends State<home> {
                     height: 530,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context).cardColor,
                       borderRadius: homeCorners,
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.grey,
+                            color: Theme.of(context).shadowColor,
                             blurRadius: 7,
                             offset: Offset(0, 5)),
                       ],
@@ -536,7 +539,7 @@ class _HomeState extends State<home> {
                                     "School Calendar",
                                     style: TextStyle(
                                       fontFamily: "SFBold",
-                                      color: const Color(0xFF252525),
+                                      // color: const Color(0xFF252525),
                                       fontSize: 18.0,
                                     ),
                                   ),
@@ -551,7 +554,7 @@ class _HomeState extends State<home> {
                                     "Latest events here!",
                                     style: TextStyle(
                                       fontFamily: "SF",
-                                      color: const Color(0xFF858585),
+                                      // color: const Color(0xFF858585),
                                       fontSize: 14.0,
                                     ),
                                   ),
@@ -570,7 +573,7 @@ class _HomeState extends State<home> {
                         Container(
                           width: screenWidth * 0.7,
                           height: 30,
-                          margin: const EdgeInsets.only(top: 8),
+                          margin: const EdgeInsets.only(top: 10),
                           // color: Colors.black,
                           child: OutlinedButton(
                               onPressed: () {
@@ -580,7 +583,7 @@ class _HomeState extends State<home> {
                                 "Open in Browser",
                                 style: TextStyle(
                                   fontFamily: "SFBold",
-                                  color: Colors.grey[700],
+                                  color: maroon,
                                 ),
                               )),
                         ),

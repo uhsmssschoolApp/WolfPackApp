@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/pages/links.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class feed extends StatefulWidget {
@@ -71,17 +72,17 @@ class _feedState extends State<feed> {
           ),
         ),
         Expanded(
-          flex: 1,
-          child: WebView(
-            initialUrl: url,
-            onWebViewCreated: (WebViewController controller) {
-              try {
-                completer.complete(controller);
-              } on StateError catch (_) {}
-            },
-            javascriptMode: JavascriptMode.unrestricted,
-          ),
+        flex: 1,
+        child: WebView(
+          initialUrl: url,
+          onWebViewCreated: (WebViewController controller) {
+            try {
+              completer.complete(controller);
+            } on StateError catch (_) {}
+          },
+          javascriptMode: JavascriptMode.unrestricted,
         ),
+          ),
       ],
     );
   }

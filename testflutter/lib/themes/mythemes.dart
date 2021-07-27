@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
 
-// Color priGrey = const Color(0xFF303030);
+class ThemeProvider extends ChangeNotifier {
+  ThemeMode themeMode = ThemeMode.light;
+  
+}
 
 class MyThemes {
   static final darkTheme = ThemeData(
     colorScheme: ColorScheme(
-      primary:  const Color(0xFF616161),
+      primary: const Color(0xFF616161),
       primaryVariant: const Color(0xFF4a4a4a),
       secondary: maroon,
       secondaryVariant: Colors.white,
@@ -45,19 +48,19 @@ class MyThemes {
 
   static final lightTheme = ThemeData(
     colorScheme: ColorScheme(
-      primary:  Colors.white,
+      primary: Colors.white,
       primaryVariant: Colors.white,
-      secondary: Colors.black,
+      secondary: maroon,
       secondaryVariant: Colors.black,
       surface: Colors.white,
       background: Colors.white,
       error: Colors.red,
-      onPrimary: Colors.white,
+      onPrimary: Colors.black,
       onSecondary: Colors.black,
       onSurface: Colors.black,
       onBackground: Colors.black,
       onError: Colors.white,
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
     ),
     scaffoldBackgroundColor: Colors.white,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/more/notifications.dart';
 import 'package:testflutter/more/theme.dart';
-// import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/pages/clubs.dart';
-// import 'package:testflutter/nav.dart';
 import 'package:testflutter/pages/home.dart';
-// import 'package:testflutter/homeutils/time.dart';
 import 'more/resources.dart';
 import 'pages/links.dart';
 import 'pages/student.dart';
@@ -24,10 +21,10 @@ class MyApp extends StatelessWidget {
     // initDates(now);
     return MaterialApp(
       title: "testing",
-      theme: MyThemes.lightTheme,
+      themeMode: ThemeMode.system,
       // do this later
-      // themeMode: ThemeMode.system,
-      // darkTheme: MyThemes.darkTheme,
+      theme: MyThemes.lightTheme,
+      darkTheme: MyThemes.darkTheme,
       home: home(),
       debugShowCheckedModeBanner: false,
       routes: {
