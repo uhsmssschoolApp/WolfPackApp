@@ -217,7 +217,7 @@ class _HomeState extends State<home> {
                             style: TextStyle(
                               fontFamily: "SF",
                               fontSize: 14.0,
-                              color: grey,
+                              // color: grey,
                             ),
                           ),
                         ),
