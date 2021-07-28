@@ -8,9 +8,13 @@ class themeChanger extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeprovider = Provider.of<ThemeProvider>(context);
-    return Switch.adaptive(
-      value: themeprovider.isDarkMode,
-      onChanged: (value) {
+    bool value = themeprovider.isDarkMode;
+    return IconButton(
+      icon: Icon(Icons.settings_display),
+      splashRadius: 0.1,
+      // value: themeprovider.isDarkMode,
+      onPressed: () {
+        value = !value;
         final provider = Provider.of<ThemeProvider>(context, listen: false);
         provider.toggleTheme(value);
       },

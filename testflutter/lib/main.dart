@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testflutter/more/notifications.dart';
-import 'package:testflutter/more/theme.dart';
 import 'package:testflutter/pages/clubs.dart';
 import 'package:testflutter/pages/home.dart';
 import 'more/resources.dart';
@@ -35,7 +34,6 @@ class MyApp extends StatelessWidget {
             "/student": (context) => student(),
             "/clubs": (context) => clubs(),
             "/more": (context) => more(),
-            "/themesettings": (context) => theme(),
             "/notifications": (context) => notifications(),
             "/resources": (context) => resources(),
           },

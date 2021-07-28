@@ -10,7 +10,7 @@ class more extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> morePaths = <String>[
-      "/themesettings",
+      "/themesettings", // DOESNT EXIST DONT ACCESS 0TH INDEX!!
       "/notifications",
       "/resources"
     ];
@@ -40,19 +40,6 @@ class more extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, morePaths[1]);
               },
-            ),
-          ),
-          Card(
-            child: ListTile(
-              leading: Icon(Icons.settings_display),
-              trailing: arrowRight,
-              onTap: () {
-                Navigator.pushNamed(context, morePaths[0]);
-              },
-              title: Text(
-                "Theme",
-                style: settingTiles,
-              ),
             ),
           ),
           Container(
