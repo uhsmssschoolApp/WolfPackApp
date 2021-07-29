@@ -7,6 +7,7 @@ Color grey = const Color(0xFF454545);
 Color maroon = const Color(0xFFf04c41);
 Color lightGrey = const Color(0xFFdadada);
 
+
 // text styles
 TextStyle linkTiles = const TextStyle(fontSize: 15.0, fontFamily: "SF");
 TextStyle settingTiles = const TextStyle(
