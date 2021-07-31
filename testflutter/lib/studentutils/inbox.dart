@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/pages/links.dart';
+
+// au and stem, parent bulletin, weekly newsletter, usac messages
 
 class inbox extends StatefulWidget {
   const inbox({Key? key}) : super(key: key);
@@ -19,86 +22,229 @@ class _inboxState extends State<inbox> {
         children: [
           Container(
             alignment: Alignment.centerLeft,
-            height: 100,
+            height: 110,
             // margin: topMargin,
             width: screenWidth * 0.9,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               borderRadius: homeCorners,
               boxShadow: [
                 BoxShadow(
-                    color: Colors.grey, blurRadius: 7, offset: Offset(0, 5)),
+                    color: Theme.of(context).shadowColor,
+                    blurRadius: 7,
+                    offset: Offset(0, 5)),
               ],
             ),
-            child: ListTile(
-              title: Text(
-                "Weekly Bulletins and E-Newsletter",
-                style: subTitle,
-              ),
-              trailing: arrowRight,
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 12, bottom: 2),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "School Newsletters",
+                    style: TextStyle(fontFamily: "SFBold", fontSize: 19),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  height: 20,
+                  child: Text(
+                    "The latest newsletter from the school.",
+                    style: TextStyle(fontFamily: "SF"),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 8),
+                  height: 35,
+                  width: screenWidth * 0.8,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith(
+                            (states) => maroon),
+                      ),
+                      onPressed: () {
+                        launchURL(
+                            "http://www.yrdsb.ca/schools/unionville.hs/NewsEvents/Pages/Newsletters-2020-2021.aspx");
+                      },
+                      child: Text(
+                        "View Latest Newsletter",
+                        style: TextStyle(
+                            fontFamily: "SFBold",
+                            fontSize: 12,
+                            color: Colors.white),
+                      )),
+                ),
+              ],
             ),
           ),
           Container(
+            margin: const EdgeInsets.only(top: 12),
             alignment: Alignment.centerLeft,
-            height: 100,
-            margin: topMargin,
+            height: 110,
+            // margin: topMargin,
             width: screenWidth * 0.9,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               borderRadius: homeCorners,
               boxShadow: [
                 BoxShadow(
-                    color: Colors.grey, blurRadius: 7, offset: Offset(0, 5)),
+                    color: Theme.of(context).shadowColor,
+                    blurRadius: 7,
+                    offset: Offset(0, 5)),
               ],
             ),
-            child: ListTile(
-              title: Text(
-                "USAC Messages",
-                style: subTitle,
-              ),
-              trailing: arrowRight,
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 12, bottom: 2),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Parent Bulletins",
+                    style: TextStyle(fontFamily: "SFBold", fontSize: 19),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  height: 20,
+                  child: Text(
+                    "The most recent updates for families!",
+                    style: TextStyle(fontFamily: "SF"),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 8),
+                  height: 35,
+                  width: screenWidth * 0.8,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith(
+                            (states) => maroon),
+                      ),
+                      onPressed: () {
+                        launchURL(
+                            "http://www.yrdsb.ca/schools/unionville.hs/NewsEvents/Pages/Weekly-Bulletins-2020-2021.aspx");
+                      },
+                      child: Text(
+                        "View Latest Bulletins",
+                        style: TextStyle(
+                            fontFamily: "SFBold",
+                            fontSize: 12,
+                            color: Colors.white),
+                      )),
+                ),
+              ],
             ),
           ),
           Container(
+            margin: const EdgeInsets.only(top: 12),
             alignment: Alignment.centerLeft,
-            height: 100,
-            margin: topMargin,
+            height: 110,
+            // margin: topMargin,
             width: screenWidth * 0.9,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               borderRadius: homeCorners,
               boxShadow: [
                 BoxShadow(
-                    color: Colors.grey, blurRadius: 7, offset: Offset(0, 5)),
+                    color: Theme.of(context).shadowColor,
+                    blurRadius: 7,
+                    offset: Offset(0, 5)),
               ],
             ),
-            child: ListTile(
-              title: Text(
-                "AU Updates",
-                style: subTitle,
-              ),
-              trailing: arrowRight,
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 12, bottom: 2),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "AU and STEM Updates",
+                    style: TextStyle(fontFamily: "SFBold", fontSize: 19),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  height: 20,
+                  child: Text(
+                    "Latest news on the specialized programs of UHS",
+                    style: TextStyle(fontFamily: "SF"),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 8),
+                  height: 35,
+                  width: screenWidth * 0.8,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith(
+                            (states) => maroon),
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        "View Updates",
+                        style: TextStyle(
+                            fontFamily: "SFBold",
+                            fontSize: 12,
+                            color: Colors.white),
+                      )),
+                ),
+              ],
             ),
           ),
           Container(
+            margin: const EdgeInsets.only(top: 12),
             alignment: Alignment.centerLeft,
-            height: 100,
-            margin: topMargin,
+            height: 110,
+            // margin: topMargin,
             width: screenWidth * 0.9,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Theme.of(context).cardColor,
               borderRadius: homeCorners,
               boxShadow: [
                 BoxShadow(
-                    color: Colors.grey, blurRadius: 7, offset: Offset(0, 5)),
+                    color: Theme.of(context).shadowColor,
+                    blurRadius: 7,
+                    offset: Offset(0, 5)),
               ],
             ),
-            child: ListTile(
-              title: Text(
-                "STEM Updates",
-                style: subTitle,
-              ),
-              trailing: arrowRight,
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 12, bottom: 2),
+                  alignment: Alignment.center,
+                  child: Text(
+                    "USAC Messages",
+                    style: TextStyle(fontFamily: "SFBold", fontSize: 19),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  height: 20,
+                  child: Text(
+                    "Messages from your student council",
+                    style: TextStyle(fontFamily: "SF"),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 8),
+                  height: 35,
+                  width: screenWidth * 0.8,
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith(
+                            (states) => maroon),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, "/usacmessages");
+                      },
+                      child: Text(
+                        "View Message Feed",
+                        style: TextStyle(
+                            fontFamily: "SFBold",
+                            fontSize: 12,
+                            color: Colors.white),
+                      )),
+                ),
+              ],
             ),
           ),
           // Container(
