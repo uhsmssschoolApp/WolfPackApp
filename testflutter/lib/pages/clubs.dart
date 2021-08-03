@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:testflutter/nav.dart';
@@ -5,10 +7,23 @@ import '../constants/consts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:testflutter/constants/icons.dart';
 
+//firestore packages
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../appbar.dart';
 
-class clubs extends StatelessWidget {
+class clubs extends StatefulWidget {
   const clubs({Key? key}) : super(key: key);
+
+  //Firestore
+  @override
+  _clubsState createState() => _clubsState();
+}
+
+class _clubsState extends State<clubs> {
+  final Stream<QuerySnapshot> dates =
+      FirebaseFirestore.instance.collection('dates').snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -45,18 +60,31 @@ class clubs extends StatelessWidget {
                           ),
                           child: Container(
                             padding: EdgeInsets.only(top: 16.0),
-                            child: Text(
-                              "Today's Clubs",
-                              style: TextStyle(
-                                fontFamily: "SFBold",
-                                fontSize: 18.0,
-                              ),
-                            ),
+                            child: StreamBuilder<QuerySnapshot>(
+                                stream: dates,
+                                builder: (BuildContext context,
+                                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                                  if (snapshot.hasError) {
+                                    return Text('Something went wrong.');
+                                  }
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
+                                    return Text('Loading');
+                                  }
+                                  final data = snapshot.requireData;
+
+                                  return ListView.builder(
+                                      itemCount: data.size,
+                                      itemBuilder: (context, index) {
+                                        return Text(
+                                            data.docs[index]['announcements']);
+                                      });
+                                }),
                           ),
                         ),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
               Card(
