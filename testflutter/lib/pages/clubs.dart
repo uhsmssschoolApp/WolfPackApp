@@ -9,8 +9,7 @@ import '../constants/consts.dart';
 
 //firestore packages
 
-// import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../appbar.dart';
 
 class clubs extends StatefulWidget {
@@ -22,8 +21,8 @@ class clubs extends StatefulWidget {
 }
 
 class _clubsState extends State<clubs> {
-  // final Stream<QuerySnapshot> dates =
-  //     FirebaseFirestore.instance.collection('dates').snapshots();
+  final Stream<QuerySnapshot> dates =
+      FirebaseFirestore.instance.collection('dates').snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +54,41 @@ class _clubsState extends State<clubs> {
                               color: maroon,
                               borderRadius: homeCorners,
                             ),
-                          )
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                                left: 16.0, right: 16.0, top: 16.0),
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: maroon,
+                              borderRadius: homeCorners,
+                            ),
+                            child: Container(
+                              padding: EdgeInsets.only(top: 16.0),
+                              child: StreamBuilder<QuerySnapshot>(
+                                  stream: dates,
+                                  builder: (BuildContext context,
+                                      AsyncSnapshot<QuerySnapshot> snapshot) {
+                                    if (snapshot.hasError) {
+                                      return Text('Something went wrong.');
+                                    }
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return Text('Loading');
+                                    }
+                                    final data = snapshot.requireData;
+
+                                    return ListView.builder(
+                                        itemCount: data.size,
+                                        itemBuilder: (context, index) {
+                                          return Text(data.docs[index]
+                                              ['announcements']);
+                                        });
+                                  }),
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -73,28 +106,7 @@ class _clubsState extends State<clubs> {
                           offset: Offset(0, 5))
                     ],
                   ),
-                  // child: Container(
-                  //   padding: EdgeInsets.only(top: 16.0),
-                  //   child: StreamBuilder<QuerySnapshot>(
-                  //       stream: dates,
-                  //       builder: (BuildContext context,
-                  //           AsyncSnapshot<QuerySnapshot> snapshot) {
-                  //         if (snapshot.hasError) {
-                  //           return Text('Something went wrong.');
-                  //         }
-                  //         if (snapshot.connectionState ==
-                  //             ConnectionState.waiting) {
-                  //           return Text('Loading');
-                  //         }
-                  //         final data = snapshot.requireData;
-
-                  //         return ListView.builder(
-                  //             itemCount: data.size,
-                  //             itemBuilder: (context, index) {
-                  //               return Text(
-                  //                   data.docs[index]['announcements']);
-                  //             });
-                  //       }),
+                  // child:
                   // ),
                 ),
               ]),
