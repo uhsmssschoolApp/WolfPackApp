@@ -1,3 +1,5 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:testflutter/nav.dart';
@@ -8,7 +10,6 @@ import '../constants/consts.dart';
 //firestore packages
 
 // import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_core/firebase_core.dart';
 
 import '../appbar.dart';
 
@@ -27,79 +28,77 @@ class _clubsState extends State<clubs> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
-        bottomNavigationBar: Nav(),
-        appBar: mainAppBar("Clubs"),
-        body: SingleChildScrollView(
-            child: Center(
-          child: Text('ehllo'),
-          // child: Container(
-          //   padding: EdgeInsets.only(top: 16.0),
-          //   child: StreamBuilder<QuerySnapshot>(
-          //       stream: dates,
-          //       builder: (BuildContext context,
-          //           AsyncSnapshot<QuerySnapshot> snapshot) {
-          //         if (snapshot.hasError) {
-          //         }
-          //         if (snapshot.connectionState == ConnectionState.waiting) {
-          //           return Text('Loading');
-          //         }
-          //         final data = snapshot.requireData;
+      bottomNavigationBar: Nav(),
+      appBar: mainAppBar("Clubs"),
+      body: SingleChildScrollView(
+        child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SingleChildScrollView(
+              controller: ScrollController(),
+              child: Row(children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 12.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(
+                                left: 16.0, right: 16.0, top: 16.0),
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              color: maroon,
+                              borderRadius: homeCorners,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                  alignment: Alignment.topRight,
+                  height: 300,
+                  width: screenWidth * 0.9,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: homeCorners,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Theme.of(context).shadowColor,
+                          blurRadius: 7,
+                          offset: Offset(0, 5))
+                    ],
+                  ),
+                  // child: Container(
+                  //   padding: EdgeInsets.only(top: 16.0),
+                  //   child: StreamBuilder<QuerySnapshot>(
+                  //       stream: dates,
+                  //       builder: (BuildContext context,
+                  //           AsyncSnapshot<QuerySnapshot> snapshot) {
+                  //         if (snapshot.hasError) {
+                  //           return Text('Something went wrong.');
+                  //         }
+                  //         if (snapshot.connectionState ==
+                  //             ConnectionState.waiting) {
+                  //           return Text('Loading');
+                  //         }
+                  //         final data = snapshot.requireData;
 
-          //         return ListView.builder(
-          //             itemCount: data.size,
-          //             itemBuilder: (context, index) {
-          //               return Text(data.docs[index]['announcements']);
-          //             });
-          //       }),
-          // ),
-        )));
-  }
-}
-
-      //   child: Column(
-      //     // crossAxisAlignment: CrossAxisAlignment.start,
-      //     children: <Widget>[
-      //       SingleChildScrollView(
-      //         controller: ScrollController(),
-      //         child: Row(children: [
-      //           Container(
-      //             margin: const EdgeInsets.only(top: 12.0),
-      //             child: Column(
-      //               children: [
-      //                 Row(
-      //                   children: [
-      //                     Container(
-      //                       margin: EdgeInsets.only(
-      //                           left: 16.0, right: 16.0, top: 16.0),
-      //                       alignment: Alignment.center,
-      //                       height: 50,
-      //                       width: 50,
-      //                       decoration: BoxDecoration(
-      //                         color: maroon,
-      //                         borderRadius: homeCorners,
-      //                       ),
-      //                     )
-      //                   ],
-      //                 ),
-      //               ],
-      //             ),
-      //             alignment: Alignment.topRight,
-      //             height: 300,
-      //             width: screenWidth * 0.9,
-      //             decoration: BoxDecoration(
-      //               color: Theme.of(context).cardColor,
-      //               borderRadius: homeCorners,
-      //               boxShadow: [
-      //                 BoxShadow(
-      //                     color: Theme.of(context).shadowColor,
-      //                     blurRadius: 7,
-      //                     offset: Offset(0, 5))
-      //               ],
-      //             ),
-      //           ),
-      //         ]),
-      
+                  //         return ListView.builder(
+                  //             itemCount: data.size,
+                  //             itemBuilder: (context, index) {
+                  //               return Text(
+                  //                   data.docs[index]['announcements']);
+                  //             });
+                  //       }),
+                  // ),
+                ),
+              ]),
+            ),
 
             // const Card(
             //   margin: EdgeInsets.only(left: 20.0, right: 20.0),
@@ -129,6 +128,9 @@ class _clubsState extends State<clubs> {
             //     ),
             //   ),
             // )
-          // ],
-        // ),
-      // ),
+          ],
+        ),
+      ),
+    );
+  }
+}
