@@ -98,7 +98,6 @@ class _HomeState extends State<home> {
                               // ignore: prefer_const_constructors
                               style: TextStyle(
                                 fontSize: 30.0,
-                                // color: const Color(0xFF404040),
                                 fontFamily: "SFBold",
                               ),
                             ),
@@ -231,23 +230,23 @@ class _HomeState extends State<home> {
               margin: const EdgeInsets.only(top: 32.0, left: 16.0),
               width: screenWidth * 0.9,
               height: 50,
-              child: Text(
+              child: const Text(
                 "More",
                 style: TextStyle(
-                  fontFamily: "SFBold", fontSize: 20.0,
-                  // color: grey
+                  fontFamily: "SFBold",
+                  fontSize: 20.0,
                 ),
               ),
             ),
-            Center(
-              child: Column(
-                children: [
-                  Container(
-                    // wrap in gesture thing to add on tap
-                    margin: EdgeInsets.only(top: 12.0),
+            Column(
+              children: [
+                Container(
+                  // the covid screening box
+                  height: 150,
+                  width: screenWidth,
+                  alignment: Alignment.center,
+                  child: Container(
                     width: screenWidth * 0.9,
-                    height: 300,
-                    // color: Colors.blue,
                     decoration: BoxDecoration(
                       color: Theme.of(context).cardColor,
                       borderRadius: homeCorners,
@@ -255,15 +254,16 @@ class _HomeState extends State<home> {
                         BoxShadow(
                             color: Theme.of(context).shadowColor,
                             blurRadius: 7,
-                            offset: Offset(0, 5)),
+                            offset: const Offset(0, 5)),
                       ],
                     ),
+                    // the decoration of the red box and text
                     child: Column(
                       children: [
                         Row(
                           children: [
                             Container(
-                              margin: EdgeInsets.only(
+                              margin: const EdgeInsets.only(
                                   left: 16.0, right: 16.0, top: 16.0),
                               alignment: Alignment.center,
                               height: 50,
@@ -274,180 +274,40 @@ class _HomeState extends State<home> {
                               ),
                               child: Container(
                                 child: Image.asset(
-                                  "assets/cheering-megaphone_1f4e3.png",
+                                  "assets/clipboard_1f4cb.png",
                                   height: 35,
                                   width: 35,
                                 ),
                               ),
                             ),
+                            // the two lines of text
                             Column(
                               children: [
                                 Container(
                                   alignment: Alignment.bottomLeft,
                                   height: 30,
                                   width: 200,
+                                  // ignore: prefer_const_constructors
                                   child: Text(
-                                    "Announcements",
+                                    "COVID Screening Form",
+                                    // ignore: prefer_const_constructors
                                     style: TextStyle(
                                       fontFamily: "SFBold",
-                                      // color: const Color(0xFF252525),
                                       fontSize: 18.0,
                                     ),
                                   ),
-                                  // color: Colors.black,
                                 ),
                                 Container(
                                   alignment: Alignment.bottomLeft,
                                   margin: const EdgeInsets.only(top: 6),
                                   height: 15,
                                   width: 200,
+                                  // ignore: prefer_const_constructors
                                   child: Text(
-                                    "Get all your latest updates here!",
+                                    "Open the screening form here.",
+                                    // ignore: prefer_const_constructors
                                     style: TextStyle(
                                       fontFamily: "SF",
-                                      // color: const Color(0xFF858585),
-                                      fontSize: 14.0,
-                                    ),
-                                  ),
-                                  // color: Colors.pink,
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(top: 15),
-                              // color: Colors.black,
-                              height: 30,
-                              width: 20,
-                              alignment: Alignment.center,
-                              child: RawMaterialButton(
-                                elevation: 2,
-                                padding: const EdgeInsets.only(right: 4),
-                                onPressed: () {
-                                  navLeft();
-                                },
-                                fillColor: Colors.red,
-                                shape: const CircleBorder(),
-                                child: const Icon(
-                                  Icons.chevron_left,
-                                  size: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              height: 30,
-                              width: 120,
-                              alignment: Alignment.center,
-                              margin: const EdgeInsets.only(left: 20, top: 15),
-                              child: Text(
-                                announcementDate,
-                                style: TextStyle(
-                                  fontFamily: "SFBold",
-                                ),
-                              ),
-                              // color: Colors.pink,
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(left: 20, top: 15),
-                              // color: Colors.black,
-                              height: 30,
-                              width: 20,
-                              child: RawMaterialButton(
-                                elevation: 2,
-                                onPressed: () {
-                                  navRight();
-                                },
-                                fillColor: Colors.red,
-                                shape: const CircleBorder(),
-                                child: const Icon(
-                                  Icons.chevron_right,
-                                  size: 20,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        expandTile(context),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 12.0),
-                    width: screenWidth * 0.9,
-                    height: 350,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).cardColor,
-                      borderRadius: homeCorners,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Theme.of(context).shadowColor,
-                            blurRadius: 7,
-                            offset: Offset(0, 5)),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Column(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(
-                                    left: 16.0,
-                                    right: 16.0,
-                                    top: 16.0,
-                                  ),
-                                  alignment: Alignment.center,
-                                  height: 50,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                    color: maroon,
-                                    borderRadius: homeCorners,
-                                  ),
-                                  child: Container(
-                                    child: Image.asset(
-                                      "assets/weather.png",
-                                      height: 30,
-                                      width: 30,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  alignment: Alignment.bottomLeft,
-                                  height: 30,
-                                  width: 200,
-                                  margin: const EdgeInsets.only(top: 8),
-                                  child: Text(
-                                    "Weather",
-                                    style: TextStyle(
-                                      fontFamily: "SFBold",
-                                      // color: const Color(0xFF252525),
-                                      fontSize: 18.0,
-                                    ),
-                                  ),
-                                  // color: Colors.black,
-                                ),
-                                Container(
-                                  alignment: Alignment.bottomLeft,
-                                  margin: const EdgeInsets.only(top: 6),
-                                  height: 15,
-                                  width: 200,
-                                  child: Text(
-                                    "The weather for this week.",
-                                    style: TextStyle(
-                                      fontFamily: "SF",
-                                      // color: const Color(0xFF858585),
                                       fontSize: 14.0,
                                     ),
                                   ),
@@ -455,129 +315,14 @@ class _HomeState extends State<home> {
                               ],
                             ),
                           ],
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          height: 225,
-                          alignment: Alignment.center,
-                          // color: Colors.yellow,
-                          child: weatherView(),
                         ),
                         Container(
                           width: screenWidth * 0.7,
                           height: 30,
-                          margin: const EdgeInsets.only(top: 8),
-                          // color: Colors.black,
+                          margin: const EdgeInsets.only(top: 24),
                           child: OutlinedButton(
                               onPressed: () {
-                                launchURL(weather);
-                              },
-                              child: Text(
-                                "View More Details",
-                                style: TextStyle(
-                                  fontFamily: "SFBold",
-                                  color: maroon,
-                                  // color: Colors.grey[700],
-                                ),
-                              )),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 12.0, bottom: 12.0),
-                    width: screenWidth * 0.9,
-                    height: 530,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).cardColor,
-                      borderRadius: homeCorners,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Theme.of(context).shadowColor,
-                            blurRadius: 7,
-                            offset: Offset(0, 5)),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Column(
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(
-                                    left: 16.0,
-                                    right: 16.0,
-                                    top: 16.0,
-                                  ),
-                                  alignment: Alignment.center,
-                                  height: 50,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                    color: maroon,
-                                    borderRadius: homeCorners,
-                                  ),
-                                  child: Container(
-                                    child: Image.asset(
-                                      "assets/calendar_1f4c5.png",
-                                      height: 30,
-                                      width: 30,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Container(
-                                  alignment: Alignment.bottomLeft,
-                                  height: 30,
-                                  width: 200,
-                                  margin: const EdgeInsets.only(top: 8),
-                                  child: Text(
-                                    "School Calendar",
-                                    style: TextStyle(
-                                      fontFamily: "SFBold",
-                                      // color: const Color(0xFF252525),
-                                      fontSize: 18.0,
-                                    ),
-                                  ),
-                                  // color: Colors.black,
-                                ),
-                                Container(
-                                  alignment: Alignment.bottomLeft,
-                                  margin: const EdgeInsets.only(top: 6),
-                                  height: 15,
-                                  width: 200,
-                                  child: Text(
-                                    "Latest events here!",
-                                    style: TextStyle(
-                                      fontFamily: "SF",
-                                      // color: const Color(0xFF858585),
-                                      fontSize: 14.0,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          height: 400,
-                          alignment: Alignment.center,
-                          // color: Colors.yellow,
-                          child: yrdsbCalendarView(),
-                        ),
-                        Container(
-                          width: screenWidth * 0.7,
-                          height: 30,
-                          margin: const EdgeInsets.only(top: 10),
-                          // color: Colors.black,
-                          child: OutlinedButton(
-                              onPressed: () {
-                                launchURL(uhsRedirect);
+                                // launch covid screening here
                               },
                               child: Text(
                                 "Open in Browser",
@@ -587,11 +332,353 @@ class _HomeState extends State<home> {
                                 ),
                               )),
                         ),
+                        // INSERT TEXT CHILD OR CONTAINER THAT HAS THE TEXT HERE ABOVE THIS COMMENT
                       ],
                     ),
                   ),
-                ],
-              ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 12.0),
+                  width: screenWidth * 0.9,
+                  height: 300,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: homeCorners,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Theme.of(context).shadowColor,
+                          blurRadius: 7,
+                          offset: Offset(0, 5)),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(
+                                left: 16.0, right: 16.0, top: 16.0),
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              color: maroon,
+                              borderRadius: homeCorners,
+                            ),
+                            child: Container(
+                              child: Image.asset(
+                                "assets/cheering-megaphone_1f4e3.png",
+                                height: 35,
+                                width: 35,
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                alignment: Alignment.bottomLeft,
+                                height: 30,
+                                width: 200,
+                                child: const Text(
+                                  "Announcements",
+                                  style: TextStyle(
+                                    fontFamily: "SFBold",
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                alignment: Alignment.bottomLeft,
+                                margin: const EdgeInsets.only(top: 6),
+                                height: 15,
+                                width: 200,
+                                child: const Text(
+                                  "Get all your latest updates here!",
+                                  style: TextStyle(
+                                    fontFamily: "SF",
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 15),
+                            height: 30,
+                            width: 20,
+                            alignment: Alignment.center,
+                            child: RawMaterialButton(
+                              elevation: 2,
+                              padding: const EdgeInsets.only(right: 4),
+                              onPressed: () {
+                                navLeft();
+                              },
+                              fillColor: Colors.red,
+                              shape: const CircleBorder(),
+                              child: const Icon(
+                                Icons.chevron_left,
+                                size: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 30,
+                            width: 120,
+                            alignment: Alignment.center,
+                            margin: const EdgeInsets.only(left: 20, top: 15),
+                            child: Text(
+                              announcementDate,
+                              style: const TextStyle(
+                                fontFamily: "SFBold",
+                              ),
+                            ),
+                            // color: Colors.pink,
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(left: 20, top: 15),
+                            // color: Colors.black,
+                            height: 30,
+                            width: 20,
+                            child: RawMaterialButton(
+                              elevation: 2,
+                              onPressed: () {
+                                navRight();
+                              },
+                              fillColor: Colors.red,
+                              shape: const CircleBorder(),
+                              child: const Icon(
+                                Icons.chevron_right,
+                                size: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      expandTile(context),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 12.0),
+                  width: screenWidth * 0.9,
+                  height: 350,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: homeCorners,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Theme.of(context).shadowColor,
+                          blurRadius: 7,
+                          offset: Offset(0, 5)),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(
+                                  left: 16.0,
+                                  right: 16.0,
+                                  top: 16.0,
+                                ),
+                                alignment: Alignment.center,
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  color: maroon,
+                                  borderRadius: homeCorners,
+                                ),
+                                child: Container(
+                                  child: Image.asset(
+                                    "assets/weather.png",
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                alignment: Alignment.bottomLeft,
+                                height: 30,
+                                width: 200,
+                                margin: const EdgeInsets.only(top: 8),
+                                child: const Text(
+                                  "Weather",
+                                  style: TextStyle(
+                                    fontFamily: "SFBold",
+                                    // color: const Color(0xFF252525),
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                                // color: Colors.black,
+                              ),
+                              Container(
+                                alignment: Alignment.bottomLeft,
+                                margin: const EdgeInsets.only(top: 6),
+                                height: 15,
+                                width: 200,
+                                child: const Text(
+                                  "The weather for this week.",
+                                  style: TextStyle(
+                                    fontFamily: "SF",
+                                    // color: const Color(0xFF858585),
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        height: 225,
+                        alignment: Alignment.center,
+                        // color: Colors.yellow,
+                        child: weatherView(),
+                      ),
+                      Container(
+                        width: screenWidth * 0.7,
+                        height: 30,
+                        margin: const EdgeInsets.only(top: 8),
+                        // color: Colors.black,
+                        child: OutlinedButton(
+                            onPressed: () {
+                              launchURL(weather);
+                            },
+                            child: Text(
+                              "View More Details",
+                              style: TextStyle(
+                                fontFamily: "SFBold",
+                                color: maroon,
+                                // color: Colors.grey[700],
+                              ),
+                            )),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                  width: screenWidth * 0.9,
+                  height: 530,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).cardColor,
+                    borderRadius: homeCorners,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Theme.of(context).shadowColor,
+                          blurRadius: 7,
+                          offset: Offset(0, 5)),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(
+                                  left: 16.0,
+                                  right: 16.0,
+                                  top: 16.0,
+                                ),
+                                alignment: Alignment.center,
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  color: maroon,
+                                  borderRadius: homeCorners,
+                                ),
+                                child: Container(
+                                  child: Image.asset(
+                                    "assets/calendar_1f4c5.png",
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                alignment: Alignment.bottomLeft,
+                                height: 30,
+                                width: 200,
+                                margin: const EdgeInsets.only(top: 8),
+                                child: const Text(
+                                  "School Calendar",
+                                  style: TextStyle(
+                                    fontFamily: "SFBold",
+                                    // color: const Color(0xFF252525),
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                                // color: Colors.black,
+                              ),
+                              Container(
+                                alignment: Alignment.bottomLeft,
+                                margin: const EdgeInsets.only(top: 6),
+                                height: 15,
+                                width: 200,
+                                child: const Text(
+                                  "Latest events here!",
+                                  style: TextStyle(
+                                    fontFamily: "SF",
+                                    // color: const Color(0xFF858585),
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 10),
+                        height: 400,
+                        alignment: Alignment.center,
+                        // color: Colors.yellow,
+                        child: yrdsbCalendarView(),
+                      ),
+                      Container(
+                        width: screenWidth * 0.7,
+                        height: 30,
+                        margin: const EdgeInsets.only(top: 10),
+                        // color: Colors.black,
+                        child: OutlinedButton(
+                            onPressed: () {
+                              launchURL(uhsRedirect);
+                            },
+                            child: Text(
+                              "Open in Browser",
+                              style: TextStyle(
+                                fontFamily: "SFBold",
+                                color: maroon,
+                              ),
+                            )),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -614,7 +701,7 @@ class _HomeState extends State<home> {
       child: Container(
         color: Colors.grey[300],
         alignment: Alignment.center,
-        child: Text(
+        child: const Text(
           "No Connection!",
           style: TextStyle(
             fontFamily: "SFBold",

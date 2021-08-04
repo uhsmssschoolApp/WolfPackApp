@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:testflutter/dorianchentesting.dart';
 import 'package:testflutter/more/notifications.dart';
 import 'package:testflutter/pages/clubs.dart';
 import 'package:testflutter/pages/home.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
             "/notifications": (context) => notifications(),
             "/resources": (context) => resources(),
             "/usacmessages": (context) => usacFeed(),
+            "/testingpage": (context) => dorianTesting(),
           },
         );
       });
