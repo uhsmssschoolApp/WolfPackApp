@@ -95,6 +95,7 @@ class _HomeState extends State<home> {
                             alignment: Alignment.topLeft,
                             child: Text(
                               greetingMessage(minutesTime),
+                              // ignore: prefer_const_constructors
                               style: TextStyle(
                                 fontSize: 30.0,
                                 // color: const Color(0xFF404040),
