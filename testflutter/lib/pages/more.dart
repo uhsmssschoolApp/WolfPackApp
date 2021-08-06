@@ -12,7 +12,8 @@ class more extends StatelessWidget {
     List<String> morePaths = <String>[
       "/themesettings", // DOESNT EXIST DONT ACCESS 0TH INDEX!!
       "/notifications",
-      "/resources"
+      "/resources",
+      "/feedback"
     ];
     return Scaffold(
       bottomNavigationBar: Nav(),
@@ -66,6 +67,9 @@ class more extends StatelessWidget {
           ),
           Card(
             child: ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, morePaths[3]);
+              },
               leading: Icon(Icons.record_voice_over_outlined),
               title: Text(
                 "Feedback",
@@ -79,16 +83,6 @@ class more extends StatelessWidget {
               leading: Icon(Icons.help),
               title: Text(
                 "FAQ",
-                style: settingTiles,
-              ),
-              trailing: arrowRight,
-            ),
-          ),
-          Card(
-            child: ListTile(
-              leading: Icon(Icons.emoji_people_rounded),
-              title: Text(
-                "Get Invovled!",
                 style: settingTiles,
               ),
               trailing: arrowRight,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testflutter/dorianchentesting.dart';
+import 'package:testflutter/more/feedback.dart';
 import 'package:testflutter/more/notifications.dart';
 import 'package:testflutter/pages/clubs.dart';
 import 'package:testflutter/pages/home.dart';
@@ -13,7 +14,7 @@ import 'pages/more.dart';
 
 //firebase
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
             "/resources": (context) => resources(),
             "/usacmessages": (context) => usacFeed(),
             "/testingpage": (context) => dorianTesting(),
+            "/feedback": (context) => feedBack(),
           },
         );
       });
