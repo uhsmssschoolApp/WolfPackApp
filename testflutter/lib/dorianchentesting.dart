@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:testflutter/appbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-final databaseReference =
-    FirebaseFirestore.instance.collection("dates").snapshots();
-
 class dorianTesting extends StatefulWidget {
   const dorianTesting({Key? key}) : super(key: key);
 
@@ -19,23 +16,25 @@ class _dorianTestingState extends State<dorianTesting> {
       appBar: mainAppBar("Testing Page"),
       body: Center(
         child: StreamBuilder<QuerySnapshot>(
-            stream: databaseReference,
+            stream: FirebaseFirestore.instance.collection("dates").snapshots(),
             builder:
                 (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-              snapshot.data!.docs.map((DocumentSnapshot document) {
-                Map<String, dynamic> data =
-                    document.data()! as Map<String, dynamic>;
-                return Text(data["announcements"]);
-              });
+              // if (!snapshot.hasData) {
+              //   return const Text(
+              //     "no data",
+              //   );
+              // }
+              if (snapshot.connectionState == ConnectionState.done) {
+                return ListView(
+                    children: snapshot.data!.docs.map((document) {
+                  return Container(
+                    child: Center(child: Text(document['Announcements'])),
+                  );
+                }).toList());
+              }
+              return const Text("loading");
             }),
       ),
     );
   }
-
-  // @override
-  // void initState() {
-
-  //   super.initState();
-  // }
-
 }

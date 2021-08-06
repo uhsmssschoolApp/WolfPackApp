@@ -99,7 +99,7 @@ class _linksState extends State<links> {
             ),
             Container(
               margin: usualMargin,
-              child: ListTile(
+              child: const ListTile(
                 title: Text(
                   "Contact",
                   style: TextStyle(
@@ -152,7 +152,7 @@ class _linksState extends State<links> {
             ),
             Container(
               margin: usualMargin,
-              child: ListTile(
+              child: const ListTile(
                 title: Text(
                   "Other",
                   style: TextStyle(
@@ -186,7 +186,8 @@ class _linksState extends State<links> {
                     ),
                     trailing: arrowRight,
                     onTap: () {
-                      // launchURL(url)
+                      launchURL(
+                          "https://sites.google.com/gapps.yrdsb.ca/uhs/home");
                     },
                   ),
                   ListTile(
