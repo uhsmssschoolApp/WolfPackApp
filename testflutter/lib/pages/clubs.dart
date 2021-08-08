@@ -21,9 +21,6 @@ class clubs extends StatefulWidget {
 }
 
 class _clubsState extends State<clubs> {
-  final Stream<QuerySnapshot> dates =
-      FirebaseFirestore.instance.collection('dates').snapshots();
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
