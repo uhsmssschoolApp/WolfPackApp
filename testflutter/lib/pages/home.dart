@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:testflutter/appbar.dart';
+import 'package:testflutter/dorianchentesting.dart';
 // import 'package:testflutter/connectivity.dart';
 import 'package:testflutter/homeutils/expand.dart';
 import 'package:testflutter/homeutils/yrdsbcalendar.dart';
@@ -461,7 +462,7 @@ class _HomeState extends State<home> {
                           ),
                         ],
                       ),
-                      expandTile(context),
+                      Text(announcementsList[1].replaceAll("\n", "\n"))
                     ],
                   ),
                 ),
