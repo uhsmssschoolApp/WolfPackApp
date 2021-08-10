@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/icons.dart';
-import 'package:testflutter/nav.dart';
+import 'package:testflutter/constructors/linktile.dart';
+import 'package:testflutter/constructors/nav.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../appbar.dart';
+import '../constructors/appbar.dart';
 import '../constants/consts.dart';
 
 class links extends StatefulWidget {
@@ -24,12 +25,11 @@ class _linksState extends State<links> {
           children: <Widget>[
             Container(
               margin: usualMargin,
-              child: ListTile(
+              child: const ListTile(
                 title: Text(
                   "School",
                   style: TextStyle(
                     fontSize: 17.0,
-                    // fontWeight: FontWeight.bold,
                     fontFamily: "SFBold",
                   ),
                 ),
@@ -39,61 +39,14 @@ class _linksState extends State<links> {
               margin: usualMargin,
               child: Column(
                 children: <Widget>[
-                  ListTile(
-                    leading: Icon(LinksIcon.pencil_squared),
-                    title: Text(
-                      "TeachAssist",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(ta);
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(LinksIcon.child),
-                    title: Text(
-                      "Guidance",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(guidance);
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(LinksIcon.money),
-                    title: Text(
-                      "School Cash Online",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(schoolCashOnline);
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(LinksIcon.road),
-                    title: Text(
-                      "My Pathway Planner",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(pathwayPlanner);
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(LinksIcon.graduation_cap),
-                    title: Text(
-                      "OUAC",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(ouac);
-                    },
-                  )
+                  linkTile(
+                      const Icon(LinksIcon.pencil_squared), "TeachAssist", ta),
+                  linkTile(const Icon(LinksIcon.child), "Guidance", guidance),
+                  linkTile(const Icon(LinksIcon.money), "School Cash Online",
+                      schoolCashOnline),
+                  linkTile(const Icon(LinksIcon.road), "My Pathway Planner",
+                      pathwayPlanner),
+                  linkTile(const Icon(LinksIcon.graduation_cap), "OUAC", ouac),
                 ],
               ),
             ),
@@ -114,39 +67,11 @@ class _linksState extends State<links> {
               margin: usualMargin,
               child: Column(
                 children: <Widget>[
-                  ListTile(
-                    leading: Icon(LinksIcon.email),
-                    title: Text(
-                      "GAPPS Inbox",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(gapps);
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(LinksIcon.instagram),
-                    title: Text(
-                      "@Samthewolf",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(samtheWolf);
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(LinksIcon.paper_plane),
-                    title: Text(
-                      "Teacher Contact",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(teacherContact);
-                    },
-                  ),
+                  linkTile(const Icon(LinksIcon.email), "GAPPS Inbox", gapps),
+                  linkTile(const Icon(LinksIcon.instagram), "@Samthewolf",
+                      samtheWolf),
+                  linkTile(const Icon(LinksIcon.paper_plane), "Teacher Contact",
+                      teacherContact),
                 ],
               ),
             ),
@@ -167,40 +92,12 @@ class _linksState extends State<links> {
               margin: usualMargin,
               child: Column(
                 children: <Widget>[
-                  ListTile(
-                    leading: Icon(LinksIcon.account_balance),
-                    title: Text(
-                      "YRDSB Website",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(yrdsbWebsite);
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(LinksIcon.link),
-                    title: Text(
-                      "UHS Website",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(
-                          "https://sites.google.com/gapps.yrdsb.ca/uhs/home");
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(LinksIcon.exclamation_triangle),
-                    title: Text(
-                      "REPORT IT",
-                      style: linkTiles,
-                    ),
-                    trailing: arrowRight,
-                    onTap: () {
-                      launchURL(reportIt);
-                    },
-                  )
+                  linkTile(const Icon(LinksIcon.account_balance),
+                      "YRDSB Website", yrdsbWebsite),
+                  linkTile(
+                      const Icon(LinksIcon.link), "UHS Website", uhsWebsite),
+                  linkTile(const Icon(LinksIcon.exclamation_triangle),
+                      "REPORT IT", reportIt)
                 ],
               ),
             ),

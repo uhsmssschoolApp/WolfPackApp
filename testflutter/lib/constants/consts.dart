@@ -7,7 +7,6 @@ Color grey = const Color(0xFF454545);
 Color maroon = const Color(0xFFf04c41);
 Color lightGrey = const Color(0xFFdadada);
 
-
 // text styles
 TextStyle linkTiles = const TextStyle(fontSize: 15.0, fontFamily: "SF");
 TextStyle settingTiles = const TextStyle(
@@ -18,10 +17,8 @@ TextStyle subTitle = const TextStyle(
   fontFamily: "SFBold",
   fontSize: 17,
 );
-TextStyle cardTitle =
-    const TextStyle(fontFamily: "SF", fontSize: 16);
-TextStyle cardSubTitle =
-    const TextStyle(fontFamily: "SF",  fontSize: 12);
+TextStyle cardTitle = const TextStyle(fontFamily: "SF", fontSize: 16);
+TextStyle cardSubTitle = const TextStyle(fontFamily: "SF", fontSize: 12);
 
 // icons
 Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);
@@ -55,6 +52,7 @@ const String faqDoc =
     "https://docs.google.com/document/d/12i2Cvw95v0wMpFtVnh2ev-O_QgJvuDzzBHDrLHrkMno/edit?usp=sharing";
 const String uhsRedirect =
     "http://www.yrdsb.ca/schools/unionville.hs/Pages/default.aspx";
+const String uhsWebsite = "https://sites.google.com/gapps.yrdsb.ca/uhs/home";
 
 // edge radius
 BorderRadius homeCorners = const BorderRadius.all(Radius.circular(15));

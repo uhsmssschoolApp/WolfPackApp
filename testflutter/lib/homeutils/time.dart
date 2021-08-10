@@ -1,5 +1,4 @@
 import 'package:intl/intl.dart';
-import 'package:testflutter/pages/home.dart';
 
 List<String> dates = List.filled(5, "", growable: false);
 
@@ -126,7 +125,5 @@ void initDates(DateTime now) {
   dates[4] = DateFormat('EE MMM dd').format(now);
   for (int i = 0; i < 4; i++) {
     dates[i] = goBack(4 - i, now);
-    // print(dates[i]);
   }
-  // print(dates[4]);
 }

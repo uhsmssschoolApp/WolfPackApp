@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:testflutter/appbar.dart';
+import 'package:testflutter/constructors/appbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 List<String> announcementsList = [];
-  void fillList() {
+  Future<void> fillList() async{
     FirebaseFirestore.instance
         .collection('dates')
         .get()

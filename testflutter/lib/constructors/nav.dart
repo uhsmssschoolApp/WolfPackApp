@@ -17,7 +17,7 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
   int _selectedInd = 1;
   int initInd = 0;
-  List<String> _widgetOptions = <String>[
+  final List<String> _widgetOptions = <String>[
     "/home",
     "/links",
     "/student",
@@ -26,9 +26,6 @@ class _NavState extends State<Nav> {
   ];
 
   void _ontap(int index) {
-    // setState(() {
-    //   _selectedInd = index;
-    // });
     _selectedInd = index;
     Navigator.pushNamed(context, _widgetOptions[index]);
   }
@@ -48,12 +45,8 @@ class _NavState extends State<Nav> {
   @override
   Widget build(BuildContext context) {
     return
-        // body: Center(
-        //   child: _widgetOptions.elementAt(_selectedInd),
-        // ),
         BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      // change accent colour?
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(MyFlutterApp.home),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
-import 'package:testflutter/nav.dart';
+import 'package:testflutter/constructors/nav.dart';
 
-import '../appbar.dart';
+import '../constructors/appbar.dart';
 
 class more extends StatelessWidget {
   const more({Key? key}) : super(key: key);

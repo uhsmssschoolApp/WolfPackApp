@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:testflutter/appbar.dart';
-import 'package:testflutter/nav.dart';
+import 'package:testflutter/constructors/appbar.dart';
+import 'package:testflutter/constructors/nav.dart';
 import 'package:testflutter/studentutils/feed.dart';
 import 'package:testflutter/studentutils/inbox.dart';
 

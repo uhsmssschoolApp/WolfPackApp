@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:testflutter/nav.dart';
+import 'package:testflutter/constructors/nav.dart';
 import '../constants/consts.dart';
 // import 'package:url_launcher/url_launcher.dart';
 // import 'package:testflutter/constants/icons.dart';
@@ -10,7 +10,7 @@ import '../constants/consts.dart';
 //firestore packages
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../appbar.dart';
+import '../constructors/appbar.dart';
 
 class clubs extends StatefulWidget {
   const clubs({Key? key}) : super(key: key);
