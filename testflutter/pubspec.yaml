@@ -37,6 +37,7 @@ dependencies:
   flutter_switch: ^0.3.2
   shared_preferences: ^2.0.6
   provider: ^5.0.0
+  flutter_spinkit: ^5.0.0
   
 
   # stack: ^0.2.1

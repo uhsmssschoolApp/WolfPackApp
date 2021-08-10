@@ -3,16 +3,14 @@ import 'package:testflutter/constructors/appbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 List<String> announcementsList = [];
-  Future<void> fillList() async{
-    FirebaseFirestore.instance
-        .collection('dates')
-        .get()
-        .then((QuerySnapshot querySnapshot) {
-      querySnapshot.docs.forEach((doc) {
-        announcementsList.add(doc["Announcements"]);
-      });
-    });
+Future<void> fillList() async {
+  final querySnapshot =
+      await FirebaseFirestore.instance.collection('dates').get();
+
+  for (var doc in querySnapshot.docs) {
+    announcementsList.add(doc["Announcements"]);
   }
+}
 
 class dorianTesting extends StatefulWidget {
   const dorianTesting({Key? key}) : super(key: key);

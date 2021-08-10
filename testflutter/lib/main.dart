@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testflutter/dorianchentesting.dart';
+import 'package:testflutter/loading.dart';
 import 'package:testflutter/more/feedback.dart';
 import 'package:testflutter/more/notifications.dart';
 import 'package:testflutter/pages/clubs.dart';
@@ -15,14 +16,16 @@ import 'dorianchentesting.dart';
 
 //firebase
 import 'package:firebase_core/firebase_core.dart';
-// import 'package:flutter/material.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  await fillList();
+void main() async {
+  await init();
   runApp(MyApp());
 }
+  Future<void> init() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+    await fillList();
+  }
 
 class MyApp extends StatelessWidget {
   @override
@@ -49,6 +52,7 @@ class MyApp extends StatelessWidget {
             "/usacmessages": (context) => usacFeed(),
             "/testingpage": (context) => dorianTesting(),
             "/feedback": (context) => feedBack(),
+            "/loading": (context) => loadingScreen(),
           },
         );
       });
