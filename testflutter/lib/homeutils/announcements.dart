@@ -6,6 +6,7 @@ import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/home.dart';
 
 import '../dorianchentesting.dart';
+import '../firestore.dart';
 
 class AnnouncementsCard extends StatefulWidget {
   const AnnouncementsCard({Key? key}) : super(key: key);
@@ -156,7 +157,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
               ),
             ],
           ),
-          Text(announcementsList[1].replaceAll("\n", "\n"))
+          // Text(announcementsList[1].replaceAll("\n", "\n"))
         ],
       ),
     );

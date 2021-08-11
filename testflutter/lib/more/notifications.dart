@@ -201,7 +201,6 @@ class _notificationsState extends State<notifications> {
                     setState(() {
                       appUpdates = val;
                     });
-                    // print(val);
                   }),
             ),
           ),

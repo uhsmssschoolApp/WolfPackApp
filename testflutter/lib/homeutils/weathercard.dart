@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/firestore.dart';
 import 'package:testflutter/homeutils/weather.dart';
 import 'package:testflutter/pages/links.dart';
 
@@ -93,7 +96,26 @@ class _WeatherCardState extends State<WeatherCard> {
             height: 225,
             alignment: Alignment.center,
             // color: Colors.yellow,
-            child: weatherView(),
+            child: StreamBuilder<QuerySnapshot>(
+                stream: dbref,
+                builder: (BuildContext context,
+                    AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (snapshot.hasData) {
+                    return weatherView();
+                  } else {
+                    print("problem");
+                    return const Center(
+                      child: Text(
+                        "There was a problem connecting! Try refreshing the app :(",
+                        style: TextStyle(
+                          fontFamily: "SFBold",
+                          fontSize: 20,
+                          color: Colors.black
+                        ),
+                      ),
+                    );
+                  }
+                }),
           ),
           Container(
             width: screenWidth * 0.7,
