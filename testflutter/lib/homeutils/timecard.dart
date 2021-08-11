@@ -1,0 +1,146 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/homeutils/time.dart';
+import 'package:testflutter/pages/home.dart';
+
+class timeCard extends StatefulWidget {
+  const timeCard({Key? key}) : super(key: key);
+
+  @override
+  _timeCardState createState() => _timeCardState();
+}
+
+class _timeCardState extends State<timeCard> {
+  void getTime() {
+    String time = (DateFormat.jm().format(now));
+    setState(() {
+      curTime = time;
+    });
+  }
+
+  @override
+  void initState() {
+    curTime = DateFormat.jm().format(now);
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      getTime();
+    });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Container(
+      margin: topMargin,
+      width: screenWidth,
+      height: 250,
+      child: Center(
+        child: Container(
+          width: screenWidth * 0.9,
+          height: 300,
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: homeCorners,
+            boxShadow: [
+              BoxShadow(
+                  color: Theme.of(context).shadowColor,
+                  blurRadius: 7,
+                  offset: const Offset(0, 5))
+            ],
+          ),
+          child: Column(
+            children: [
+              Expanded(
+                flex: 3,
+                child: Container(
+                  margin: topMargin,
+                  child: Center(
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 70,
+                      width: 300,
+                      decoration: BoxDecoration(
+                          color: maroon,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(15))),
+                      child: Text(
+                        curTime,
+                        style: const TextStyle(
+                          fontSize: 48.0,
+                          fontFamily: "SFBold",
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  margin: hometileMargin,
+                  alignment: Alignment.topLeft,
+                  child: const Text(
+                    "Current Rotation",
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontFamily: "SFBold",
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  margin: hometileMargin,
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    periodNumber(findPeriod(minutesTime)),
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontFamily: "SFBold",
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: 10.0,
+                width: 300,
+                alignment: Alignment.topLeft,
+                decoration: BoxDecoration(
+                  color: lightGrey,
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                ),
+                child: Container(
+                  height: 10.0,
+                  width: periodProgress(minutesTime, findPeriod(minutesTime)),
+                  decoration: BoxDecoration(
+                    color: maroon,
+                    borderRadius: const BorderRadius.all(Radius.circular(20)),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  margin: hometileMargin,
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    timeStamps(findPeriod(minutesTime)),
+                    style: const TextStyle(
+                      fontFamily: "SF",
+                      fontSize: 14.0,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
