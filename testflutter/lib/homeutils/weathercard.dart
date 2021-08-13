@@ -102,7 +102,8 @@ class _WeatherCardState extends State<WeatherCard> {
                     AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.hasData) {
                     return weatherView();
-                  } else {
+                  }
+                  /*else {
                     print("problem");
                     return const Center(
                       child: Text(
@@ -114,7 +115,8 @@ class _WeatherCardState extends State<WeatherCard> {
                         ),
                       ),
                     );
-                  }
+                  }*/
+                  return Container();
                 }),
           ),
           Container(

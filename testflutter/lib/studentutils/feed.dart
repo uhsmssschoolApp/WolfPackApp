@@ -70,8 +70,8 @@ class _feedState extends State<feed> {
             ],
           ),
         ),
-        Container(
-          height: 300,
+        Expanded(
+          flex: 1,
           child: WebView(
             initialUrl: url,
             onWebViewCreated: (WebViewController controller) {
@@ -81,7 +81,7 @@ class _feedState extends State<feed> {
             },
             javascriptMode: JavascriptMode.unrestricted,
             navigationDelegate: (navigation) {
-              if (navigation.url.startsWith('twitter/') ||
+              if (navigation.url.startsWith('https://uhsmssschoolapp') ||
                   !navigation.isForMainFrame) {
                 return NavigationDecision.navigate;
               }
