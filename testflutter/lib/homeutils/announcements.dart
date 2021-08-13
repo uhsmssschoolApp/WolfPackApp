@@ -8,6 +8,9 @@ import 'package:testflutter/pages/home.dart';
 import '../dorianchentesting.dart';
 import '../firestore.dart';
 
+bool leftDisable = false;
+bool rightDisable = true;
+
 class AnnouncementsCard extends StatefulWidget {
   const AnnouncementsCard({Key? key}) : super(key: key);
 
@@ -21,7 +24,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
     setState(() {
       announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
       currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
-      print(dateIndex);
+      // print(dateIndex);
     });
   }
 
@@ -111,13 +114,12 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
                 height: 30,
                 width: 20,
                 alignment: Alignment.center,
-                child: RawMaterialButton(
+                child: MaterialButton(
                   elevation: 2,
                   padding: const EdgeInsets.only(right: 4),
-                  onPressed: () {
-                    navLeft();
-                  },
-                  fillColor: Colors.red,
+                  onPressed: leftDisable ? null : navLeft,
+                  color: Colors.red,
+                  disabledColor: Colors.grey,
                   shape: const CircleBorder(),
                   child: const Icon(
                     Icons.chevron_left,
@@ -144,12 +146,12 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
                 // color: Colors.black,
                 height: 30,
                 width: 20,
-                child: RawMaterialButton(
+                child: MaterialButton(
                   elevation: 2,
-                  onPressed: () {
-                    navRight();
-                  },
-                  fillColor: Colors.red,
+                  onPressed: rightDisable ? null : navRight,
+                  // fillColor: Colors.red,
+                  color: Colors.red,
+                  disabledColor: Colors.grey,
                   shape: const CircleBorder(),
                   child: const Icon(
                     Icons.chevron_right,
@@ -169,12 +171,20 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
   void navLeft() {
     if (dateIndex > 0) {
       dateIndex--;
-    } else {}
+      leftDisable = false;
+    } else {
+      leftDisable = true;
+      rightDisable = false;
+    }
   }
 
   void navRight() {
     if (dateIndex < 4) {
       dateIndex++;
+      rightDisable = false;
+    } else {
+      rightDisable = true;
+      leftDisable = false;
     }
   }
 }
