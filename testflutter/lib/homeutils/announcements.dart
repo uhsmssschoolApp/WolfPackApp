@@ -16,7 +16,7 @@ class AnnouncementsCard extends StatefulWidget {
 }
 
 class _AnnouncementsCardState extends State<AnnouncementsCard> {
-    void getDate() {
+  void getDate() {
     // String date = (DateFormat('EEEE MMMM d').format(now));
     setState(() {
       announcementDate = dates[dateIndex];
@@ -32,6 +32,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
     });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -157,7 +158,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
               ),
             ],
           ),
-          // Text(announcementsList[1].replaceAll("\n", "\n"))
+          //Text(test[0].announcement)
         ],
       ),
     );
