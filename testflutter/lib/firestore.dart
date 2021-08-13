@@ -21,7 +21,7 @@ Future<void> fillList() async {
     displayTimeStampList.add(doc["displayTimeStamp"]);
   }
 
-  store newThing = new store(
+  store newThing = store(
       stamp: 1,
       displayDate: "hello",
       announcement: "bro",

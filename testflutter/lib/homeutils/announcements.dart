@@ -158,7 +158,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
               ),
             ],
           ),
-          //Text(test[0].announcement)
+          Text(test[0].announcement)
         ],
       ),
     );
