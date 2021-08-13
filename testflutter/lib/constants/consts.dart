@@ -53,6 +53,7 @@ const String faqDoc =
 const String uhsRedirect =
     "http://www.yrdsb.ca/schools/unionville.hs/Pages/default.aspx";
 const String uhsWebsite = "https://sites.google.com/gapps.yrdsb.ca/uhs/home";
+const String yrdsbDark = "https://uhsmssschoolapp.github.io/yrdsbfeed-dark/";
 
 // edge radius
 BorderRadius homeCorners = const BorderRadius.all(Radius.circular(15));

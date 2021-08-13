@@ -59,17 +59,17 @@ class MyThemes {
       backgroundColor: Colors.grey[900],
       unselectedItemColor: Colors.white,
     ),
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: Colors.white,
     ),
     appBarTheme: AppBarTheme(
       backwardsCompatibility: false,
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.white,
       ),
       elevation: 0,
       backgroundColor: Colors.grey[850],
-      titleTextStyle: TextStyle(
+      titleTextStyle: const TextStyle(
         color: Colors.white,
         fontSize: 20.0,
         fontFamily: "SFBold",
@@ -95,18 +95,18 @@ class MyThemes {
       brightness: Brightness.light,
     ),
     scaffoldBackgroundColor: Colors.white,
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       unselectedItemColor: Colors.grey,
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backwardsCompatibility: false,
       iconTheme: IconThemeData(
-        color: const Color(0xFF454545),
+        color: Color(0xFF454545),
       ),
       backgroundColor: Color(0xFFeeeeee),
       titleTextStyle: TextStyle(
-        color: const Color(0xFF454545),
+        color: Color(0xFF454545),
         fontSize: 20.0,
         fontFamily: "SFBold",
       ),

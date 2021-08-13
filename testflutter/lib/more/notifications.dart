@@ -81,11 +81,11 @@ class _notificationsState extends State<notifications> {
           Card(
             child: ListTile(
               title: Text(
-                "AU Updates",
+                "Club Announcements",
                 style: cardTitle,
               ),
               subtitle: Text(
-                "Latest news for Arts Unionville",
+                "Announcements specific to clubs",
                 style: cardSubTitle,
               ),
               trailing: CupertinoSwitch(
@@ -99,27 +99,27 @@ class _notificationsState extends State<notifications> {
                   }),
             ),
           ),
-          Card(
-            child: ListTile(
-              title: Text(
-                "STEM Updates",
-                style: cardTitle,
-              ),
-              subtitle: Text(
-                "Latest news for Unionville STEM",
-                style: cardSubTitle,
-              ),
-              trailing: CupertinoSwitch(
-                  value: stemUpdates,
-                  activeColor: maroon,
-                  onChanged: (bool val) {
-                    setState(() {
-                      stemUpdates = val;
-                    });
-                    // print(val);
-                  }),
-            ),
-          ),
+          // Card(
+          //   child: ListTile(
+          //     title: Text(
+          //       "STEM Updates",
+          //       style: cardTitle,
+          //     ),
+          //     subtitle: Text(
+          //       "Latest news for Unionville STEM",
+          //       style: cardSubTitle,
+          //     ),
+          //     trailing: CupertinoSwitch(
+          //         value: stemUpdates,
+          //         activeColor: maroon,
+          //         onChanged: (bool val) {
+          //           setState(() {
+          //             stemUpdates = val;
+          //           });
+          //           // print(val);
+          //         }),
+          //   ),
+          // ),
           Card(
             child: ListTile(
               title: Text(

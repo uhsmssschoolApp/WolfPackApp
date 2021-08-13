@@ -18,7 +18,13 @@ class _feedState extends State<feed> {
   Completer<WebViewController> completer = Completer<WebViewController>();
   @override
   Widget build(BuildContext context) {
-    // print(url);
+    String darkURL() {
+      if (MediaQuery.of(context).platformBrightness == Brightness.dark) {
+        return yrdsbDark;
+      }
+      return twitterURL;
+    }
+
     return Column(
       children: [
         Container(
@@ -29,11 +35,15 @@ class _feedState extends State<feed> {
               Container(
                 height: 30,
                 width: 90,
-                // color: Colors.black,
                 child: OutlinedButton(
                     onPressed: () {
                       setState(() {
-                        // activePage = 0;
+                        print(MediaQuery.of(context).platformBrightness);
+                        if (MediaQuery.of(context).platformBrightness ==
+                            Brightness.dark) {
+                          completer.future.then(
+                              (controller) => controller.loadUrl(yrdsbDark));
+                        }
                         completer.future.then(
                             (controller) => controller.loadUrl(twitterURL));
                       });
@@ -73,7 +83,7 @@ class _feedState extends State<feed> {
         Expanded(
           flex: 1,
           child: WebView(
-            initialUrl: url,
+            initialUrl: darkURL(),
             onWebViewCreated: (WebViewController controller) {
               try {
                 completer.complete(controller);
