@@ -70,8 +70,8 @@ class _feedState extends State<feed> {
             ],
           ),
         ),
-        Expanded(
-          flex: 1,
+        Container(
+          height: 300,
           child: WebView(
             initialUrl: url,
             onWebViewCreated: (WebViewController controller) {

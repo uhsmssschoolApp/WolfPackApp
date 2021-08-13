@@ -172,7 +172,12 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
     if (dateIndex > 0) {
       dateIndex--;
       leftDisable = false;
+      rightDisable = false;
     } else {
+      leftDisable = true;
+      rightDisable = false;
+    }
+    if (dateIndex == 0) {
       leftDisable = true;
       rightDisable = false;
     }
@@ -182,7 +187,12 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
     if (dateIndex < 4) {
       dateIndex++;
       rightDisable = false;
+      leftDisable = false;
     } else {
+      rightDisable = true;
+      leftDisable = false;
+    }
+    if (dateIndex == 4) {
       rightDisable = true;
       leftDisable = false;
     }
