@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -5,7 +6,7 @@ List<String> displayAnnouncementList = [];
 List<String> displayDateList = [];
 List<String> displayClubAnnouncementList = [];
 List<int> displayTimeStampList = [];
-List<store> test = [];
+List<store> masterList = [];
 
 final Stream<QuerySnapshot> dbref =
     FirebaseFirestore.instance.collection('dates').snapshots();
@@ -21,17 +22,20 @@ Future<void> fillList() async {
     displayTimeStampList.add(doc["displayTimeStamp"]);
   }
 
-  store newThing = store(
-      stamp: 1,
-      displayDate: "hello",
-      announcement: "bro",
-      clubAnnouncement: "ok");
+  for (int x = 0; x < displayAnnouncementList.length; x++) {
+    store newThing = store(
+        stamp: displayTimeStampList[x],
+        displayDate: displayDateList[x],
+        announcement: displayAnnouncementList[x],
+        clubAnnouncement: displayClubAnnouncementList[x]);
 
-  test.add(newThing);
-  print(test[0].announcement);
+    masterList.add(newThing);
+  }
+
+  masterList.sort();
 }
 
-class store {
+class store implements Comparable<store> {
   late int stamp;
   late String displayDate;
   late String announcement;
@@ -43,4 +47,9 @@ class store {
     this.announcement = "announcement",
     this.clubAnnouncement = "clubAnnouncement",
   });
+
+  @override
+  int compareTo(store other) {
+    return stamp - other.stamp;
+  }
 }
