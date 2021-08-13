@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -33,6 +33,8 @@ Future<void> fillList() async {
   }
 
   masterList.sort();
+
+  print(masterList[0].announcement);
 }
 
 class store implements Comparable<store> {
@@ -50,6 +52,6 @@ class store implements Comparable<store> {
 
   @override
   int compareTo(store other) {
-    return stamp - other.stamp;
+    return other.stamp - stamp;
   }
 }

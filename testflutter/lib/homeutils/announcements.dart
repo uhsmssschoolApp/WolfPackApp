@@ -19,7 +19,9 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
   void getDate() {
     // String date = (DateFormat('EEEE MMMM d').format(now));
     setState(() {
-      announcementDate = dates[dateIndex];
+      announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
+      currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
+      print(dateIndex);
     });
   }
 
@@ -158,7 +160,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
               ),
             ],
           ),
-          Text(masterList[0].announcement)
+          Text(currentAnnounce),
         ],
       ),
     );

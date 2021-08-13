@@ -18,6 +18,7 @@ double globalWidth = 0.0;
 String curTime = "";
 DateTime now = DateTime.now();
 String announcementDate = "";
+String currentAnnounce = "";
 int dateIndex = 4;
 
 // ignore: camel_case_types
@@ -61,7 +62,7 @@ class _HomeState extends State<home> {
                 // covid screening form widget
                 const covidScreening(),
                 // announcements widget
-               const AnnouncementsCard(),
+                const AnnouncementsCard(),
                 // weather widget
                 const WeatherCard(),
                 // school calendar
