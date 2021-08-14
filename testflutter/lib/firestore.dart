@@ -85,7 +85,7 @@ class store implements Comparable<store> {
 }
 
 //sac stream object
-class streamStore implements Comparable<store> {
+class streamStore implements Comparable<streamStore> {
   late int stamp;
   late String body;
   late String title;
@@ -97,7 +97,7 @@ class streamStore implements Comparable<store> {
   });
 
   @override
-  int compareTo(store other) {
+  int compareTo(streamStore other) {
     return other.stamp - stamp;
   }
 }
