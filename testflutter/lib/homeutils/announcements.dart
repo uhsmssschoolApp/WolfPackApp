@@ -23,14 +23,14 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
   void getDate() {
     // String date = (DateFormat('EEEE MMMM d').format(now));
     setState(() {
-      if (announcementDate.length > 4 && currentAnnounce.length > 4) {
-        announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
-        currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
-      } else {
-        currentAnnounce =
-            "There was an error loading the announcements! Please reload or check your connection.";
-        announcementDate = "";
-      }
+      // if (announcementDate.length > 4 && currentAnnounce.length > 4) {
+      announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
+      currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
+      // } else {
+      //   currentAnnounce =
+      //       "There was an error loading the announcements! Please reload or check your connection.";
+      //   announcementDate = "";
+      // }
       // print(dateIndex);
     });
   }
