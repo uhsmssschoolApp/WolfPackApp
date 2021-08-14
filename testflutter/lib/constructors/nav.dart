@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/constants/icons.dart';
+import 'package:testflutter/firestore.dart';
 // import 'package:testflutter/links.dart';
 // import 'package:testflutter/home.dart';
 // import 'package:testflutter/student.dart';
@@ -26,8 +27,12 @@ class _NavState extends State<Nav> {
   ];
 
   void _ontap(int index) {
-    _selectedInd = index;
-    Navigator.pushNamed(context, _widgetOptions[index]);
+    if (_selectedInd == 0 && _selectedInd == index) {
+      refreshData();
+    } else {
+      _selectedInd = index;
+      Navigator.pushNamed(context, _widgetOptions[index]);
+    }
   }
 
   int prev() {
@@ -44,8 +49,7 @@ class _NavState extends State<Nav> {
 
   @override
   Widget build(BuildContext context) {
-    return
-        BottomNavigationBar(
+    return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(

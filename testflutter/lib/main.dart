@@ -22,11 +22,13 @@ void main() async {
   await init();
   runApp(MyApp());
 }
-  Future<void> init() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp();
-    await fillList();
-  }
+
+Future<void> init() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await fillList();
+  await fillStream();
+}
 
 class MyApp extends StatelessWidget {
   @override

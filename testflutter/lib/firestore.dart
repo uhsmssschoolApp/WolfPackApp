@@ -2,12 +2,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+//morning and club announcements
 List<String> displayAnnouncementList = [];
 List<String> displayDateList = [];
 List<String> displayClubAnnouncementList = [];
 List<int> displayTimeStampList = [];
 List<store> masterList = [];
 
+//USAC stream announcements
+List<String> streamBody = [];
+List<String> streamTitle = [];
+List<int> streamTimeStamp = [];
+List<streamStore> masterStreamList = [];
+
+//morning and club announcements
 final Stream<QuerySnapshot> dbref =
     FirebaseFirestore.instance.collection('dates').snapshots();
 
@@ -31,12 +39,32 @@ Future<void> fillList() async {
 
     masterList.add(newThing);
   }
-
   masterList.sort();
-
-  print(masterList[0].announcement);
 }
 
+//SAC STREAM
+Future<void> fillStream() async {
+  final querySnapshot =
+      await FirebaseFirestore.instance.collection('sacStream').get();
+
+  for (var doc in querySnapshot.docs) {
+    streamBody.add(doc["body"]);
+    streamTitle.add(doc["title"]);
+    streamTimeStamp.add(doc["timeStamp"]);
+  }
+
+  for (int x = 0; x < streamBody.length; x++) {
+    streamStore newThing = streamStore(
+      stamp: streamTimeStamp[x],
+      body: streamBody[x],
+      title: streamTitle[x],
+    );
+    masterStreamList.add(newThing);
+  }
+  masterStreamList.sort();
+}
+
+//morning and club object
 class store implements Comparable<store> {
   late int stamp;
   late String displayDate;
@@ -54,4 +82,27 @@ class store implements Comparable<store> {
   int compareTo(store other) {
     return other.stamp - stamp;
   }
+}
+
+//sac stream object
+class streamStore implements Comparable<store> {
+  late int stamp;
+  late String body;
+  late String title;
+
+  streamStore({
+    this.stamp = 0,
+    this.body = "body",
+    this.title = "titl",
+  });
+
+  @override
+  int compareTo(store other) {
+    return other.stamp - stamp;
+  }
+}
+
+Future<void> refreshData() async {
+  await fillList();
+  await fillStream();
 }
