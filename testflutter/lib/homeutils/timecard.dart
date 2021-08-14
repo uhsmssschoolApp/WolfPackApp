@@ -61,7 +61,7 @@ class _timeCardState extends State<timeCard> {
                     child: Container(
                       alignment: Alignment.center,
                       height: 70,
-                      width: 300,
+                      width: screenWidth * 0.75,
                       decoration: BoxDecoration(
                           color: maroon,
                           borderRadius:
@@ -108,7 +108,7 @@ class _timeCardState extends State<timeCard> {
               ),
               Container(
                 height: 10.0,
-                width: 300,
+                width: screenWidth * 0.75,
                 alignment: Alignment.topLeft,
                 decoration: BoxDecoration(
                   color: lightGrey,
