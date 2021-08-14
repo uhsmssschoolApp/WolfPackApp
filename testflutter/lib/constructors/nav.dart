@@ -30,8 +30,8 @@ class _NavState extends State<Nav> {
     // if (_selectedInd == 0 && _selectedInd == index) {
     //   refreshData();
     // } else {
-    _selectedInd = index;
-    Navigator.pushNamed(context, _widgetOptions[index]);
+      _selectedInd = index;
+      Navigator.pushNamed(context, _widgetOptions[index]);
     // }
   }
 
