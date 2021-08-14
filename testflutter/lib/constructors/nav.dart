@@ -27,12 +27,12 @@ class _NavState extends State<Nav> {
   ];
 
   void _ontap(int index) {
-    if (_selectedInd == 0 && _selectedInd == index) {
-      refreshData();
-    } else {
+    // if (_selectedInd == 0 && _selectedInd == index) {
+    //   refreshData();
+    // } else {
       _selectedInd = index;
       Navigator.pushNamed(context, _widgetOptions[index]);
-    }
+    // }
   }
 
   int prev() {
