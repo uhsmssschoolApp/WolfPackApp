@@ -20,8 +20,8 @@ import 'dorianchentesting.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
-  runApp(MyApp());
   await init();
+  runApp(MyApp());
 }
 
 Future<void> init() async {
