@@ -67,10 +67,6 @@ class _usacFeedState extends State<usacFeed> {
                                 TextStyle(color: maroon, fontFamily: "SFBold"),
                           )),
                     ))
-                // Container(
-                //   alignment: Alignment.bottomRight,
-                //   child: TextButton(onPressed: () {}, child: Text("hi")),
-                // )
               ],
             ),
           );

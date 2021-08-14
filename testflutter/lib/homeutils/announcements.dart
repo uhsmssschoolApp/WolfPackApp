@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
-import 'package:testflutter/homeutils/time.dart';
+// import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/home.dart';
 import 'package:testflutter/studentutils/alertdialog.dart';
 
-import '../dorianchentesting.dart';
+// import '../dorianchentesting.dart';
 import '../firestore.dart';
 
 bool leftDisable = false;
@@ -23,15 +23,21 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
   void getDate() {
     // String date = (DateFormat('EEEE MMMM d').format(now));
     setState(() {
-      announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
-      currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
+      if (announcementDate.length > 4 && currentAnnounce.length > 4) {
+        announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
+        currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
+      } else {
+        currentAnnounce =
+            "There was an error loading the announcements! Please reload or check your connection.";
+        announcementDate = "";
+      }
       // print(dateIndex);
     });
   }
 
   @override
   void initState() {
-    announcementDate = DateTime.now().toString();
+    announcementDate = "loading...";
     // curTime = DateFormat.jm().format(now);
     Timer.periodic(const Duration(seconds: 1), (timer) {
       getDate();

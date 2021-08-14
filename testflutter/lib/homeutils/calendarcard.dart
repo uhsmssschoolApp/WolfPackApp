@@ -92,7 +92,12 @@ class _CalendarCardState extends State<CalendarCard> {
             margin: const EdgeInsets.only(top: 10),
             height: 400,
             alignment: Alignment.center,
-            child: yrdsbCalendarView(),
+            child: StreamBuilder<Object>(
+              stream: null,
+              builder: (context, snapshot) {
+                return yrdsbCalendarView();
+              }
+            ),
           ),
           Container(
             width: screenWidth * 0.7,

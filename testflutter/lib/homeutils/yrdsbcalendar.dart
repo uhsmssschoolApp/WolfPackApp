@@ -5,6 +5,5 @@ Widget yrdsbCalendarView() {
   return const WebView(
     initialUrl: "https://sarinali.github.io/webview_flutter/",
     javascriptMode: JavascriptMode.unrestricted,
-    
   );
 }
