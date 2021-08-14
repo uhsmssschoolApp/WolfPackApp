@@ -7,7 +7,6 @@ import 'package:testflutter/more/notifications.dart';
 import 'package:testflutter/pages/clubs.dart';
 import 'package:testflutter/pages/home.dart';
 import 'package:testflutter/studentutils/usacmessages.dart';
-import 'package:testflutter/splash.dart';
 import 'firestore.dart';
 import 'more/resources.dart';
 import 'pages/links.dart';
@@ -20,8 +19,8 @@ import 'dorianchentesting.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
-  runApp(MyApp());
   await init();
+  runApp(MyApp());
 }
 
 Future<void> init() async {
