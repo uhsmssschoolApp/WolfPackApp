@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/home.dart';
+import 'package:testflutter/studentutils/alertdialog.dart';
 
 import '../dorianchentesting.dart';
 import '../firestore.dart';
@@ -161,7 +162,26 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
               ),
             ],
           ),
-          Text(currentAnnounce),
+          Container(
+            height: 135,
+            padding:
+                const EdgeInsets.only(top: 12, left: 20, right: 20, bottom: 12),
+            alignment: Alignment.topLeft,
+            child: Text(
+              currentAnnounce,
+              maxLines: 5,
+              style: TextStyle(fontFamily: "SF"),
+            ),
+          ),
+          Container(
+            alignment: Alignment.bottomRight,
+            padding: const EdgeInsets.only(right: 12, bottom: 1),
+            child: OutlinedButton(
+                onPressed: () {
+                  showAlert(context, currentAnnounce);
+                },
+                child: Text("View More")),
+          )
         ],
       ),
     );

@@ -98,7 +98,7 @@ class streamStore implements Comparable<streamStore> {
 
   @override
   int compareTo(streamStore other) {
-    return stamp - other.stamp;
+    return other.stamp - stamp;
   }
 }
 
