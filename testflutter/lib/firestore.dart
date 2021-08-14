@@ -13,6 +13,7 @@ List<store> masterList = [];
 List<String> streamBody = [];
 List<String> streamTitle = [];
 List<int> streamTimeStamp = [];
+List<String> streamDate = [];
 List<streamStore> masterStreamList = [];
 
 //morning and club announcements
@@ -51,6 +52,7 @@ Future<void> fillStream() async {
     streamBody.add(doc["body"]);
     streamTitle.add(doc["title"]);
     streamTimeStamp.add(doc["timeStamp"]);
+    streamDate.add(doc["streamDate"]);
   }
 
   for (int x = 0; x < streamBody.length; x++) {
@@ -58,6 +60,7 @@ Future<void> fillStream() async {
       stamp: streamTimeStamp[x],
       body: streamBody[x],
       title: streamTitle[x],
+      date: streamDate[x],
     );
     masterStreamList.add(newThing);
   }
@@ -89,11 +92,13 @@ class streamStore implements Comparable<streamStore> {
   late int stamp;
   late String body;
   late String title;
+  late String date;
 
   streamStore({
     this.stamp = 0,
     this.body = "body",
     this.title = "title",
+    this.date = "date",
   });
 
   @override
