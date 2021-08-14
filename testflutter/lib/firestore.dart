@@ -93,7 +93,7 @@ class streamStore implements Comparable<store> {
   streamStore({
     this.stamp = 0,
     this.body = "body",
-    this.title = "titl",
+    this.title = "title",
   });
 
   @override
