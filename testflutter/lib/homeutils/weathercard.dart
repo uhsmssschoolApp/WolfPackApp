@@ -95,29 +95,30 @@ class _WeatherCardState extends State<WeatherCard> {
             margin: const EdgeInsets.only(top: 10),
             height: 225,
             alignment: Alignment.center,
+            child: weatherView(),
             // color: Colors.yellow,
-            child: StreamBuilder<QuerySnapshot>(
-                stream: dbref,
-                builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (snapshot.hasData) {
-                    return weatherView();
-                  }
-                  /*else {
-                    print("problem");
-                    return const Center(
-                      child: Text(
-                        "There was a problem connecting! Try refreshing the app :(",
-                        style: TextStyle(
-                          fontFamily: "SFBold",
-                          fontSize: 20,
-                          color: Colors.black
-                        ),
-                      ),
-                    );
-                  }*/
-                  return Container();
-                }),
+            // child: StreamBuilder<QuerySnapshot>(
+            //     stream: dbref,
+            //     builder: (BuildContext context,
+            //         AsyncSnapshot<QuerySnapshot> snapshot) {
+            //       if (snapshot.hasData) {
+            //         return weatherView();
+            //       }
+            //       /*else {
+            //         print("problem");
+            //         return const Center(
+            //           child: Text(
+            //             "There was a problem connecting! Try refreshing the app :(",
+            //             style: TextStyle(
+            //               fontFamily: "SFBold",
+            //               fontSize: 20,
+            //               color: Colors.black
+            //             ),
+            //           ),
+            //         );
+            //       }*/
+            //       return Container();
+            //     }),
           ),
           Container(
             width: screenWidth * 0.7,

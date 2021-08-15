@@ -28,13 +28,13 @@ class _clubsState extends State<clubs> {
         child: Column(
           children: [
             // TO VISIT TESTING SCAFFOLD
-            OutlinedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, "/testingpage");
-              },
-              // ignore: prefer_const_constructors
-              child: Text("Go to Testing Page"),
-            ),
+            // OutlinedButton(
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, "/testingpage");
+            //   },
+            //   // ignore: prefer_const_constructors
+            //   child: Text("Go to Testing Page"),
+            // ),
             // text that says today
             Container(
               margin: const EdgeInsets.only(top: 16.0, left: 16.0),

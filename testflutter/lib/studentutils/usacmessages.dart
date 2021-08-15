@@ -14,68 +14,86 @@ class usacFeed extends StatefulWidget {
 class _usacFeedState extends State<usacFeed> {
   @override
   Widget build(BuildContext context) {
+    // please check this function dorian
+    Future<void> getData() async {
+      masterStreamList.clear();
+      await fillStream();
+      setState(() {});
+    }
+
     return Scaffold(
       appBar: mainAppBar("USAC Messages"),
-      body: ListView.builder(
-        // reverse: true,
-        itemBuilder: (context, index) {
-          if (masterStreamList.isEmpty) {
-            return const Center(
-                child: Text("There was a problem loading the stream :("));
-          }
-          return Container(
-            decoration: BoxDecoration(
-                border: Border.all(color: Theme.of(context).dividerColor)),
-            height: 150,
-            padding: const EdgeInsets.only(top: 12, left: 12, right: 12),
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      masterStreamList[index].title,
-                      style: TextStyle(fontSize: 18, fontFamily: "SFBold"),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  flex: 4,
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 12),
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      masterStreamList[index].body,
-                      // "hi\nhi\nhi\nhi\nhi",
-                      maxLines: 4,
-                      style: const TextStyle(fontFamily: "SF"),
-                    ),
-                  ),
-                ),
-                Expanded(
-                    flex: 2,
+      body: RefreshIndicator(
+        onRefresh: getData,
+        child: ListView.builder(
+          // reverse: true,
+          itemBuilder: (context, index) {
+            if (masterStreamList.isEmpty) {
+              return const Center(
+                  child: Text("There was a problem loading the stream :("));
+            }
+            return Container(
+              decoration: BoxDecoration(
+                  border: Border.all(color: Theme.of(context).dividerColor)),
+              height: 150,
+              padding: const EdgeInsets.only(top: 12, left: 12, right: 12),
+              child: Column(
+                children: [
+                  Expanded(
+                    flex: 1,
                     child: Container(
-                      alignment: Alignment.bottomRight,
-                      child: TextButton(
-                          onPressed: () {
-                            showAlert(context, masterStreamList[index].body);
-                          },
-                          child: Text(
-                            "View More",
-                            style:
-                                TextStyle(color: maroon, fontFamily: "SFBold"),
-                          )),
-                    ))
-                // Container(
-                //   alignment: Alignment.bottomRight,
-                //   child: TextButton(onPressed: () {}, child: Text("hi")),
-                // )
-              ],
-            ),
-          );
-        },
-        itemCount: masterStreamList.length,
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        masterStreamList[index].title,
+                        style: TextStyle(fontSize: 18, fontFamily: "SFBold"),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 4),
+                      alignment: Alignment.topLeft,
+                      child: Text(masterStreamList[index].date),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      margin: const EdgeInsets.only(top: 8),
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        masterStreamList[index].body,
+                        // "hi\nhi\nhi\nhi\nhi",
+                        maxLines: 3,
+                        style: const TextStyle(fontFamily: "SF"),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                      flex: 2,
+                      child: Container(
+                        alignment: Alignment.bottomRight,
+                        child: TextButton(
+                            onPressed: () {
+                              showAlert(context, masterStreamList[index].body);
+                            },
+                            child: Text(
+                              "View More",
+                              style: TextStyle(
+                                  color: maroon, fontFamily: "SFBold"),
+                            )),
+                      ))
+                  // Container(
+                  //   alignment: Alignment.bottomRight,
+                  //   child: TextButton(onPressed: () {}, child: Text("hi")),
+                  // )
+                ],
+              ),
+            );
+          },
+          itemCount: masterStreamList.length,
+        ),
       ),
     );
   }

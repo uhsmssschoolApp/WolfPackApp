@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/pages/links.dart';
 
 class ClubResources extends StatefulWidget {
   const ClubResources({Key? key}) : super(key: key);
@@ -22,7 +23,10 @@ class _ClubResourcesState extends State<ClubResources> {
             ),
             elevation: 5,
             child: ListTile(
-              onTap: () {},
+              onTap: () {
+                launchURL(
+                    "https://drive.google.com/file/d/1pkSV9MoeuK4NpXHPJHbiOWiKJSiCDozV/view?usp=sharing");
+              },
               leading: Container(
                 height: 60,
                 width: 35,
@@ -55,7 +59,10 @@ class _ClubResourcesState extends State<ClubResources> {
             ),
             elevation: 5,
             child: ListTile(
-              onTap: () {},
+              onTap: () {
+                launchURL(
+                    "https://docs.google.com/presentation/d/1ancN0wa7SNNb6gozzV5eZJ8Idei7wXz1/edit?usp=sharing&ouid=101102019988373514505&rtpof=true&sd=true");
+              },
               leading: Container(
                 height: 35,
                 width: 35,

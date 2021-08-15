@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/firestore.dart';
+import 'package:testflutter/studentutils/alertdialog.dart';
+
+String curClubAnnounce = "";
 
 class ClubAnnouncements extends StatefulWidget {
   const ClubAnnouncements({Key? key}) : super(key: key);
@@ -11,6 +15,8 @@ class ClubAnnouncements extends StatefulWidget {
 class _ClubAnnouncementsState extends State<ClubAnnouncements> {
   @override
   Widget build(BuildContext context) {
+    curClubAnnounce = masterList[0].clubAnnouncement;
+    curClubAnnounce = curClubAnnounce.replaceAll('|n', '\n');
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       // padding: const EdgeInsets.only(left: 30),
@@ -88,6 +94,34 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                 ),
               ],
             ),
+            Expanded(
+              flex: 4,
+              child: Container(
+                padding: const EdgeInsets.only(
+                    left: 20, right: 20, top: 16, bottom: 12),
+                alignment: Alignment.topLeft,
+                child: Text(
+                  curClubAnnounce,
+                  // "hi\nhi\nhi\nhi\nhi\nhi\nhi\nhi\n",
+                  maxLines: 7,
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                alignment: Alignment.bottomRight,
+                child: OutlinedButton(
+                    onPressed: () {
+                      showAlert(context, curClubAnnounce);
+                    },
+                    child: Text(
+                      "View More",
+                      style: TextStyle(color: maroon),
+                    )),
+              ),
+            )
             // INSERT TEXT CHILD OR CONTAINER THAT HAS THE TEXT HERE UNDER THIS COMMENT
           ],
         ),

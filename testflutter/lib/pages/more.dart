@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/constructors/nav.dart';
+import 'package:testflutter/pages/links.dart';
 
 import '../constructors/appbar.dart';
 
@@ -57,7 +58,8 @@ class more extends StatelessWidget {
               leading: Icon(Icons.book_rounded),
               trailing: arrowRight,
               onTap: () {
-                Navigator.pushNamed(context, morePaths[2]);
+                // Navigator.pushNamed(context, morePaths[2]);
+                launchURL(libraryResources);
               },
               title: Text(
                 "Resources",
