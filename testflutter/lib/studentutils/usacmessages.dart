@@ -16,7 +16,6 @@ class _usacFeedState extends State<usacFeed> {
   Widget build(BuildContext context) {
     // please check this function dorian
     Future<void> getData() async {
-      masterStreamList.clear();
       await fillStream();
       setState(() {});
     }

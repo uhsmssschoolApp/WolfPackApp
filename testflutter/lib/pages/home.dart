@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:testflutter/constructors/appbar.dart';
+import 'package:testflutter/firestore.dart';
 import 'package:testflutter/homeutils/announcements.dart';
 import 'package:testflutter/homeutils/calendarcard.dart';
 import 'package:testflutter/homeutils/covidscreening.dart';
@@ -30,6 +31,11 @@ class home extends StatefulWidget {
 }
 
 class _HomeState extends State<home> {
+  Future<void> getData() async {
+    await fillList();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -37,39 +43,42 @@ class _HomeState extends State<home> {
     return Scaffold(
       bottomNavigationBar: Nav(),
       appBar: mainAppBar("Home"),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            titleRow(),
-            // timecard
-            const timeCard(),
-            // container for more text
-            Container(
-              margin: const EdgeInsets.only(top: 32.0, left: 16.0),
-              width: screenWidth * 0.9,
-              height: 50,
-              child: const Text(
-                "More",
-                style: TextStyle(
-                  fontFamily: "SFBold",
-                  fontSize: 20.0,
+      body: RefreshIndicator(
+        onRefresh: getData,
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              titleRow(),
+              // timecard
+              const timeCard(),
+              // container for more text
+              Container(
+                margin: const EdgeInsets.only(top: 32.0, left: 16.0),
+                width: screenWidth * 0.9,
+                height: 50,
+                child: const Text(
+                  "More",
+                  style: TextStyle(
+                    fontFamily: "SFBold",
+                    fontSize: 20.0,
+                  ),
                 ),
               ),
-            ),
-            Column(
-              // ignore: prefer_const_literals_to_create_immutables
-              children: [
-                // covid screening form widget
-                const covidScreening(),
-                // announcements widget
-                const AnnouncementsCard(),
-                // weather widget
-                const WeatherCard(),
-                // school calendar
-                const CalendarCard(),
-              ],
-            ),
-          ],
+              Column(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  // covid screening form widget
+                  const covidScreening(),
+                  // announcements widget
+                  const AnnouncementsCard(),
+                  // weather widget
+                  const WeatherCard(),
+                  // school calendar
+                  const CalendarCard(),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

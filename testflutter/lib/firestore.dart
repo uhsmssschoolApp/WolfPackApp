@@ -24,6 +24,12 @@ Future<void> fillList() async {
   final querySnapshot =
       await FirebaseFirestore.instance.collection('dates').get();
 
+  masterList.clear();
+  displayAnnouncementList.clear();
+  displayClubAnnouncementList.clear();
+  displayDateList.clear();
+  displayTimeStampList.clear();
+
   for (var doc in querySnapshot.docs) {
     displayAnnouncementList.add(doc["displayAnnouncement"]);
     displayClubAnnouncementList.add(doc["displayClubAnnouncement"]);
@@ -47,6 +53,12 @@ Future<void> fillList() async {
 Future<void> fillStream() async {
   final querySnapshot =
       await FirebaseFirestore.instance.collection('sacStream').get();
+
+  masterStreamList.clear();
+  streamBody.clear();
+  streamTitle.clear();
+  streamTimeStamp.clear();
+  streamDate.clear();
 
   for (var doc in querySnapshot.docs) {
     streamBody.add(doc["body"]);
