@@ -83,7 +83,7 @@ String timeStamps(int numPeriod) {
   }
 }
 
-double periodProgress(int time, int curPeriod) {
+double periodProgress(int time, int curPeriod, double width) {
   int period1 = 84;
   int periodTwotoFour = 79;
   int period5 = 75;
@@ -91,23 +91,23 @@ double periodProgress(int time, int curPeriod) {
     return 0;
   } else if (curPeriod == 1) {
     int diff = period1 - (594 - time);
-    double divided = ((diff / period1) * 300);
+    double divided = ((diff / period1) * width);
     return divided;
   } else if (curPeriod == 2) {
     int diff = periodTwotoFour - (673 - time);
-    double divided = ((diff / periodTwotoFour) * 300);
+    double divided = ((diff / periodTwotoFour) * width);
     return divided;
   } else if (curPeriod == 3) {
     int diff = periodTwotoFour - (752 - time);
-    double divided = ((diff / periodTwotoFour) * 300);
+    double divided = ((diff / periodTwotoFour) * width);
     return divided;
   } else if (curPeriod == 4) {
     int diff = periodTwotoFour - (831 - time);
-    double divided = ((diff / periodTwotoFour) * 300);
+    double divided = ((diff / periodTwotoFour) * width);
     return divided;
   } else if (curPeriod == 5) {
     int diff = period5 - (906 - time);
-    double divided = ((diff / period5) * 300);
+    double divided = ((diff / period5) * width);
     return divided;
   } else {
     return 300.0;

@@ -180,7 +180,10 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
                 onPressed: () {
                   showAlert(context, currentAnnounce);
                 },
-                child: Text("View More")),
+                child: Text(
+                  "View More",
+                  style: TextStyle(color: maroon, fontFamily: "SFBold"),
+                )),
           )
         ],
       ),

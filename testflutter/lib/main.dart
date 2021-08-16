@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testflutter/dorianchentesting.dart';
@@ -7,7 +8,7 @@ import 'package:testflutter/more/notifications.dart';
 import 'package:testflutter/pages/clubs.dart';
 import 'package:testflutter/pages/home.dart';
 import 'package:testflutter/studentutils/usacmessages.dart';
-import 'package:testflutter/splash.dart';
+// import 'package:testflutter/splash.dart';
 import 'firestore.dart';
 import 'more/resources.dart';
 import 'pages/links.dart';
@@ -22,6 +23,9 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   await init();
   runApp(MyApp());
+  print(FirebaseMessaging.instance.getToken().then((value) {
+    print(value);
+  }));
 }
 
 Future<void> init() async {

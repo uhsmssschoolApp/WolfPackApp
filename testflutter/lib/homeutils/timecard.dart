@@ -116,7 +116,7 @@ class _timeCardState extends State<timeCard> {
                 ),
                 child: Container(
                   height: 10.0,
-                  width: periodProgress(minutesTime, findPeriod(minutesTime)),
+                  width: periodProgress(minutesTime, findPeriod(minutesTime), screenWidth*0.75),
                   decoration: BoxDecoration(
                     color: maroon,
                     borderRadius: const BorderRadius.all(Radius.circular(20)),

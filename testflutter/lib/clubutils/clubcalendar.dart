@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class ClubCalendar extends StatefulWidget {
   const ClubCalendar({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       margin: topMargin,
-      height: 250,
+      height: 450,
       width: screenWidth,
       alignment: Alignment.center,
       child: Container(
@@ -90,7 +91,14 @@ class _ClubCalendarState extends State<ClubCalendar> {
               ],
             ),
             // insert webview widget here UNDER THIS COMMENT
-
+            Container(
+              height: 320,
+              padding: const EdgeInsets.all(6),
+              child: const WebView(
+                initialUrl: clubCalendar,
+                javascriptMode: JavascriptMode.unrestricted,
+              ),
+            ),
             // the outlined button (gets pushed down by the webview)
             Container(
               width: screenWidth * 0.7,
