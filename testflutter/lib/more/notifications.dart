@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:testflutter/constructors/appbar.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:testflutter/userprefs.dart';
 
 class notifications extends StatefulWidget {
   const notifications({Key? key}) : super(key: key);
@@ -11,39 +12,24 @@ class notifications extends StatefulWidget {
   _notificationsState createState() => _notificationsState();
 }
 
-// note to self : broken please fix
-class _notificationsState extends State<notifications> {
-  // List<bool> preferencesState = <bool>[
-  //   true,
-  //   true,
-  //   true,
-  //   true,
-  //   true,
-  //   true,
-  //   true,
-  // ];
-  bool announcementsBool = true;
-  bool auUpdates = true;
-  bool stemUpdates = true;
-  bool usacAnnouncements = true;
-  bool adminUpdates = true;
-  bool weatherUpdates = true;
-  bool appUpdates = true;
+bool announcementsBool = true;
+bool clubAnnouncementsBool = true;
+bool usacAnnouncements = true;
+bool adminUpdates = true;
+bool weatherUpdates = true;
+bool appUpdates = true;
 
-  Future<bool?> getNotifPrefs(String condition) async {
-    final prefs = await SharedPreferences.getInstance();
-    final listPrefs = prefs.getBool(condition);
-    if (listPrefs == null) {
-      print("lmao");
-      return false;
-    }
-    print("yay");
-    return listPrefs;
+class _notificationsState extends State<notifications> {
+  void init() async {
+    announcementsBool = await UserPrefs.getPrefs();
+    // savebool();
+    // loaddata();
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    getNotifPrefs("announcementsBool");
+    init();
     return Scaffold(
       appBar: mainAppBar("Notifications"),
       body: Column(
@@ -73,6 +59,7 @@ class _notificationsState extends State<notifications> {
                   onChanged: (bool val) {
                     setState(() {
                       announcementsBool = val;
+                      UserPrefs.setPref(val);
                     });
                     // print(val);
                   }),
@@ -89,37 +76,17 @@ class _notificationsState extends State<notifications> {
                 style: cardSubTitle,
               ),
               trailing: CupertinoSwitch(
-                  value: auUpdates,
+                  value: clubAnnouncementsBool,
                   activeColor: maroon,
                   onChanged: (bool val) {
                     setState(() {
-                      auUpdates = val;
+                      clubAnnouncementsBool = val;
+                      // savebool();
                     });
                     // print(val);
                   }),
             ),
           ),
-          // Card(
-          //   child: ListTile(
-          //     title: Text(
-          //       "STEM Updates",
-          //       style: cardTitle,
-          //     ),
-          //     subtitle: Text(
-          //       "Latest news for Unionville STEM",
-          //       style: cardSubTitle,
-          //     ),
-          //     trailing: CupertinoSwitch(
-          //         value: stemUpdates,
-          //         activeColor: maroon,
-          //         onChanged: (bool val) {
-          //           setState(() {
-          //             stemUpdates = val;
-          //           });
-          //           // print(val);
-          //         }),
-          //   ),
-          // ),
           Card(
             child: ListTile(
               title: Text(
@@ -141,27 +108,6 @@ class _notificationsState extends State<notifications> {
                   }),
             ),
           ),
-          // Card(
-          //   child: ListTile(
-          //     title: Text(
-          //       "Admin and Office Updates",
-          //       style: cardTitle,
-          //     ),
-          //     subtitle: Text(
-          //       "Messages from school admin and staff",
-          //       style: cardSubTitle,
-          //     ),
-          //     trailing: CupertinoSwitch(
-          //         value: adminUpdates,
-          //         activeColor: maroon,
-          //         onChanged: (bool val) {
-          //           setState(() {
-          //             adminUpdates = val;
-          //           });
-          //           // print(val);
-          //         }),
-          //   ),
-          // ),
           Card(
             child: ListTile(
               title: Text(
@@ -208,4 +154,17 @@ class _notificationsState extends State<notifications> {
       ),
     );
   }
+
+  // @override
+  // Future<void> savebool() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   await prefs.setBool("announcementsBool", announcementsBool);
+  // }
+
+  // Future<void> loaddata() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   await prefs.setBool("announcementsBool", announcementsBool);
+  //   announcementsBool = prefs.getBool("announcementsBool")!;
+  //   setState(() {});
+  // }
 }

@@ -57,6 +57,8 @@ const String yrdsbDark = "https://uhsmssschoolapp.github.io/yrdsbfeed-dark/";
 const String libraryResources =
     "http://www.yrdsb.ca/schools/unionville.hs/library/Pages/default.aspx";
 const String clubCalendar = "https://uhsmssschoolapp.github.io/club-calendar/";
+const String clubCalendarRedirect =
+    "https://calendar.google.com/calendar/u/0?cid=dmJxdmhyZDVqanZvMXU2MTlvbHM1M2FmOW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ";
 
 // edge radius
 BorderRadius homeCorners = const BorderRadius.all(Radius.circular(15));

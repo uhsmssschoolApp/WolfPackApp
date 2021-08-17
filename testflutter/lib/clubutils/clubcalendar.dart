@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/pages/links.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ClubCalendar extends StatefulWidget {
@@ -92,7 +93,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
             ),
             // insert webview widget here UNDER THIS COMMENT
             Container(
-              height: 320,
+              height: 330,
               padding: const EdgeInsets.all(6),
               child: const WebView(
                 initialUrl: clubCalendar,
@@ -103,9 +104,11 @@ class _ClubCalendarState extends State<ClubCalendar> {
             Container(
               width: screenWidth * 0.7,
               height: 30,
-              margin: const EdgeInsets.only(top: 8),
+              margin: const EdgeInsets.only(top: 4),
               child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    launchURL(clubCalendarRedirect);
+                  },
                   child: Text(
                     "View Calendar in Browser",
                     style: TextStyle(
