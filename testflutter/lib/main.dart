@@ -23,9 +23,9 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   await init();
   runApp(MyApp());
-  print(FirebaseMessaging.instance.getToken().then((value) {
-    print(value);
-  }));
+  // print(FirebaseMessaging.instance.getToken().then((value) {
+  //   print(value);
+  // }));
 }
 
 Future<void> init() async {

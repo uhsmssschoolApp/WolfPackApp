@@ -2,8 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testflutter/constructors/appbar.dart';
 import 'package:testflutter/constants/consts.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:testflutter/userprefs.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:testflutter/prefs/announcementpref.dart';
+import 'package:testflutter/prefs/apppref.dart';
+import 'package:testflutter/prefs/clubannouncementpref.dart';
+import 'package:testflutter/prefs/usacannouncementpref.dart';
+import 'package:testflutter/prefs/weatherpref.dart';
 
 class notifications extends StatefulWidget {
   const notifications({Key? key}) : super(key: key);
@@ -15,15 +19,16 @@ class notifications extends StatefulWidget {
 bool announcementsBool = true;
 bool clubAnnouncementsBool = true;
 bool usacAnnouncements = true;
-bool adminUpdates = true;
 bool weatherUpdates = true;
 bool appUpdates = true;
 
 class _notificationsState extends State<notifications> {
   void init() async {
-    announcementsBool = await UserPrefs.getPrefs();
-    // savebool();
-    // loaddata();
+    announcementsBool = await AnnouncementPref.getPrefs();
+    clubAnnouncementsBool = await ClubAnnouncementPref.getPrefs();
+    usacAnnouncements = await UsacAnnouncementPref.getPrefs();
+    appUpdates = await AppPref.getPrefs();
+    weatherUpdates = await WeatherPref.getPrefs();
     setState(() {});
   }
 
@@ -59,7 +64,7 @@ class _notificationsState extends State<notifications> {
                   onChanged: (bool val) {
                     setState(() {
                       announcementsBool = val;
-                      UserPrefs.setPref(val);
+                      AnnouncementPref.setPref(val);
                     });
                     // print(val);
                   }),
@@ -81,6 +86,7 @@ class _notificationsState extends State<notifications> {
                   onChanged: (bool val) {
                     setState(() {
                       clubAnnouncementsBool = val;
+                      ClubAnnouncementPref.setPref(val);
                       // savebool();
                     });
                     // print(val);
@@ -103,6 +109,7 @@ class _notificationsState extends State<notifications> {
                   onChanged: (bool val) {
                     setState(() {
                       usacAnnouncements = val;
+                      UsacAnnouncementPref.setPref(val);
                     });
                     // print(val);
                   }),
@@ -125,6 +132,7 @@ class _notificationsState extends State<notifications> {
                   onChanged: (bool val) {
                     setState(() {
                       weatherUpdates = val;
+                      WeatherPref.setPref(val);
                     });
                     // print(val);
                   }),
@@ -146,6 +154,7 @@ class _notificationsState extends State<notifications> {
                   onChanged: (bool val) {
                     setState(() {
                       appUpdates = val;
+                      AppPref.setPref(val);
                     });
                   }),
             ),
