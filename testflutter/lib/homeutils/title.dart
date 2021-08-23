@@ -14,15 +14,17 @@ Widget titleRow() {
           height: 120,
           child: Center(
             child: Container(
+              alignment: Alignment.center,
               height: 80,
               width: 80,
               decoration: BoxDecoration(
                 color: maroon,
                 borderRadius: homeCorners,
               ),
-              child: const Image(
-                image: AssetImage("assets/wave.png"),
-              ),
+              child: Container(
+                  height: 70,
+                  width: 70,
+                  child: Image.asset("assets/app_logo_outline_2.png")),
             ),
           ),
         ),

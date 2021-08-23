@@ -12,7 +12,6 @@ class AnnouncementPref {
       prefs.setBool("announcementsPref", true);
     }
     bool ans = prefs.getBool("announcementsPref")!;
-    
     return ans;
   }
 }

@@ -102,8 +102,8 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                 alignment: Alignment.topLeft,
                 child: Text(
                   curClubAnnounce,
-                  // "hi\nhi\nhi\nhi\nhi\nhi\nhi\nhi\n",
                   maxLines: 7,
+                  style: const TextStyle(fontFamily: "SF"),
                 ),
               ),
             ),

@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/constants/icons.dart';
-import 'package:testflutter/firestore.dart';
-// import 'package:testflutter/links.dart';
-// import 'package:testflutter/home.dart';
-// import 'package:testflutter/student.dart';
-// import 'package:testflutter/clubs.dart';
-// import 'package:testflutter/settings.dart';
 
 class Nav extends StatefulWidget {
   // const Nav({ Key? key }) : super(key: key);
@@ -27,12 +21,9 @@ class _NavState extends State<Nav> {
   ];
 
   void _ontap(int index) {
-    // if (_selectedInd == 0 && _selectedInd == index) {
-    //   refreshData();
-    // } else {
     _selectedInd = index;
     Navigator.pushNamed(context, _widgetOptions[index]);
-    // }
+
   }
 
   int prev() {

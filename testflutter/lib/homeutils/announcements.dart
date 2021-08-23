@@ -2,11 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
-import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/home.dart';
 import 'package:testflutter/studentutils/alertdialog.dart';
 
-import '../dorianchentesting.dart';
 import '../firestore.dart';
 
 bool leftDisable = false;
@@ -21,18 +19,21 @@ class AnnouncementsCard extends StatefulWidget {
 
 class _AnnouncementsCardState extends State<AnnouncementsCard> {
   void getDate() {
-    // String date = (DateFormat('EEEE MMMM d').format(now));
     setState(() {
-      announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
-      currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
-      // print(dateIndex);
+      if (displayAnnouncementList.isNotEmpty && displayDateList.isNotEmpty) {
+        announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
+        currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
+        currentAnnounce = currentAnnounce.replaceAll('|n', '\n');
+      } else {
+        announcementDate = "loading...";
+        currentAnnounce = "";
+      }
     });
   }
 
   @override
   void initState() {
-    announcementDate = DateTime.now().toString();
-    // curTime = DateFormat.jm().format(now);
+    announcementDate = "loading...";
     Timer.periodic(const Duration(seconds: 1), (timer) {
       getDate();
     });
@@ -170,7 +171,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
             child: Text(
               currentAnnounce,
               maxLines: 5,
-              style: TextStyle(fontFamily: "SF"),
+              style: const TextStyle(fontFamily: "SF"),
             ),
           ),
           Container(

@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testflutter/dorianchentesting.dart';
 import 'package:testflutter/loading.dart';
 import 'package:testflutter/more/feedback.dart';
@@ -33,6 +34,17 @@ Future<void> init() async {
   await Firebase.initializeApp();
   await fillList();
   await fillStream();
+}
+
+// check launch 
+Future<bool> checkInit() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  if (prefs.getBool("startupInit") == null) {
+    prefs.setBool("startupInit", true);
+    return true;
+  } else {
+    return false;
+  }
 }
 
 class MyApp extends StatelessWidget {
