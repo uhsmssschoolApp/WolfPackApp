@@ -10,7 +10,7 @@ Widget titleRow() {
       Expanded(
         flex: 1,
         child: Container(
-          margin: homeMargin,
+          margin: const EdgeInsets.only(top: 16),
           height: 120,
           child: Center(
             child: Container(
@@ -32,7 +32,7 @@ Widget titleRow() {
       Expanded(
         flex: 2,
         child: Container(
-          margin: const EdgeInsets.only(left: 6.0, top: 16.0),
+          margin: const EdgeInsets.only(top: 16.0),
           height: 120,
           child: Column(
             children: [

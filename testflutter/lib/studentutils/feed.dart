@@ -18,12 +18,12 @@ class _feedState extends State<feed> {
   Completer<WebViewController> completer = Completer<WebViewController>();
   @override
   Widget build(BuildContext context) {
-    String darkURL() {
-      if (MediaQuery.of(context).platformBrightness == Brightness.dark) {
-        return yrdsbDark;
-      }
-      return twitterURL;
-    }
+    // String darkURL() {
+    //   if (MediaQuery.of(context).platformBrightness == Brightness.dark) {
+    //     return yrdsbDark;
+    //   }
+    //   return twitterURL;
+    // }
 
     return Column(
       children: [
@@ -38,21 +38,15 @@ class _feedState extends State<feed> {
                 child: OutlinedButton(
                     onPressed: () {
                       setState(() {
-                        print(MediaQuery.of(context).platformBrightness);
-                        if (MediaQuery.of(context).platformBrightness ==
-                            Brightness.dark) {
-                          completer.future.then(
-                              (controller) => controller.loadUrl(yrdsbDark));
-                        }
                         completer.future.then(
                             (controller) => controller.loadUrl(twitterURL));
                       });
                     },
-                    child: const Text(
+                    child: Text(
                       "@YRDSB",
                       style: TextStyle(
                         fontFamily: "SFBold",
-                        color: Colors.indigo,
+                        color: maroon,
                       ),
                     )),
                 margin: const EdgeInsets.only(left: 8),
@@ -67,11 +61,11 @@ class _feedState extends State<feed> {
                           .then((controller) => controller.loadUrl(uhsURL));
                     });
                   },
-                  child: const Text(
+                  child:  Text(
                     "@UHSUpdates",
                     style: TextStyle(
                       fontFamily: "SFBold",
-                      color: Colors.indigo,
+                      color: maroon,
                     ),
                   ),
                 ),
@@ -83,7 +77,7 @@ class _feedState extends State<feed> {
         Expanded(
           flex: 1,
           child: WebView(
-            initialUrl: darkURL(),
+            initialUrl: twitterURL,
             onWebViewCreated: (WebViewController controller) {
               try {
                 completer.complete(controller);

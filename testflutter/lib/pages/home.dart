@@ -100,7 +100,7 @@ class _HomeState extends State<home> {
   @override
   void initState() {
     initDates(now);
-    curDate = now.toString();
+    curDate = DateFormat('EEEE MMMM d').format(now);
     minutesTime = findTime(now);
     Timer.periodic(const Duration(seconds: 1), (timer) {
       getDate();

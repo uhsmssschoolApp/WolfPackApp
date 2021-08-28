@@ -81,7 +81,7 @@ class _timeCardState extends State<timeCard> {
               Expanded(
                 flex: 1,
                 child: Container(
-                  margin: hometileMargin,
+                  margin: EdgeInsets.only(left: screenWidth * 0.075, top: 8),
                   alignment: Alignment.topLeft,
                   child: const Text(
                     "Current Rotation",
@@ -95,7 +95,7 @@ class _timeCardState extends State<timeCard> {
               Expanded(
                 flex: 1,
                 child: Container(
-                  margin: hometileMargin,
+                  margin: EdgeInsets.only(left: screenWidth * 0.075, top: 8),
                   alignment: Alignment.topLeft,
                   child: Text(
                     periodNumber(findPeriod(minutesTime)),
@@ -116,7 +116,8 @@ class _timeCardState extends State<timeCard> {
                 ),
                 child: Container(
                   height: 10.0,
-                  width: periodProgress(minutesTime, findPeriod(minutesTime), screenWidth*0.75),
+                  width: periodProgress(
+                      minutesTime, findPeriod(minutesTime), screenWidth * 0.75),
                   decoration: BoxDecoration(
                     color: maroon,
                     borderRadius: const BorderRadius.all(Radius.circular(20)),
@@ -126,7 +127,7 @@ class _timeCardState extends State<timeCard> {
               Expanded(
                 flex: 1,
                 child: Container(
-                  margin: hometileMargin,
+                  margin: EdgeInsets.only(left: screenWidth * 0.075, top: 8),
                   alignment: Alignment.topLeft,
                   child: Text(
                     timeStamps(findPeriod(minutesTime)),

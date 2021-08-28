@@ -31,6 +31,8 @@ class _usacFeedState extends State<usacFeed> {
               return const Center(
                   child: Text("There was a problem loading the stream :("));
             }
+            String bodyText =
+                masterStreamList[index].body.replaceAll("|n", "\n");
             return Container(
               decoration: BoxDecoration(
                   border: Border.all(color: Theme.of(context).dividerColor)),
@@ -44,7 +46,8 @@ class _usacFeedState extends State<usacFeed> {
                       alignment: Alignment.topLeft,
                       child: Text(
                         masterStreamList[index].title,
-                        style: TextStyle(fontSize: 18, fontFamily: "SFBold"),
+                        style:
+                            const TextStyle(fontSize: 18, fontFamily: "SFBold"),
                       ),
                     ),
                   ),
@@ -52,18 +55,20 @@ class _usacFeedState extends State<usacFeed> {
                     flex: 1,
                     child: Container(
                       margin: const EdgeInsets.only(top: 4),
-                      alignment: Alignment.topLeft,
-                      child: Text(masterStreamList[index].date),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        masterStreamList[index].date,
+                        style: const TextStyle(fontFamily: "SF", fontSize: 12),
+                      ),
                     ),
                   ),
                   Expanded(
                     flex: 4,
                     child: Container(
-                      margin: const EdgeInsets.only(top: 8),
+                      margin: const EdgeInsets.only(top: 6),
                       alignment: Alignment.topLeft,
                       child: Text(
-                        masterStreamList[index].body,
-                        // "hi\nhi\nhi\nhi\nhi",
+                        bodyText,
                         maxLines: 3,
                         style: const TextStyle(fontFamily: "SF"),
                       ),
@@ -75,7 +80,7 @@ class _usacFeedState extends State<usacFeed> {
                         alignment: Alignment.bottomRight,
                         child: TextButton(
                             onPressed: () {
-                              showAlert(context, masterStreamList[index].body);
+                              showAlert(context, bodyText);
                             },
                             child: Text(
                               "View More",
@@ -83,10 +88,6 @@ class _usacFeedState extends State<usacFeed> {
                                   color: maroon, fontFamily: "SFBold"),
                             )),
                       ))
-                  // Container(
-                  //   alignment: Alignment.bottomRight,
-                  //   child: TextButton(onPressed: () {}, child: Text("hi")),
-                  // )
                 ],
               ),
             );

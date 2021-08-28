@@ -22,6 +22,8 @@ import 'dorianchentesting.dart';
 //firebase
 import 'package:firebase_core/firebase_core.dart';
 
+bool hasLaunchedOnce = false;
+
 void main() async {
   await init();
   runApp(MyApp());
@@ -35,25 +37,30 @@ Future<void> init() async {
   await Firebase.initializeApp();
   await fillList();
   await fillStream();
+  await checkInit();
 }
 
 // check launch
 Future<bool> checkInit() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   if (prefs.getBool("startupInit") == null) {
+    print("not init yet");
     prefs.setBool("startupInit", true);
     return true;
   } else {
+    print("init done");
+    hasLaunchedOnce = true;
     return false;
   }
 }
 
-bool test = false;
-Widget testing() {
-  if (!test) {
-    return IntroPage();
-  } else {
+// bool test = false;
+Widget initHome() {
+  print(hasLaunchedOnce);
+  if (hasLaunchedOnce) {
     return home();
+  } else {
+    return IntroPage();
   }
 }
 
@@ -69,7 +76,7 @@ class MyApp extends StatelessWidget {
           // do this later
           theme: MyThemes.lightTheme,
           darkTheme: MyThemes.darkTheme,
-          home: testing(),
+          home: initHome(),
           debugShowCheckedModeBanner: false,
           routes: {
             "/home": (context) => home(),
