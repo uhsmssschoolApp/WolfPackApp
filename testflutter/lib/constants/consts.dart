@@ -19,6 +19,8 @@ TextStyle subTitle = const TextStyle(
 );
 TextStyle cardTitle = const TextStyle(fontFamily: "SF", fontSize: 16);
 TextStyle cardSubTitle = const TextStyle(fontFamily: "SF", fontSize: 12);
+TextStyle pageOneIntro =
+    const TextStyle(fontFamily: "SFBold", fontSize: 26, color: Colors.black);
 
 // icons
 Icon arrowRight = const Icon(LinksIcon.keyboard_arrow_right);

@@ -23,12 +23,15 @@ class _NavState extends State<Nav> {
   void _ontap(int index) {
     _selectedInd = index;
     Navigator.pushNamed(context, _widgetOptions[index]);
-
   }
 
   int prev() {
     if (ModalRoute.of(context) != null) {
       RouteSettings? rs = ModalRoute.of(context)!.settings;
+      if (rs.name == null) {
+        // print("caught");
+        return 0;
+      }
       for (int i = 0; i < 5; i++) {
         if (rs.name!.contains(_widgetOptions[i])) {
           return i;

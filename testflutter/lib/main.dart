@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testflutter/dorianchentesting.dart';
+import 'package:testflutter/intro/intro.dart';
 import 'package:testflutter/loading.dart';
 import 'package:testflutter/more/feedback.dart';
 import 'package:testflutter/more/notifications.dart';
@@ -36,7 +37,7 @@ Future<void> init() async {
   await fillStream();
 }
 
-// check launch 
+// check launch
 Future<bool> checkInit() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   if (prefs.getBool("startupInit") == null) {
@@ -44,6 +45,15 @@ Future<bool> checkInit() async {
     return true;
   } else {
     return false;
+  }
+}
+
+bool test = false;
+Widget testing() {
+  if (!test) {
+    return IntroPage();
+  } else {
+    return home();
   }
 }
 
@@ -59,7 +69,7 @@ class MyApp extends StatelessWidget {
           // do this later
           theme: MyThemes.lightTheme,
           darkTheme: MyThemes.darkTheme,
-          home: home(),
+          home: testing(),
           debugShowCheckedModeBanner: false,
           routes: {
             "/home": (context) => home(),
@@ -73,6 +83,7 @@ class MyApp extends StatelessWidget {
             "/testingpage": (context) => dorianTesting(),
             "/feedback": (context) => feedBack(),
             "/loading": (context) => loadingScreen(),
+            "/intro": (context) => IntroPage(),
           },
         );
       });

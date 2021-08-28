@@ -43,6 +43,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_switch: ^0.3.2
   introduction_screen: ^2.1.0
+  animated_text_kit: ^4.2.1
 
   # utility 
   url_launcher: ^6.0.0
