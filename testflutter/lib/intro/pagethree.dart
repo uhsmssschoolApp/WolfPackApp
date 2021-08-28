@@ -5,19 +5,18 @@ class PageThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+          child: Column(
         children: [
           Container(
-            height: 600,
-            color: Colors.black,
+            margin: const EdgeInsets.only(top: 60),
+            alignment: Alignment.center,
+            child: Image.asset("assets/instructions.png"),
           ),
-          Container(
-            height: 700,
-            color: Colors.blueGrey,
-          )
         ],
-      ),
+      )),
     );
   }
 }

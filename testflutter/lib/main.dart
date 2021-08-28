@@ -43,12 +43,13 @@ Future<void> init() async {
 // check launch
 Future<bool> checkInit() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
+  // prefs.clear();
   if (prefs.getBool("startupInit") == null) {
-    print("not init yet");
+    // print("not init yet");
     prefs.setBool("startupInit", true);
     return true;
   } else {
-    print("init done");
+    // print("init done");
     hasLaunchedOnce = true;
     return false;
   }
@@ -56,7 +57,7 @@ Future<bool> checkInit() async {
 
 // bool test = false;
 Widget initHome() {
-  print(hasLaunchedOnce);
+  // print(hasLaunchedOnce);
   if (hasLaunchedOnce) {
     return home();
   } else {

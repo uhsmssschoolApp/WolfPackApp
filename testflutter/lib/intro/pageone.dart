@@ -36,9 +36,11 @@ Widget pageOne() {
             alignment: Alignment.bottomCenter,
             child: AnimatedTextKit(repeatForever: true, animatedTexts: [
               FadeAnimatedText("Swipe to get started",
-                  textStyle: const TextStyle(fontFamily: "SF")),
+                  textStyle:
+                      const TextStyle(fontFamily: "SF", color: Colors.black)),
               FadeAnimatedText("→",
-                  textStyle: const TextStyle(fontFamily: "SF"))
+                  textStyle:
+                      const TextStyle(fontFamily: "SF", color: Colors.black))
             ])),
         flex: 1,
       )

@@ -16,6 +16,7 @@ class _IntroPageState extends State<IntroPage> {
       initialPage: 0
     );
     return Scaffold(
+      backgroundColor: Colors.white,
       body: PageView(
         controller: pageViewController,
         children: [

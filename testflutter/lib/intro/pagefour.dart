@@ -23,14 +23,20 @@ class PageFour extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
               child: Container(
-                // color: Colors.blue,
-                alignment: Alignment.bottomCenter,
-                child: const Text("A Special Thanks to:", style: TextStyle(fontFamily: "SFBold", fontSize: 20),)
-              ),
+                  // color: Colors.blue,
+                  alignment: Alignment.bottomCenter,
+                  child: const Text(
+                    "A Special Thanks to:",
+                    style: TextStyle(
+                        fontFamily: "SFBold",
+                        fontSize: 20,
+                        color: Colors.black),
+                  )),
               flex: 2),
           Expanded(
             child: Container(

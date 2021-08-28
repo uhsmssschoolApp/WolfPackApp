@@ -16,6 +16,7 @@ class _PageTwoState extends State<PageTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
@@ -23,7 +24,8 @@ class _PageTwoState extends State<PageTwo> {
               alignment: Alignment.bottomCenter,
               child: const Text(
                 "Before we get started...",
-                style: TextStyle(fontFamily: "SFBold", fontSize: 20),
+                style: TextStyle(
+                    fontFamily: "SFBold", fontSize: 20, color: Colors.black),
               ),
             ),
             flex: 1,
@@ -36,7 +38,7 @@ class _PageTwoState extends State<PageTwo> {
                     controlAffinity: ListTileControlAffinity.leading,
                     title: const Text(
                       "I am a student, staff or parent of UHS and I agree to the terms and conditions.",
-                      style: TextStyle(fontFamily: "SF"),
+                      style: TextStyle(fontFamily: "SF", color: Colors.black),
                     ),
                     activeColor: maroon,
                     value: isChecked,
