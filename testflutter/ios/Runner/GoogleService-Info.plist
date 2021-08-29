@@ -3,11 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>716313159337-mh0f2ckpnit0r5h06oorblpm1re5e6qg.apps.googleusercontent.com</string>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
+	<string>716313159337-r41p3qet3cetdabp34cpdi9ro3h7lmip.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.716313159337-mh0f2ckpnit0r5h06oorblpm1re5e6qg</string>
+	<string>com.googleusercontent.apps.716313159337-r41p3qet3cetdabp34cpdi9ro3h7lmip</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDygGBAfkoearC2h9kehw0D3vYyOyLDXn8</string>
 	<key>GCM_SENDER_ID</key>
@@ -21,17 +19,17 @@
 	<key>STORAGE_BUCKET</key>
 	<string>test-e7753.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:716313159337:ios:c02d1e203ad5c8d8cf6bb8</string>
+	<string>1:716313159337:ios:8cee89479e605a6ccf6bb8</string>
 	<key>DATABASE_URL</key>
 	<string>https://test-e7753-default-rtdb.firebaseio.com</string>
 </dict>
