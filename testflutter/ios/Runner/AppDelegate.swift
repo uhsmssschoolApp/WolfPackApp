@@ -1,18 +1,18 @@
 import UIKit
+import Flutter
 import Firebase
-import FirebaseMessaging
-import FirebaseAnalytics
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+  override func application(
     _ application: UIApplication,
-    didFinishLaunchingWithOptions
-      launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    // 1
+    if #available(iOS 10.0, *) {
+      UNUserNotificationCenter.current().delegate = self
+    }
     FirebaseApp.configure()
-    // 2
-    FirebaseConfiguration.shared.setLoggerLevel(.min)
-    return true
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
