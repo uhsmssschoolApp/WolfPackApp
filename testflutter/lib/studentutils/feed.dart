@@ -44,6 +44,7 @@ class _feedState extends State<feed> {
                     },
                     child: Text(
                       "@YRDSB",
+                      textScaleFactor: 1.0,
                       style: TextStyle(
                         fontFamily: "SFBold",
                         color: maroon,
@@ -61,8 +62,9 @@ class _feedState extends State<feed> {
                           .then((controller) => controller.loadUrl(uhsURL));
                     });
                   },
-                  child:  Text(
+                  child: Text(
                     "@UHSUpdates",
+                    textScaleFactor: 1.0,
                     style: TextStyle(
                       fontFamily: "SFBold",
                       color: maroon,

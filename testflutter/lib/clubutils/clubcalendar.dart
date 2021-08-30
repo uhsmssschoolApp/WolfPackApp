@@ -65,6 +65,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
                       // ignore: prefer_const_constructors
                       child: Text(
                         "Club Scheduling",
+                        textScaleFactor: 1.0,
                         // ignore: prefer_const_constructors
                         style: TextStyle(
                           fontFamily: "SFBold",
@@ -80,6 +81,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
                       // ignore: prefer_const_constructors
                       child: Text(
                         "See what's running today!",
+                        textScaleFactor: 1.0,
                         // ignore: prefer_const_constructors
                         style: TextStyle(
                           fontFamily: "SF",
@@ -111,6 +113,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
                   },
                   child: Text(
                     "View Calendar in Browser",
+                    textScaleFactor: 1.0,
                     style: TextStyle(
                       fontFamily: "SFBold",
                       color: maroon,

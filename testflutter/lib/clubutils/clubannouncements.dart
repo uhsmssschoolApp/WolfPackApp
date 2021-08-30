@@ -68,6 +68,7 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                       // ignore: prefer_const_constructors
                       child: Text(
                         "Club Announcements",
+                        textScaleFactor: 1.0,
                         // ignore: prefer_const_constructors
                         style: TextStyle(
                           fontFamily: "SFBold",
@@ -83,6 +84,7 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                       // ignore: prefer_const_constructors
                       child: Text(
                         "Club specific news!",
+                        textScaleFactor: 1.0,
                         // ignore: prefer_const_constructors
                         style: TextStyle(
                           fontFamily: "SF",
@@ -102,6 +104,7 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                 alignment: Alignment.topLeft,
                 child: Text(
                   curClubAnnounce,
+                  textScaleFactor: 1.0,
                   maxLines: 7,
                   style: const TextStyle(fontFamily: "SF"),
                 ),
@@ -118,6 +121,7 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                     },
                     child: Text(
                       "View More",
+                      textScaleFactor: 1.0,
                       style: TextStyle(color: maroon),
                     )),
               ),

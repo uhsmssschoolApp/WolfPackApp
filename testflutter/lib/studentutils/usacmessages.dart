@@ -46,6 +46,7 @@ class _usacFeedState extends State<usacFeed> {
                       alignment: Alignment.topLeft,
                       child: Text(
                         masterStreamList[index].title,
+                        textScaleFactor: 1.0,
                         style:
                             const TextStyle(fontSize: 18, fontFamily: "SFBold"),
                       ),
@@ -58,6 +59,7 @@ class _usacFeedState extends State<usacFeed> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         masterStreamList[index].date,
+                        textScaleFactor: 1.0,
                         style: const TextStyle(fontFamily: "SF", fontSize: 12),
                       ),
                     ),
@@ -69,6 +71,7 @@ class _usacFeedState extends State<usacFeed> {
                       alignment: Alignment.topLeft,
                       child: Text(
                         bodyText,
+                        textScaleFactor: 1.0,
                         maxLines: 3,
                         style: const TextStyle(fontFamily: "SF"),
                       ),
@@ -84,6 +87,7 @@ class _usacFeedState extends State<usacFeed> {
                             },
                             child: Text(
                               "View More",
+                              textScaleFactor: 1.0,
                               style: TextStyle(
                                   color: maroon, fontFamily: "SFBold"),
                             )),

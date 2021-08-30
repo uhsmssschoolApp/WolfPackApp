@@ -1,8 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:testflutter/constants/consts.dart';
-import 'package:testflutter/firestore.dart';
 import 'package:testflutter/homeutils/weather.dart';
 import 'package:testflutter/pages/links.dart';
 
@@ -68,6 +65,7 @@ class _WeatherCardState extends State<WeatherCard> {
                     margin: const EdgeInsets.only(top: 8),
                     child: const Text(
                       "Weather",
+                      textScaleFactor: 1.0,
                       style: TextStyle(
                         fontFamily: "SFBold",
                         fontSize: 18.0,
@@ -81,6 +79,7 @@ class _WeatherCardState extends State<WeatherCard> {
                     width: 200,
                     child: const Text(
                       "The weather for this week.",
+                      textScaleFactor: 1.0,
                       style: TextStyle(
                         fontFamily: "SF",
                         fontSize: 14.0,
@@ -130,6 +129,7 @@ class _WeatherCardState extends State<WeatherCard> {
                 },
                 child: Text(
                   "View More Details",
+                  textScaleFactor: 1.0,
                   style: TextStyle(
                     fontFamily: "SFBold",
                     color: maroon,

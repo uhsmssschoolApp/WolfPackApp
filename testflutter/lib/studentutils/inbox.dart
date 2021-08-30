@@ -40,7 +40,7 @@ class _inboxState extends State<inbox> {
                 Container(
                   padding: const EdgeInsets.only(top: 12, bottom: 2),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     "School Newsletters",
                     style: TextStyle(fontFamily: "SFBold", fontSize: 19),
                   ),
@@ -48,8 +48,9 @@ class _inboxState extends State<inbox> {
                 Container(
                   alignment: Alignment.center,
                   height: 20,
-                  child: Text(
+                  child: const Text(
                     "The latest newsletter from the school.",
+                    textScaleFactor: 1.0,
                     style: TextStyle(fontFamily: "SF"),
                   ),
                 ),
@@ -66,7 +67,7 @@ class _inboxState extends State<inbox> {
                         launchURL(
                             "http://www.yrdsb.ca/schools/unionville.hs/NewsEvents/Pages/Newsletters-2020-2021.aspx");
                       },
-                      child: Text(
+                      child: const Text(
                         "View Latest Newsletter",
                         style: TextStyle(
                             fontFamily: "SFBold",
@@ -98,7 +99,7 @@ class _inboxState extends State<inbox> {
                 Container(
                   padding: const EdgeInsets.only(top: 12, bottom: 2),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     "Parent Bulletins",
                     style: TextStyle(fontFamily: "SFBold", fontSize: 19),
                   ),
@@ -106,8 +107,9 @@ class _inboxState extends State<inbox> {
                 Container(
                   alignment: Alignment.center,
                   height: 20,
-                  child: Text(
+                  child: const Text(
                     "The most recent updates for families!",
+                    textScaleFactor: 1.0,
                     style: TextStyle(fontFamily: "SF"),
                   ),
                 ),
@@ -124,7 +126,7 @@ class _inboxState extends State<inbox> {
                         launchURL(
                             "http://www.yrdsb.ca/schools/unionville.hs/NewsEvents/Pages/Weekly-Bulletins-2020-2021.aspx");
                       },
-                      child: Text(
+                      child: const Text(
                         "View Latest Bulletins",
                         style: TextStyle(
                             fontFamily: "SFBold",
@@ -156,7 +158,7 @@ class _inboxState extends State<inbox> {
                 Container(
                   padding: const EdgeInsets.only(top: 12, bottom: 2),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     "AU and STEM Updates",
                     style: TextStyle(fontFamily: "SFBold", fontSize: 19),
                   ),
@@ -164,8 +166,9 @@ class _inboxState extends State<inbox> {
                 Container(
                   alignment: Alignment.center,
                   height: 20,
-                  child: Text(
+                  child: const Text(
                     "Latest news on the specialized programs of UHS",
+                    textScaleFactor: 1.0,
                     style: TextStyle(fontFamily: "SF"),
                   ),
                 ),
@@ -179,7 +182,7 @@ class _inboxState extends State<inbox> {
                             (states) => maroon),
                       ),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "View Updates",
                         style: TextStyle(
                             fontFamily: "SFBold",
@@ -211,7 +214,7 @@ class _inboxState extends State<inbox> {
                 Container(
                   padding: const EdgeInsets.only(top: 12, bottom: 2),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     "USAC Messages",
                     style: TextStyle(fontFamily: "SFBold", fontSize: 19),
                   ),
@@ -219,8 +222,9 @@ class _inboxState extends State<inbox> {
                 Container(
                   alignment: Alignment.center,
                   height: 20,
-                  child: Text(
+                  child: const Text(
                     "Messages from your student council",
+                    textScaleFactor: 1.0,
                     style: TextStyle(fontFamily: "SF"),
                   ),
                 ),
@@ -236,7 +240,7 @@ class _inboxState extends State<inbox> {
                       onPressed: () {
                         Navigator.pushNamed(context, "/usacmessages");
                       },
-                      child: Text(
+                      child: const Text(
                         "View Message Feed",
                         style: TextStyle(
                             fontFamily: "SFBold",

@@ -65,6 +65,7 @@ class _CalendarCardState extends State<CalendarCard> {
                     margin: const EdgeInsets.only(top: 8),
                     child: const Text(
                       "School Calendar",
+                      textScaleFactor: 1.0,
                       style: TextStyle(
                         fontFamily: "SFBold",
                         fontSize: 18.0,
@@ -78,6 +79,7 @@ class _CalendarCardState extends State<CalendarCard> {
                     width: 200,
                     child: const Text(
                       "Latest events here!",
+                      textScaleFactor: 1.0,
                       style: TextStyle(
                         fontFamily: "SF",
                         fontSize: 14.0,
@@ -104,6 +106,7 @@ class _CalendarCardState extends State<CalendarCard> {
                 },
                 child: Text(
                   "Open in Browser",
+                  textScaleFactor: 1.0,
                   style: TextStyle(
                     fontFamily: "SFBold",
                     color: maroon,
@@ -113,6 +116,5 @@ class _CalendarCardState extends State<CalendarCard> {
         ],
       ),
     );
-    
   }
 }

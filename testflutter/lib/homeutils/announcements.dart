@@ -85,6 +85,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
                     width: 200,
                     child: const Text(
                       "Announcements",
+                      textScaleFactor: 1.0,
                       style: TextStyle(
                         fontFamily: "SFBold",
                         fontSize: 18.0,
@@ -98,6 +99,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
                     width: 200,
                     child: const Text(
                       "Get all your latest updates here!",
+                      textScaleFactor: 1.0,
                       style: TextStyle(
                         fontFamily: "SF",
                         fontSize: 14.0,
@@ -137,6 +139,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
                 margin: const EdgeInsets.only(left: 20, top: 15),
                 child: Text(
                   announcementDate,
+                  textScaleFactor: 1.0,
                   style: const TextStyle(
                     fontFamily: "SFBold",
                   ),
@@ -170,6 +173,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
             alignment: Alignment.topLeft,
             child: Text(
               currentAnnounce,
+              textScaleFactor: 1.0,
               maxLines: 5,
               style: const TextStyle(fontFamily: "SF"),
             ),
@@ -183,6 +187,7 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
                 },
                 child: Text(
                   "View More",
+                  textScaleFactor: 1.0,
                   style: TextStyle(color: maroon, fontFamily: "SFBold"),
                 )),
           )

@@ -50,7 +50,7 @@ class _HomeState extends State<home> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              titleRow(),
+              titleRow(context),
               // timecard
               const timeCard(),
               // container for more text

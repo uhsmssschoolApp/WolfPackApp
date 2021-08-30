@@ -45,6 +45,7 @@ class _ClubResourcesState extends State<ClubResources> {
               ),
               subtitle: const Text(
                 "Startup, FAQ, Teacher Advisors and More!",
+                textScaleFactor: 1.0,
                 style: TextStyle(fontFamily: "SF"),
               ),
             ),
@@ -80,6 +81,7 @@ class _ClubResourcesState extends State<ClubResources> {
               ),
               subtitle: const Text(
                 "List of all active clubs at UHS",
+                textScaleFactor: 1.0,
                 style: TextStyle(fontFamily: "SF"),
               ),
             ),

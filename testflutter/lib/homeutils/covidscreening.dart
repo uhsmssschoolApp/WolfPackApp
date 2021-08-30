@@ -58,11 +58,12 @@ class _covidScreeningState extends State<covidScreening> {
                       alignment: Alignment.bottomLeft,
                       height: 30,
                       width: 200,
-                      child: const Text(
+                      child: Text(
                         "COVID Screening Form",
+                        textScaleFactor: 1.0,
                         style: TextStyle(
                           fontFamily: "SFBold",
-                          fontSize: 18.0,
+                          fontSize: screenWidth * 0.04,
                         ),
                       ),
                     ),
@@ -73,6 +74,7 @@ class _covidScreeningState extends State<covidScreening> {
                       width: 200,
                       child: const Text(
                         "Open the screening form here.",
+                        textScaleFactor: 1.0,
                         style: TextStyle(
                           fontFamily: "SF",
                           fontSize: 14.0,
@@ -93,6 +95,7 @@ class _covidScreeningState extends State<covidScreening> {
                   },
                   child: Text(
                     "Open in Browser",
+                    textScaleFactor: 1.0,
                     style: TextStyle(
                       fontFamily: "SFBold",
                       color: maroon,

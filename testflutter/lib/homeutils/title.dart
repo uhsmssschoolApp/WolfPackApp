@@ -4,7 +4,9 @@ import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/home.dart';
 
-Widget titleRow() {
+Widget titleRow(BuildContext context) {
+  // double screenWidth = MediaQuery.of(context).size.width;
+  // print(screenWidth);
   return Row(
     children: [
       Expanded(
@@ -42,6 +44,7 @@ Widget titleRow() {
                   alignment: Alignment.bottomLeft,
                   child: Text(
                     curDate,
+                    textScaleFactor: 1.0,
                     style: TextStyle(
                         fontSize: 16.0, color: maroon, fontFamily: "SFBold"),
                   ),
@@ -54,9 +57,10 @@ Widget titleRow() {
                   alignment: Alignment.topLeft,
                   child: Text(
                     greetingMessage(minutesTime),
+                    textScaleFactor: 1.0,
                     // ignore: prefer_const_constructors
                     style: TextStyle(
-                      fontSize: 30.0,
+                      fontSize: 30,
                       fontFamily: "SFBold",
                     ),
                   ),

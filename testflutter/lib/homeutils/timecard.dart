@@ -68,6 +68,7 @@ class _timeCardState extends State<timeCard> {
                               const BorderRadius.all(Radius.circular(15))),
                       child: Text(
                         curTime,
+                        textScaleFactor: 1.0,
                         style: const TextStyle(
                           fontSize: 48.0,
                           fontFamily: "SFBold",
@@ -85,6 +86,7 @@ class _timeCardState extends State<timeCard> {
                   alignment: Alignment.topLeft,
                   child: const Text(
                     "Current Rotation",
+                    textScaleFactor: 1.0,
                     style: TextStyle(
                       fontSize: 24.0,
                       fontFamily: "SFBold",
@@ -99,6 +101,7 @@ class _timeCardState extends State<timeCard> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     periodNumber(findPeriod(minutesTime)),
+                    textScaleFactor: 1.0,
                     style: const TextStyle(
                       fontSize: 16.0,
                       fontFamily: "SFBold",
@@ -131,6 +134,7 @@ class _timeCardState extends State<timeCard> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     timeStamps(findPeriod(minutesTime)),
+                    textScaleFactor: 1.0,
                     style: const TextStyle(
                       fontFamily: "SF",
                       fontSize: 14.0,
