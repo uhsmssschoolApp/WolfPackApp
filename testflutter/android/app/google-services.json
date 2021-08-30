@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:716313159337:android:7b9f6a1b06882948cf6bb8",
+        "mobilesdk_app_id": "1:716313159337:android:d2d6509cd061f6b8cf6bb8",
         "android_client_info": {
-          "package_name": "com.example.adminapp"
+          "package_name": "com.doriansarina.uhsapp"
         }
       },
       "oauth_client": [
@@ -44,9 +44,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:716313159337:android:3cef390a572622c9cf6bb8",
+        "mobilesdk_app_id": "1:716313159337:android:7b9f6a1b06882948cf6bb8",
         "android_client_info": {
-          "package_name": "com.example.testflutter"
+          "package_name": "com.example.adminapp"
         }
       },
       "oauth_client": [
