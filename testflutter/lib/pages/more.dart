@@ -14,7 +14,8 @@ class more extends StatelessWidget {
       "/themesettings", // DOESNT EXIST DONT ACCESS 0TH INDEX!!
       "/notifications",
       "/resources",
-      "/feedback"
+      "/feedback",
+      "/faq"
     ];
     return Scaffold(
       bottomNavigationBar: Nav(),
@@ -82,6 +83,9 @@ class more extends StatelessWidget {
           ),
           Card(
             child: ListTile(
+              onTap: () {
+                Navigator.pushNamed(context, morePaths[4]);
+              },
               leading: Icon(Icons.help),
               title: Text(
                 "FAQ",
