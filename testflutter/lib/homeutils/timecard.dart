@@ -6,6 +6,8 @@ import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/home.dart';
 
+String displayCurrentRotation = "Current Rotation";
+
 class timeCard extends StatefulWidget {
   const timeCard({Key? key}) : super(key: key);
 
@@ -84,10 +86,10 @@ class _timeCardState extends State<timeCard> {
                 child: Container(
                   margin: EdgeInsets.only(left: screenWidth * 0.075, top: 8),
                   alignment: Alignment.topLeft,
-                  child: const Text(
-                    "Current Rotation",
+                  child: Text(
+                    displayCurrentRotation,
                     textScaleFactor: 1.0,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24.0,
                       fontFamily: "SFBold",
                     ),

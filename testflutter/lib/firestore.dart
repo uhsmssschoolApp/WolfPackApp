@@ -1,6 +1,7 @@
 //import 'dart:html';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:testflutter/homeutils/timecard.dart';
 
 //morning and club announcements
 List<String> displayAnnouncementList = [];
@@ -8,6 +9,7 @@ List<String> displayDateList = [];
 List<String> displayClubAnnouncementList = [];
 List<int> displayTimeStampList = [];
 List<store> masterList = [];
+String currentRotation = "";
 
 //USAC stream announcements
 List<String> streamBody = [];
@@ -35,6 +37,7 @@ Future<void> fillList() async {
     displayClubAnnouncementList.add(doc["displayClubAnnouncement"]);
     displayDateList.add(doc["displayDate"]);
     displayTimeStampList.add(doc["displayTimeStamp"]);
+    currentRotation = doc["displayCurrentRotation"];
   }
 
   for (int x = 0; x < displayAnnouncementList.length; x++) {
@@ -47,6 +50,7 @@ Future<void> fillList() async {
     masterList.add(newThing);
   }
   masterList.sort();
+  displayCurrentRotation = currentRotation;
 }
 
 //SAC STREAM

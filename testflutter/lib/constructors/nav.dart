@@ -10,8 +10,6 @@ class Nav extends StatefulWidget {
 }
 
 class _NavState extends State<Nav> {
-  // int _selectedInd = 1;
-  // int initInd = 0;
   final List<String> _widgetOptions = <String>[
     "/home",
     "/links",
@@ -22,7 +20,9 @@ class _NavState extends State<Nav> {
 
   void _ontap(int index) {
     // _selectedInd = index;
-    Navigator.pushNamed(context, _widgetOptions[index]);
+    if (index != prev()) {
+      Navigator.pushNamed(context, _widgetOptions[index]);
+    }
     // Navigator.pushReplacementNamed(context, _widgetOptions[index]);
     // Navigator.pushNamedAndRemoveUntil(
     //     context, _widgetOptions[index], (route) => false);

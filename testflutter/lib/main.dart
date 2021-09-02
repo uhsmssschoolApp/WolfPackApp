@@ -60,12 +60,13 @@ Future<bool> checkInit() async {
 Widget initHome() {
   // print(hasLaunchedOnce);
   if (hasLaunchedOnce) {
-    return home();
+    return const home();
   } else {
-    return IntroPage();
+    return const IntroPage();
   }
 }
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(

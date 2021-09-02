@@ -3,7 +3,10 @@ import 'package:testflutter/themes/changetheme.dart';
 
 AppBar mainAppBar(String curPage) {
   return AppBar(
+    automaticallyImplyLeading: false,
+    // ignore: prefer_const_literals_to_create_immutables
     actions: [
+      // ignore: prefer_const_constructors
       themeChanger(),
     ],
     bottom: PreferredSize(
@@ -11,7 +14,7 @@ AppBar mainAppBar(String curPage) {
         color: Colors.black,
         height: 0.4,
       ),
-      preferredSize: Size.fromHeight(4.0),
+      preferredSize: const Size.fromHeight(4.0),
     ),
     title: Text(
       curPage,

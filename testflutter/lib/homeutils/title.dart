@@ -60,7 +60,7 @@ Widget titleRow(BuildContext context) {
                     textScaleFactor: 1.0,
                     // ignore: prefer_const_constructors
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontFamily: "SFBold",
                     ),
                   ),
