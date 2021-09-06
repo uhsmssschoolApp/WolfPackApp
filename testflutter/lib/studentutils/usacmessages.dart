@@ -21,7 +21,7 @@ class _usacFeedState extends State<usacFeed> {
     }
 
     return Scaffold(
-      appBar: mainAppBar("USAC Messages"),
+      appBar: mainAppBar("USAC Messages",true),
       body: RefreshIndicator(
         onRefresh: getData,
         child: ListView.builder(

@@ -19,9 +19,8 @@ class _NavState extends State<Nav> {
   ];
 
   void _ontap(int index) {
-    // _selectedInd = index;
     if (index != prev()) {
-      Navigator.pushNamed(context, _widgetOptions[index]);
+      Navigator.pushReplacementNamed(context, _widgetOptions[index]);
     }
     // Navigator.pushReplacementNamed(context, _widgetOptions[index]);
     // Navigator.pushNamedAndRemoveUntil(

@@ -10,7 +10,7 @@ class feedBack extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-        appBar: mainAppBar("Feedback"),
+        appBar: mainAppBar("Feedback", true),
         body: Column(children: [
           Center(
             child: Container(

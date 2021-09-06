@@ -5,6 +5,8 @@ import 'package:testflutter/constructors/nav.dart';
 import 'package:testflutter/studentutils/feed.dart';
 import 'package:testflutter/studentutils/inbox.dart';
 
+DateTime? _lastQuitTime;
+
 class student extends StatefulWidget {
   const student({Key? key}) : super(key: key);
 
@@ -36,31 +38,43 @@ class _studentState extends State<student> {
   int? i;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Nav(),
-      appBar: mainAppBar("Student"),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              alignment: Alignment.center,
-              child: CupertinoSlidingSegmentedControl<int>(
-                  children: segControl,
-                  groupValue: curDisplay,
-                  onValueChanged: (i) {
-                    setState(() {
-                      curDisplay = i!;
-                    });
-                  }),
+    return WillPopScope(
+      onWillPop: () async {
+        if (_lastQuitTime == null ||
+            DateTime.now().difference(_lastQuitTime!).inSeconds > 4) {
+          _lastQuitTime = DateTime.now();
+          ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Press back Button again to exit')));
+          return false;
+        }
+        return true;
+      },
+      child: Scaffold(
+        bottomNavigationBar: Nav(),
+        appBar: mainAppBar("Student",false),
+        body: Column(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                alignment: Alignment.center,
+                child: CupertinoSlidingSegmentedControl<int>(
+                    children: segControl,
+                    groupValue: curDisplay,
+                    onValueChanged: (i) {
+                      setState(() {
+                        curDisplay = i!;
+                      });
+                    }),
+              ),
             ),
-          ),
-
-          Expanded(
-            flex: 7,
-            child: screenDisplays[curDisplay],
-          ),
-        ],
+    
+            Expanded(
+              flex: 7,
+              child: screenDisplays[curDisplay],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -12,6 +12,7 @@ import 'package:testflutter/homeutils/title.dart';
 import 'package:testflutter/homeutils/weathercard.dart';
 import 'package:testflutter/constructors/nav.dart';
 import 'package:testflutter/homeutils/time.dart';
+import 'package:testflutter/studentutils/alertdialog.dart';
 
 int minutesTime = 0;
 String curDate = "";
@@ -21,6 +22,7 @@ DateTime now = DateTime.now();
 String announcementDate = "";
 String currentAnnounce = "";
 int dateIndex = 4;
+DateTime? _lastQuitTime;
 
 // ignore: camel_case_types
 class home extends StatefulWidget {
@@ -38,48 +40,61 @@ class _HomeState extends State<home> {
     setState(() {});
   }
 
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     globalWidth = screenWidth;
-    return Scaffold(
-      bottomNavigationBar: Nav(),
-      appBar: mainAppBar("Home"),
-      body: RefreshIndicator(
-        onRefresh: getData,
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              titleRow(context),
-              // timecard
-              const timeCard(),
-              // container for more text
-              Container(
-                margin: const EdgeInsets.only(top: 32.0, left: 16.0),
-                width: screenWidth * 0.9,
-                height: 50,
-                child: const Text(
-                  "More",
-                  style: TextStyle(
-                    fontFamily: "SFBold",
-                    fontSize: 20.0,
+    return WillPopScope(
+      onWillPop: () async {
+        if (_lastQuitTime == null ||
+            DateTime.now().difference(_lastQuitTime!).inSeconds > 4) {
+          _lastQuitTime = DateTime.now();
+          ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Press back Button again to exit')));
+          return false;
+        }
+        return true;
+      },
+      child: Scaffold(
+        bottomNavigationBar: Nav(),
+        appBar: mainAppBar("Home",false),
+        body: RefreshIndicator(
+          onRefresh: getData,
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                titleRow(context),
+                // timecard
+                const timeCard(),
+                // container for more text
+                Container(
+                  margin: const EdgeInsets.only(top: 32.0, left: 16.0),
+                  width: screenWidth * 0.9,
+                  height: 50,
+                  child: const Text(
+                    "More",
+                    style: TextStyle(
+                      fontFamily: "SFBold",
+                      fontSize: 20.0,
+                    ),
                   ),
                 ),
-              ),
-              Column(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  // covid screening form widget
-                  const covidScreening(),
-                  // announcements widget
-                  const AnnouncementsCard(),
-                  // weather widget
-                  const WeatherCard(),
-                  // school calendar
-                  const CalendarCard(),
-                ],
-              ),
-            ],
+                Column(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    // covid screening form widget
+                    const covidScreening(),
+                    // announcements widget
+                    const AnnouncementsCard(),
+                    // weather widget
+                    const WeatherCard(),
+                    // school calendar
+                    const CalendarCard(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

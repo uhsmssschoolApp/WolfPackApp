@@ -8,7 +8,7 @@ class FaqPage extends StatelessWidget {
   Widget build(BuildContext context) {
     EdgeInsets textMargin = const EdgeInsets.only(top: 16, left: 16, right: 16);
     return Scaffold(
-      appBar: mainAppBar("FAQ"),
+      appBar: mainAppBar("FAQ", true),
       body: SingleChildScrollView(
         child: Column(
           children: [

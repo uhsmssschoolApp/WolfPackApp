@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/themes/changetheme.dart';
 
-AppBar mainAppBar(String curPage) {
+AppBar mainAppBar(String curPage, bool showBack) {
   return AppBar(
-    automaticallyImplyLeading: false,
+    automaticallyImplyLeading: showBack,
     // ignore: prefer_const_literals_to_create_immutables
     actions: [
       // ignore: prefer_const_constructors
