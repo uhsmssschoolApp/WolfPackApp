@@ -106,10 +106,12 @@ class _HomeState extends State<home> {
   void getDate() {
     now = DateTime.now();
     String date = (DateFormat('EEEE MMMM d').format(now));
-    setState(() {
-      curDate = date;
-      minutesTime = findTime(now);
-    });
+    if (mounted) {
+      setState(() {
+        curDate = date;
+        minutesTime = findTime(now);
+      });
+    }
   }
 
   @override

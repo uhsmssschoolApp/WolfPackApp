@@ -19,16 +19,18 @@ class AnnouncementsCard extends StatefulWidget {
 
 class _AnnouncementsCardState extends State<AnnouncementsCard> {
   void getDate() {
-    setState(() {
-      if (displayAnnouncementList.isNotEmpty && displayDateList.isNotEmpty) {
-        announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
-        currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
-        currentAnnounce = currentAnnounce.replaceAll('|n', '\n');
-      } else {
-        announcementDate = "loading...";
-        currentAnnounce = "";
-      }
-    });
+    if (mounted) {
+      setState(() {
+        if (displayAnnouncementList.isNotEmpty && displayDateList.isNotEmpty) {
+          announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
+          currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
+          currentAnnounce = currentAnnounce.replaceAll('|n', '\n');
+        } else {
+          announcementDate = "loading...";
+          currentAnnounce = "";
+        }
+      });
+    }
   }
 
   @override
