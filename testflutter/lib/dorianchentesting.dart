@@ -16,7 +16,7 @@ class _dorianTestingState extends State<dorianTesting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: mainAppBar("Testing Page"),
+        // appBar: mainAppBar("Testing Page"),
         body: Center(
             child: StreamBuilder<QuerySnapshot>(
           stream: dates,

@@ -36,7 +36,7 @@ class _notificationsState extends State<notifications> {
   Widget build(BuildContext context) {
     init();
     return Scaffold(
-      appBar: mainAppBar("Notifications"),
+      appBar: mainAppBar("Notifications", true),
       body: Column(
         children: [
           Container(

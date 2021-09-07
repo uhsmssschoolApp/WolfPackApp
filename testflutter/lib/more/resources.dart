@@ -7,7 +7,7 @@ class resources extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mainAppBar("Resources"),
+      // appBar: mainAppBar("Resources"),
       body: Container(),
     );
   }

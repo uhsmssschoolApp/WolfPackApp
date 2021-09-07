@@ -18,9 +18,11 @@ class timeCard extends StatefulWidget {
 class _timeCardState extends State<timeCard> {
   void getTime() {
     String time = (DateFormat.jm().format(now));
-    setState(() {
-      curTime = time;
-    });
+    if (mounted) {
+      setState(() {
+        curTime = time;
+      });
+    }
   }
 
   @override
