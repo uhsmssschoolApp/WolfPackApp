@@ -37,7 +37,7 @@ String guidance =
     "http://www.yrdsb.ca/schools/unionville.hs/guidance/Pages/default.aspx";
 String schoolCashOnline = "https://yrdsb.schoolcashonline.com/Home/SignIn";
 String pathwayPlanner =
-    "https://mypathwayplanner.yrdsb.ca/LoginFormIdentityProvider/Login.aspx?ReturnUrl=/LoginFormIdentityProvider/Default.aspx";
+    "https://mypathwayplanner.yrdsb.ca/";
 String ouac = "https://www.ouac.on.ca/";
 String gapps = "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
 String samtheWolf = "https://www.instagram.com/samthewolfofficial/";
