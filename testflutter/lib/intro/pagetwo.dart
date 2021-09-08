@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/intro/secondpart.dart';
 import 'package:testflutter/pages/home.dart';
-import 'package:testflutter/studentutils/alertdialog.dart';
+import 'package:testflutter/constructors/alertdialog.dart';
 
 class PageTwo extends StatefulWidget {
   const PageTwo({Key? key}) : super(key: key);

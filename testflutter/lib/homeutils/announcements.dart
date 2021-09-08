@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/pages/home.dart';
-import 'package:testflutter/studentutils/alertdialog.dart';
+import 'package:testflutter/constructors/alertdialog.dart';
+import 'package:testflutter/pages/links.dart';
 
 import '../firestore.dart';
 
@@ -44,6 +46,56 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
 
   @override
   Widget build(BuildContext context) {
+    void navLeft() {
+      if (dateIndex > 0) {
+        dateIndex--;
+        leftDisable = false;
+        rightDisable = false;
+      } else {
+        leftDisable = true;
+        rightDisable = false;
+      }
+      if (dateIndex == 0) {
+        leftDisable = true;
+        rightDisable = false;
+      }
+      setState(() {
+        if (displayAnnouncementList.isNotEmpty && displayDateList.isNotEmpty) {
+          announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
+          currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
+          currentAnnounce = currentAnnounce.replaceAll('|n', '\n');
+        } else {
+          announcementDate = "loading...";
+          currentAnnounce = "";
+        }
+      });
+    }
+
+    void navRight() {
+      if (dateIndex < 4) {
+        dateIndex++;
+        rightDisable = false;
+        leftDisable = false;
+      } else {
+        rightDisable = true;
+        leftDisable = false;
+      }
+      if (dateIndex == 4) {
+        rightDisable = true;
+        leftDisable = false;
+      }
+      setState(() {
+        if (displayAnnouncementList.isNotEmpty && displayDateList.isNotEmpty) {
+          announcementDate = masterList[(dateIndex - 4).abs()].displayDate;
+          currentAnnounce = masterList[(dateIndex - 4).abs()].announcement;
+          currentAnnounce = currentAnnounce.replaceAll('|n', '\n');
+        } else {
+          announcementDate = "loading...";
+          currentAnnounce = "";
+        }
+      });
+    }
+
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.only(top: 12.0),
@@ -169,17 +221,17 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
             ],
           ),
           Container(
-            height: 135,
-            padding:
-                const EdgeInsets.only(top: 12, left: 20, right: 20, bottom: 12),
-            alignment: Alignment.topLeft,
-            child: Text(
-              currentAnnounce,
-              textScaleFactor: 1.0,
-              maxLines: 5,
-              style: const TextStyle(fontFamily: "SF"),
-            ),
-          ),
+              height: 135,
+              padding: const EdgeInsets.only(
+                  top: 12, left: 20, right: 20, bottom: 12),
+              alignment: Alignment.topLeft,
+              child: Linkify(
+                text: currentAnnounce,
+                textScaleFactor: 1.0,
+                maxLines: 5,
+                onOpen: (link) => launchURL(link.url),
+                style: const TextStyle(fontFamily: "SF"),
+              )),
           Container(
             alignment: Alignment.bottomRight,
             padding: const EdgeInsets.only(right: 12, bottom: 1),
@@ -196,35 +248,5 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
         ],
       ),
     );
-  }
-
-  void navLeft() {
-    if (dateIndex > 0) {
-      dateIndex--;
-      leftDisable = false;
-      rightDisable = false;
-    } else {
-      leftDisable = true;
-      rightDisable = false;
-    }
-    if (dateIndex == 0) {
-      leftDisable = true;
-      rightDisable = false;
-    }
-  }
-
-  void navRight() {
-    if (dateIndex < 4) {
-      dateIndex++;
-      rightDisable = false;
-      leftDisable = false;
-    } else {
-      rightDisable = true;
-      leftDisable = false;
-    }
-    if (dateIndex == 4) {
-      rightDisable = true;
-      leftDisable = false;
-    }
   }
 }

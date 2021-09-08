@@ -51,7 +51,7 @@ class _NavState extends State<Nav> {
   }
 
   int prev() {
-    print(ModalRoute.of(context));
+    // print(ModalRoute.of(context));
     if (ModalRoute.of(context) != null) {
       RouteSettings? rs = ModalRoute.of(context)!.settings;
       if (rs.name == null) {

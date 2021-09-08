@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/constructors/appbar.dart';
 import 'package:testflutter/firestore.dart';
-import 'package:testflutter/studentutils/alertdialog.dart';
+import 'package:testflutter/constructors/alertdialog.dart';
+import 'package:testflutter/pages/links.dart';
 
 class usacFeed extends StatefulWidget {
   const usacFeed({Key? key}) : super(key: key);
@@ -69,10 +71,11 @@ class _usacFeedState extends State<usacFeed> {
                     child: Container(
                       margin: const EdgeInsets.only(top: 6),
                       alignment: Alignment.topLeft,
-                      child: Text(
-                        bodyText,
+                      child: Linkify(
+                        text: bodyText,
                         textScaleFactor: 1.0,
                         maxLines: 3,
+                        onOpen: (link) => launchURL(link.url),
                         style: const TextStyle(fontFamily: "SF"),
                       ),
                     ),

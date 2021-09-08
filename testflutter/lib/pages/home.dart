@@ -12,7 +12,7 @@ import 'package:testflutter/homeutils/title.dart';
 import 'package:testflutter/homeutils/weathercard.dart';
 import 'package:testflutter/constructors/nav.dart';
 import 'package:testflutter/homeutils/time.dart';
-import 'package:testflutter/studentutils/alertdialog.dart';
+import 'package:testflutter/constructors/alertdialog.dart';
 
 int minutesTime = 0;
 String curDate = "";

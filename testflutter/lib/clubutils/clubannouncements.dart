@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/firestore.dart';
-import 'package:testflutter/studentutils/alertdialog.dart';
+import 'package:testflutter/constructors/alertdialog.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 String curClubAnnounce = "";
 
@@ -102,10 +104,11 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                 padding: const EdgeInsets.only(
                     left: 20, right: 20, top: 16, bottom: 12),
                 alignment: Alignment.topLeft,
-                child: Text(
-                  curClubAnnounce,
+                child: Linkify(
+                  text: curClubAnnounce,
                   textScaleFactor: 1.0,
                   maxLines: 7,
+                  onOpen: (link)=>launch(link.url),
                   style: const TextStyle(fontFamily: "SF"),
                 ),
               ),
