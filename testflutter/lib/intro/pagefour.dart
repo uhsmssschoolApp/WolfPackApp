@@ -6,15 +6,13 @@ import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/pages/home.dart';
 
 List<String> specialThanksNames = [
-  "Dorian",
-  "Sarina",
   "Stephen",
   "Mrs. Cheong",
   "Mr. Anadarajan",
   "Mrs. Faulkner",
-  "Members of USAC",
-  "Testers",
-  "Anyone else lmfao"
+  "Mr. Belmonte",
+  "USAC and CS Club",
+  "Beta Testers",
 ];
 
 class PageFour extends StatelessWidget {
@@ -31,13 +29,14 @@ class PageFour extends StatelessWidget {
                   // color: Colors.blue,
                   alignment: Alignment.bottomCenter,
                   child: const Text(
-                    "A Special Thanks to:",
+                    "Thanks for making wolfpackapp possible!",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: "SFBold",
-                        fontSize: 20,
+                        fontSize: 18,
                         color: Colors.black),
                   )),
-              flex: 2),
+              flex: 3),
           Expanded(
             child: Container(
               alignment: Alignment.center,

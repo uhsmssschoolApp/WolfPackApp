@@ -27,6 +27,8 @@ Future<void> changeMode() async {
   await prefs.setBool("currentMode", !isDark);
 }
 
+
+// changes the mode using listeners see PROVIDER LIBRARY AND CHANGELISTENER to read more
 class ThemeProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.system;
   bool get isDarkMode => themeMode == ThemeMode.dark;

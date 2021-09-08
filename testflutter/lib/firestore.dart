@@ -23,6 +23,7 @@ final Stream<QuerySnapshot> dbref =
     FirebaseFirestore.instance.collection('dates').snapshots();
 
 Future<void> fillList() async {
+  // gets the collection named "dates" and returns as a snapshot
   final querySnapshot =
       await FirebaseFirestore.instance.collection('dates').get();
 
@@ -32,6 +33,7 @@ Future<void> fillList() async {
   displayDateList.clear();
   displayTimeStampList.clear();
 
+  // adds the information in accordance with the name of the field in the snapshot
   for (var doc in querySnapshot.docs) {
     displayAnnouncementList.add(doc["displayAnnouncement"]);
     displayClubAnnouncementList.add(doc["displayClubAnnouncement"]);
@@ -40,6 +42,7 @@ Future<void> fillList() async {
     currentRotation = doc["displayCurrentRotation"];
   }
 
+  // stores inside of our object
   for (int x = 0; x < displayAnnouncementList.length; x++) {
     store newThing = store(
         stamp: displayTimeStampList[x],
@@ -123,6 +126,7 @@ class streamStore implements Comparable<streamStore> {
   }
 }
 
+// called to refresh data, see above functions
 Future<void> refreshData() async {
   await fillList();
   await fillStream();
