@@ -42,8 +42,17 @@ class _NavState extends State<Nav> {
         currentSelected = index;
       });
 
-      Navigator.pushNamedAndRemoveUntil(
-          context, _widgetOptions[index], (route) => false);
+Navigator.pushReplacement(
+      context, 
+      PageRouteBuilder(
+        pageBuilder: (context, animation1, animation2) => 
+        _pageOptions[index],
+        transitionDuration: Duration.zero,
+    ),
+);
+
+      // Navigator.pushNamedAndRemoveUntil(
+      //     context, _widgetOptions[index], (route) => false);
     }
   }
 

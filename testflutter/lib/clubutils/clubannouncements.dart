@@ -52,6 +52,7 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                     color: maroon,
                     borderRadius: homeCorners,
                   ),
+                  // ignore: avoid_unnecessary_containers
                   child: Container(
                     child: Image.asset(
                       "assets/open-mailbox-with-raised-flag_1f4ec.png",

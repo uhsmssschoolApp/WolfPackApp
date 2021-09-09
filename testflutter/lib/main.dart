@@ -44,7 +44,7 @@ Future<void> init() async {
 // check launch
 Future<bool> checkInit() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  // prefs.clear();
+  prefs.clear();
   if (prefs.getBool("startupInit") == null) {
     // print("not init yet");
     prefs.setBool("startupInit", true);
