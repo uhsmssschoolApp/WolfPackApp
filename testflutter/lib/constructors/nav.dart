@@ -7,7 +7,6 @@ import 'package:testflutter/pages/links.dart';
 import 'package:testflutter/pages/more.dart';
 import 'package:testflutter/pages/student.dart';
 
-
 class Nav extends StatefulWidget {
   // const Nav({ Key? key }) : super(key: key);
 
@@ -15,7 +14,10 @@ class Nav extends StatefulWidget {
   _NavState createState() => _NavState();
 }
 
+int currentSelected = 0;
+
 class _NavState extends State<Nav> {
+  //stores the different screens
   final List<String> _widgetOptions = <String>[
     "/home",
     "/links",
@@ -33,39 +35,34 @@ class _NavState extends State<Nav> {
   ];
 
   void _ontap(int index) {
-    if (index != prev()) {
+    //goto the next screen
+
+    if (index != currentSelected) {
+      setState(() {
+        currentSelected = index;
+      });
+
       Navigator.pushNamedAndRemoveUntil(
-        context, _widgetOptions[index], (route) => false);
-        //  Navigator.pushReplacement(
-//       context, 
-//       PageRouteBuilder(
-//         pageBuilder: (context, animation1, animation2) => 
-//         _pageOptions[index],
-//         transitionDuration: Duration.zero,
-//     ),
-// );
+          context, _widgetOptions[index], (route) => false);
     }
-    // Navigator.pushReplacementNamed(context, _widgetOptions[index]);
-    // Navigator.pushNamedAndRemoveUntil(
-    //     context, _widgetOptions[index], (route) => false);
   }
 
-  int prev() {
-    // print(ModalRoute.of(context));
-    if (ModalRoute.of(context) != null) {
-      RouteSettings? rs = ModalRoute.of(context)!.settings;
-      if (rs.name == null) {
-        // print("caught");
-        return 0;
-      }
-      for (int i = 0; i < 5; i++) {
-        if (rs.name!.contains(_widgetOptions[i])) {
-          return i;
-        }
-      }
-    }
-    return 0;
-  }
+  // int prev() {
+  //   // print(ModalRoute.of(context));
+  //   if (ModalRoute.of(context) != null) {
+  //     RouteSettings? rs = ModalRoute.of(context)!.settings;
+  //     if (rs.name == null) {
+  //       // print("caught");
+  //       return 0;
+  //     }
+  //     for (int i = 0; i < 5; i++) {
+  //       if (rs.name!.contains(_widgetOptions[i])) {
+  //         return i;
+  //       }
+  //     }
+  //   }
+  //   return 0;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +91,7 @@ class _NavState extends State<Nav> {
         ),
       ],
       onTap: _ontap,
-      currentIndex: prev(),
+      currentIndex: currentSelected,
       selectedItemColor: maroon,
     );
   }
