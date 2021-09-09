@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/pages/links.dart';
 
 // ignore: camel_case_types
 class covidScreening extends StatefulWidget {
@@ -91,7 +92,7 @@ class _covidScreeningState extends State<covidScreening> {
               margin: const EdgeInsets.only(top: 24),
               child: OutlinedButton(
                   onPressed: () {
-                    // launch covid screening here
+                    launchURL(screening);
                   },
                   child: Text(
                     "Open in Browser",

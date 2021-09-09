@@ -36,8 +36,7 @@ String ta = "https://ta.yrdsb.ca/yrdsb/";
 String guidance =
     "http://www.yrdsb.ca/schools/unionville.hs/guidance/Pages/default.aspx";
 String schoolCashOnline = "https://yrdsb.schoolcashonline.com/Home/SignIn";
-String pathwayPlanner =
-    "https://mypathwayplanner.yrdsb.ca/";
+String pathwayPlanner = "https://mypathwayplanner.yrdsb.ca/";
 String ouac = "https://www.ouac.on.ca/";
 String gapps = "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
 String samtheWolf = "https://www.instagram.com/samthewolfofficial/";
@@ -61,6 +60,7 @@ const String libraryResources =
 const String clubCalendar = "https://uhsmssschoolapp.github.io/club-calendar/";
 const String clubCalendarRedirect =
     "https://calendar.google.com/calendar/u/0?cid=dmJxdmhyZDVqanZvMXU2MTlvbHM1M2FmOW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ";
-
+const String screening =
+    "https://docs.google.com/forms/d/e/1FAIpQLSedNWLgRdQKVfNqT4gwYrq0PEJqj2vnOL5GHqfopjwnakC-0g/viewform";
 // edge radius
 BorderRadius homeCorners = const BorderRadius.all(Radius.circular(15));
