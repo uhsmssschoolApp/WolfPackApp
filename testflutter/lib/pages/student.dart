@@ -15,8 +15,8 @@ class student extends StatefulWidget {
 }
 
 List<Widget> screenDisplays = [
-  feed(),
   inbox(),
+  feed(),
 ];
 
 
@@ -24,11 +24,11 @@ class _studentState extends State<student> {
 
   final Map<int, Widget> segControl = const <int, Widget>{
     0: Text(
-      "Twitter",
+      "Inbox",
       style: TextStyle(fontFamily: "SF"),
     ),
     1: Text(
-      "Inbox",
+      "Twitter",
       style: TextStyle(
         fontFamily: "SF",
       ),

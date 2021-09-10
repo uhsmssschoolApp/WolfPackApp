@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:testflutter/constructors/appbar.dart';
+import 'package:testflutter/pages/links.dart';
 
 class FaqPage extends StatelessWidget {
   const FaqPage({Key? key}) : super(key: key);
@@ -23,8 +25,10 @@ class FaqPage extends StatelessWidget {
             Container(
               alignment: Alignment.topLeft,
               margin: textMargin,
-              child: const Text(
-                "This app was coded in Dart using the Flutter development kit. Visit Flutter’s official website to learn more about the framework.",
+              child: Linkify(
+                text:
+                    "This app was coded in Dart using the Flutter development kit. Visit Flutter’s official website to learn more about the framework: https://flutter.dev/",
+                onOpen: (link) => launchURL(link.url),
                 style: TextStyle(fontFamily: "SF"),
               ),
             ),
@@ -57,9 +61,11 @@ class FaqPage extends StatelessWidget {
               alignment: Alignment.topLeft,
               margin: textMargin,
               // ADD CONTACT INFORMATION
-              child: const Text(
-                "Oh no! You’re in the right place. Contact either Sarina or Dorian and we would be happy to help out with any issues and answer any questions. [insert contact]",
-                style: TextStyle(fontFamily: "SF"),
+              child: Linkify(
+                onOpen: (link) => launchURL(link.url),
+                text:
+                    "Oh no! You’re in the right place. Contact either Sarina or Dorian and we would be happy to help out with any issues and answer any questions. 341001170@gapps.yrdsb.ca (Dorian), 348892050@gapps.yrdsb.ca (Sarina)",
+                style: const TextStyle(fontFamily: "SF"),
               ),
             ),
             Container(
@@ -136,7 +142,7 @@ class FaqPage extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.topLeft,
-              margin: const EdgeInsets.all(16),
+              margin: const EdgeInsets.fromLTRB(16, 16, 16, 36),
               child: const Text(
                 "Nope. Everything is free to use!",
                 style: TextStyle(fontFamily: "SF"),
