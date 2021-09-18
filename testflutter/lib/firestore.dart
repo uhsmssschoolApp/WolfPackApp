@@ -10,7 +10,7 @@ List<String> displayClubAnnouncementList = [];
 List<String> displayCurrentRotation = [];
 List<int> displayTimeStampList = [];
 List<store> masterList = [];
-String currentRotation = "";
+// String currentRotation = "";
 
 //USAC stream announcements
 List<String> streamBody = [];
@@ -56,7 +56,7 @@ Future<void> fillList() async {
     masterList.add(newThing);
   }
   masterList.sort();
-  print(masterList.last.rotation);
+  // print(masterList.first.rotation);
 }
 
 //SAC STREAM

@@ -10,7 +10,7 @@ Future<void> showAlert(BuildContext context, String message) async {
           content: Linkify(
             text: message,
             onOpen: (link) => launchURL(link.url),
-            linkStyle: TextStyle(fontFamily: "SF"),
+            linkStyle: const TextStyle(fontFamily: "SF"),
           ),
           actions: [
             TextButton(

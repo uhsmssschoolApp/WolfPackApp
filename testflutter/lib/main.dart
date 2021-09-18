@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testflutter/dorianchentesting.dart';
+import 'package:testflutter/homeutils/viewmore.dart';
 import 'package:testflutter/intro/intro.dart';
 import 'package:testflutter/loading.dart';
 import 'package:testflutter/more/faq.dart';
@@ -97,6 +98,7 @@ class MyApp extends StatelessWidget {
             "/loading": (context) => loadingScreen(),
             "/intro": (context) => IntroPage(),
             "/faq": (context) => FaqPage(),
+            "/viewmore": (context) => ViewMore(),
           },
         );
       });

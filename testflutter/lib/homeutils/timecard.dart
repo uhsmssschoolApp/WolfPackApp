@@ -3,10 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/firestore.dart';
 import 'package:testflutter/homeutils/time.dart';
 import 'package:testflutter/pages/home.dart';
 
-String displayCurrentRotation = "Current Rotation";
+String displayCurrentRotation = masterList.first.rotation;
 
 class timeCard extends StatefulWidget {
   const timeCard({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class _timeCardState extends State<timeCard> {
     if (mounted) {
       setState(() {
         curTime = time;
+        displayCurrentRotation = masterList.first.rotation;
       });
     }
   }

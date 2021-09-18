@@ -37,9 +37,10 @@ class home extends StatefulWidget {
 class _HomeState extends State<home> {
   Future<void> getData() async {
     await fillList();
-    setState(() {});
+    setState(() {
+      // displayCurrentRotation = masterList.first.rotation;
+    });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -50,15 +51,18 @@ class _HomeState extends State<home> {
         if (_lastQuitTime == null ||
             DateTime.now().difference(_lastQuitTime!).inSeconds > 4) {
           _lastQuitTime = DateTime.now();
-          ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Press back Button again to exit')));
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text(
+            'Press back button again to exit',
+            style: TextStyle(fontFamily: "SF"),
+          )));
           return false;
         }
         return true;
       },
       child: Scaffold(
         bottomNavigationBar: Nav(),
-        appBar: mainAppBar("Home",false),
+        appBar: mainAppBar("Home", false),
         body: RefreshIndicator(
           onRefresh: getData,
           child: SingleChildScrollView(

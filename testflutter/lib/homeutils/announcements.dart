@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:testflutter/constants/consts.dart';
+import 'package:testflutter/homeutils/viewmore.dart';
 import 'package:testflutter/pages/home.dart';
 import 'package:testflutter/constructors/alertdialog.dart';
 import 'package:testflutter/pages/links.dart';
@@ -237,7 +238,8 @@ class _AnnouncementsCardState extends State<AnnouncementsCard> {
             padding: const EdgeInsets.only(right: 12, bottom: 1),
             child: OutlinedButton(
                 onPressed: () {
-                  showAlert(context, currentAnnounce);
+                  Navigator.pushNamed(context, "/viewmore");
+                  // showAlert(context, currentAnnounce);
                 },
                 child: Text(
                   "View More",
