@@ -7,6 +7,7 @@ import 'package:testflutter/homeutils/timecard.dart';
 List<String> displayAnnouncementList = [];
 List<String> displayDateList = [];
 List<String> displayClubAnnouncementList = [];
+List<String> displayCurrentRotation = [];
 List<int> displayTimeStampList = [];
 List<store> masterList = [];
 String currentRotation = "";
@@ -32,6 +33,7 @@ Future<void> fillList() async {
   displayClubAnnouncementList.clear();
   displayDateList.clear();
   displayTimeStampList.clear();
+  displayCurrentRotation.clear();
 
   // adds the information in accordance with the name of the field in the snapshot
   for (var doc in querySnapshot.docs) {
@@ -39,21 +41,22 @@ Future<void> fillList() async {
     displayClubAnnouncementList.add(doc["displayClubAnnouncement"]);
     displayDateList.add(doc["displayDate"]);
     displayTimeStampList.add(doc["displayTimeStamp"]);
-    currentRotation = doc["displayCurrentRotation"];
+    displayCurrentRotation.add(doc["displayCurrentRotation"]);
   }
 
   // stores inside of our object
   for (int x = 0; x < displayAnnouncementList.length; x++) {
     store newThing = store(
-        stamp: displayTimeStampList[x],
-        displayDate: displayDateList[x],
-        announcement: displayAnnouncementList[x],
-        clubAnnouncement: displayClubAnnouncementList[x]);
-
+      stamp: displayTimeStampList[x],
+      displayDate: displayDateList[x],
+      announcement: displayAnnouncementList[x],
+      clubAnnouncement: displayClubAnnouncementList[x],
+      rotation: displayCurrentRotation[x],
+    );
     masterList.add(newThing);
   }
   masterList.sort();
-  displayCurrentRotation = currentRotation;
+  print(masterList.last.rotation);
 }
 
 //SAC STREAM
@@ -91,6 +94,7 @@ class store implements Comparable<store> {
   late int stamp;
   late String displayDate;
   late String announcement;
+  late String rotation;
   late String clubAnnouncement;
 
   store({
@@ -98,6 +102,7 @@ class store implements Comparable<store> {
     this.displayDate = "displayDate",
     this.announcement = "announcement",
     this.clubAnnouncement = "clubAnnouncement",
+    this.rotation = "rotation",
   });
 
   @override
