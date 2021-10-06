@@ -64,7 +64,7 @@ class FaqPage extends StatelessWidget {
               child: Linkify(
                 onOpen: (link) => launchURL(link.url),
                 text:
-                    "Oh no! You’re in the right place. Contact either Sarina or Dorian and we would be happy to help out with any issues and answer any questions. 341001170@gapps.yrdsb.ca (Dorian), 348892050@gapps.yrdsb.ca (Sarina)",
+                    "Oh no! You’re in the right place. Contact either Sarina or Dorian and we would be happy to help out with any issues and answer any questions.  348892050@gapps.yrdsb.ca (Sarina), 341001170@gapps.yrdsb.ca (Dorian)",
                 style: const TextStyle(fontFamily: "SF"),
               ),
             ),

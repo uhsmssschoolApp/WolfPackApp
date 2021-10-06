@@ -29,9 +29,9 @@ bool hasLaunchedOnce = false;
 void main() async {
   await init();
   runApp(MyApp());
-  // print(FirebaseMessaging.instance.getToken().then((value) {
-  //   print(value);
-  // }));
+  print(FirebaseMessaging.instance.getToken().then((value) {
+    print(value);
+  }));
 }
 
 Future<void> init() async {
