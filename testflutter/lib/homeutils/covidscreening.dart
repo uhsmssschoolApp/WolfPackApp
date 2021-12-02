@@ -60,7 +60,7 @@ class _covidScreeningState extends State<covidScreening> {
                       height: 30,
                       width: 200,
                       child: Text(
-                        "COVID Screening Form",
+                        "COVID Screening",
                         textScaleFactor: 1.0,
                         style: TextStyle(
                           fontFamily: "SFBold",
@@ -74,7 +74,7 @@ class _covidScreeningState extends State<covidScreening> {
                       height: 15,
                       width: 200,
                       child: const Text(
-                        "Open the screening form here.",
+                        "Open the screening tools here.",
                         textScaleFactor: 1.0,
                         style: TextStyle(
                           fontFamily: "SF",

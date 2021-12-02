@@ -9,9 +9,11 @@ findTime --> findPeriod --> period number --> display
 
 0: before school 
 1: p1
-2: lunch
-3: p2
-4: after school
+2: p2
+3: lunch
+4: p3
+5: p4
+6: afterschool
 
 */
 
@@ -44,16 +46,20 @@ String greetingMessage(int time) {
 int findPeriod(int time) {
   //edit this to change the intervals
   // current period
-  if (time < 510) {
+  if (time <= 510) {
     return 0;
-  } else if (time <= 670) {
+  } else if (time <= 595) {
     return 1;
-  } else if (time <= 720) {
+  } else if (time <= 670) {
     return 2;
-  } else if (time <= 875) {
+  } else if (time <= 720) {
     return 3;
-  } else {
+  } else if (time <= 800) {
     return 4;
+  } else if (time <= 875) {
+    return 5;
+  } else {
+    return 6;
   }
 }
 
@@ -64,9 +70,13 @@ String periodNumber(int numPeriod) {
   } else if (numPeriod == 1) {
     return "Period 1";
   } else if (numPeriod == 2) {
-    return "Lunch";
+    return "Period 3";
   } else if (numPeriod == 3) {
+    return "Lunch";
+  } else if (numPeriod == 4) {
     return "Period 2";
+  } else if (numPeriod == 5) {
+    return "Period 4";
   } else {
     return "After School";
   }
@@ -76,11 +86,15 @@ String timeStamps(int numPeriod) {
   if (numPeriod == 0) {
     return "12:00AM - 8:30AM";
   } else if (numPeriod == 1) {
-    return "8:30AM - 11:10AM";
+    return "8:30AM - 9:55AM";
   } else if (numPeriod == 2) {
-    return "11:10AM - 12:00PM";
+    return "9:55AM - 11:10AM";
   } else if (numPeriod == 3) {
-    return "12:00PM - 2:35PM";
+    return "11:10AM - 12:00PM";
+  } else if (numPeriod == 4) {
+    return "12:00PM - 1:20PM";
+  } else if (numPeriod == 5) {
+    return "1:20PM - 2:35PM";
   } else {
     return "2:35PM - 12:00AM";
   }
@@ -88,19 +102,30 @@ String timeStamps(int numPeriod) {
 
 double periodProgress(int time, int curPeriod, double width) {
   //function to fill up the bar
-  int period = 155;
+  int period_1 = 85;
+  int period = 75;
+  int period_4 = 80;
   int lunch = 50;
   if (curPeriod == 0) {
     return 0;
   } else if (curPeriod == 1) {
-    int diff = period - (670 - time);
+    int diff = period_1 - (595 - time);
     double divided = ((diff / period) * width);
     return divided;
   } else if (curPeriod == 2) {
+    int diff = period - (670 - time);
+    double divided = ((diff / period) * width);
+    return divided;
+  } else if (curPeriod == 3) {
     int diff = lunch - (720 - time);
     double divided = ((diff / lunch) * width);
     return divided;
-  } else if (curPeriod == 3) {
+  } else if (curPeriod == 4) {
+    int diff = period_4 - (800 - time);
+    print(diff);
+    double divided = ((diff / period) * width);
+    return divided;
+  } else if (curPeriod == 5) {
     int diff = period - (875 - time);
     double divided = ((diff / period) * width);
     return divided;

@@ -8,11 +8,10 @@ import 'package:testflutter/pages/home.dart';
 List<String> specialThanksNames = [
   "Stephen",
   "Mrs. Cheong",
-  "Mr. Anadarajan",
+  "Mr. Anandarajan",
   "Mrs. Faulkner",
   "Mr. Belmonte",
-  "USAC and CS Club",
-  "Beta Testers",
+  "USAC",
 ];
 
 class PageFour extends StatelessWidget {
