@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testflutter/constructors/appbar.dart';
 import 'package:testflutter/constructors/nav.dart';
 import 'package:testflutter/studentutils/feed.dart';
 import 'package:testflutter/studentutils/inbox.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 DateTime? _lastQuitTime;
 
@@ -77,5 +80,10 @@ class _studentState extends State<student> {
         ),
       ),
     );
+  }
+  @override
+  void initState() {
+    super.initState();
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
   }
 }

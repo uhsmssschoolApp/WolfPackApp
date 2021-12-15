@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:testflutter/constructors/appbar.dart';
@@ -11,6 +12,7 @@ import 'package:testflutter/homeutils/title.dart';
 import 'package:testflutter/homeutils/weathercard.dart';
 import 'package:testflutter/constructors/nav.dart';
 import 'package:testflutter/homeutils/time.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 int minutesTime = 0;
 String curDate = "";
@@ -33,6 +35,8 @@ class home extends StatefulWidget {
 // bool test = true;
 
 class _HomeState extends State<home> {
+
+  
   Future<void> getData() async {
     await fillList();
     setState(() {
@@ -118,6 +122,7 @@ class _HomeState extends State<home> {
 
   @override
   void initState() {
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
     initDates(now);
     curDate = DateFormat('EEEE MMMM d').format(now);
     minutesTime = findTime(now);
