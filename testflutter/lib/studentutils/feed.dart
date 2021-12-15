@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
@@ -98,5 +99,10 @@ class _feedState extends State<feed> {
         ),
       ],
     );
+  }
+  @override
+  void initState() {
+    super.initState();
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
   }
 }

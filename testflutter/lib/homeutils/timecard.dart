@@ -60,7 +60,7 @@ class _timeCardState extends State<timeCard> {
           child: Column(
             children: [
               Expanded(
-                flex: 3,
+                flex: 2,
                 child: Container(
                   margin: topMargin,
                   child: Center(
@@ -85,21 +85,21 @@ class _timeCardState extends State<timeCard> {
                   ),
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  margin: EdgeInsets.only(left: screenWidth * 0.075, top: 8),
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    displayCurrentRotation,
-                    textScaleFactor: 1.0,
-                    style: const TextStyle(
-                      fontSize: 24.0,
-                      fontFamily: "SFBold",
-                    ),
-                  ),
-                ),
-              ),
+              // Expanded(
+              //   flex: 1,
+              //   child: Container(
+              //     margin: EdgeInsets.only(left: screenWidth * 0.075, top: 8),
+              //     alignment: Alignment.topLeft,
+              //     child: Text(
+              //       displayCurrentRotation,
+              //       textScaleFactor: 1.0,
+              //       style: const TextStyle(
+              //         fontSize: 24.0,
+              //         fontFamily: "SFBold",
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Expanded(
                 flex: 1,
                 child: Container(
@@ -109,7 +109,7 @@ class _timeCardState extends State<timeCard> {
                     periodNumber(findPeriod(minutesTime)),
                     textScaleFactor: 1.0,
                     style: const TextStyle(
-                      fontSize: 16.0,
+                      fontSize: 24.0,
                       fontFamily: "SFBold",
                     ),
                   ),

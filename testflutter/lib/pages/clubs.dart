@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:testflutter/clubutils/clubannouncements.dart';
 import 'package:testflutter/clubutils/clubcalendar.dart';
 import 'package:testflutter/clubutils/clubresources.dart';
 import 'package:testflutter/constructors/nav.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 //firestore packages
 import '../constructors/appbar.dart';
@@ -87,5 +90,10 @@ class _clubsState extends State<clubs> {
         ),
       ),
     );
+  }
+  @override
+  void initState() {
+    super.initState();
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testflutter/constants/icons.dart';
 import 'package:testflutter/constructors/linktile.dart';
 import 'package:testflutter/constructors/nav.dart';
@@ -15,6 +16,13 @@ class links extends StatefulWidget {
   _linksState createState() => _linksState();
 }
 
+List<Widget> customLinksList = <Widget>[
+  linkTile(
+      const Icon(LinksIcon.account_balance), "YRDSB Website", yrdsbWebsite),
+  linkTile(const Icon(LinksIcon.link), "UHS Website", uhsWebsite),
+  linkTile(const Icon(LinksIcon.exclamation_triangle), "REPORT IT", reportIt)
+];
+
 class _linksState extends State<links> {
   @override
   Widget build(BuildContext context) {
@@ -30,8 +38,18 @@ class _linksState extends State<links> {
         return true;
       },
       child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/editlinks");
+          },
+          tooltip: "Edit my own links!",
+          child: const Icon(
+            Icons.edit,
+            color: Colors.white,
+          ),
+        ),
         bottomNavigationBar: Nav(),
-        appBar: mainAppBar("Links",false),
+        appBar: mainAppBar("Links", false),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,14 +70,15 @@ class _linksState extends State<links> {
                 margin: usualMargin,
                 child: Column(
                   children: <Widget>[
-                    linkTile(
-                        const Icon(LinksIcon.pencil_squared), "TeachAssist", ta),
+                    linkTile(const Icon(LinksIcon.pencil_squared),
+                        "TeachAssist", ta),
                     linkTile(const Icon(LinksIcon.child), "Guidance", guidance),
                     linkTile(const Icon(LinksIcon.money), "School Cash Online",
                         schoolCashOnline),
                     linkTile(const Icon(LinksIcon.road), "My Pathway Planner",
                         pathwayPlanner),
-                    linkTile(const Icon(LinksIcon.graduation_cap), "OUAC", ouac),
+                    linkTile(
+                        const Icon(LinksIcon.graduation_cap), "OUAC", ouac),
                   ],
                 ),
               ),
@@ -83,8 +102,8 @@ class _linksState extends State<links> {
                     linkTile(const Icon(LinksIcon.email), "GAPPS Inbox", gapps),
                     linkTile(const Icon(LinksIcon.instagram), "@Samthewolf",
                         samtheWolf),
-                    linkTile(const Icon(LinksIcon.paper_plane), "Teacher Contact",
-                        teacherContact),
+                    linkTile(const Icon(LinksIcon.paper_plane),
+                        "Teacher Contact", teacherContact),
                   ],
                 ),
               ),
@@ -103,16 +122,12 @@ class _linksState extends State<links> {
               ),
               Card(
                 margin: usualMargin,
-                child: Column(
-                  children: <Widget>[
-                    linkTile(const Icon(LinksIcon.account_balance),
-                        "YRDSB Website", yrdsbWebsite),
-                    linkTile(
-                        const Icon(LinksIcon.link), "UHS Website", uhsWebsite),
-                    linkTile(const Icon(LinksIcon.exclamation_triangle),
-                        "REPORT IT", reportIt)
-                  ],
-                ),
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: customLinksList.length,
+                    itemBuilder: (context, index) {
+                      return customLinksList[index];
+                    }),
               ),
               Container(
                 margin: usualMargin,

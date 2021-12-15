@@ -109,7 +109,7 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                   text: curClubAnnounce,
                   textScaleFactor: 1.0,
                   maxLines: 7,
-                  onOpen: (link)=>launch(link.url),
+                  onOpen: (link) => launch(link.url),
                   style: const TextStyle(fontFamily: "SF"),
                 ),
               ),
@@ -121,7 +121,7 @@ class _ClubAnnouncementsState extends State<ClubAnnouncements> {
                 alignment: Alignment.bottomRight,
                 child: OutlinedButton(
                     onPressed: () {
-                      showAlert(context, curClubAnnounce);
+                      Navigator.pushNamed(context, "/clubviewmore");
                     },
                     child: Text(
                       "View More",
