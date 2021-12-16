@@ -35,29 +35,29 @@ class more extends StatelessWidget {
         appBar: mainAppBar("More", false),
         body: ListView(
           children: [
-            // Container(
-            //   height: 70,
-            //   margin: const EdgeInsets.only(left: 16),
-            //   alignment: Alignment.centerLeft,
-            //   child: Text(
-            //     "General Settings",
-            //     style: subTitle,
-            //   ),
-            // ),
-            // Card(
-            //   // margin: const EdgeInsets.only(top: 4),
-            //   child: ListTile(
-            //     leading: Icon(Icons.circle_notifications),
-            //     trailing: arrowRight,
-            //     title: Text(
-            //       "Notifications",
-            //       style: settingTiles,
-            //     ),
-            //     onTap: () {
-            //       Navigator.pushNamed(context, morePaths[1]);
-            //     },
-            //   ),
-            // ),
+            Container(
+              height: 70,
+              margin: const EdgeInsets.only(left: 16),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "General Settings",
+                style: subTitle,
+              ),
+            ),
+            Card(
+              // margin: const EdgeInsets.only(top: 4),
+              child: ListTile(
+                leading: Icon(Icons.circle_notifications),
+                trailing: arrowRight,
+                title: Text(
+                  "Notifications",
+                  style: settingTiles,
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, morePaths[1]);
+                },
+              ),
+            ),
             Container(
               height: 70,
               alignment: Alignment.centerLeft,

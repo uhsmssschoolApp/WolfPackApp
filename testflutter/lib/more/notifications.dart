@@ -51,11 +51,11 @@ class _notificationsState extends State<notifications> {
           Card(
             child: ListTile(
               title: Text(
-                "Announcements",
+                "Important Stuff",
                 style: cardTitle,
               ),
               subtitle: Text(
-                "Daily announcements and updates",
+                "Daily Announcements, USAC Stream + App Updates ",
                 style: cardSubTitle,
               ),
               trailing: CupertinoSwitch(
@@ -73,11 +73,11 @@ class _notificationsState extends State<notifications> {
           Card(
             child: ListTile(
               title: Text(
-                "Club Announcements",
+                "Everything Else",
                 style: cardTitle,
               ),
               subtitle: Text(
-                "Announcements specific to clubs",
+                "Club Announcements, Resource Updates + More",
                 style: cardSubTitle,
               ),
               trailing: CupertinoSwitch(
@@ -93,72 +93,72 @@ class _notificationsState extends State<notifications> {
                   }),
             ),
           ),
-          Card(
-            child: ListTile(
-              title: Text(
-                "USAC Announcements",
-                style: cardTitle,
-              ),
-              subtitle: Text(
-                "Messages from student council",
-                style: cardSubTitle,
-              ),
-              trailing: CupertinoSwitch(
-                  value: usacAnnouncements,
-                  activeColor: maroon,
-                  onChanged: (bool val) {
-                    setState(() {
-                      usacAnnouncements = val;
-                      UsacAnnouncementPref.setPref(val);
-                    });
-                    // print(val);
-                  }),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              title: Text(
-                "Weather Updates",
-                style: cardTitle,
-              ),
-              subtitle: Text(
-                "Inclement weather updates and forecasted weather conditions",
-                style: cardSubTitle,
-              ),
-              isThreeLine: true,
-              trailing: CupertinoSwitch(
-                  value: weatherUpdates,
-                  activeColor: maroon,
-                  onChanged: (bool val) {
-                    setState(() {
-                      weatherUpdates = val;
-                      WeatherPref.setPref(val);
-                    });
-                    // print(val);
-                  }),
-            ),
-          ),
-          Card(
-            child: ListTile(
-              title: Text(
-                "App Updates",
-                style: cardTitle,
-              ),
-              subtitle: Text(
-                "Brief messages regarding updates on the app",
-                style: cardSubTitle,
-              ),
-              trailing: CupertinoSwitch(
-                  value: appUpdates,
-                  activeColor: maroon,
-                  onChanged: (bool val) {
-                    setState(() {
-                      appUpdates = val;
-                      AppPref.setPref(val);
-                    });
-                  }),
-            ),
-          ),
+          // Card(
+          //   child: ListTile(
+          //     title: Text(
+          //       "USAC Announcements",
+          //       style: cardTitle,
+          //     ),
+          //     subtitle: Text(
+          //       "Messages from student council",
+          //       style: cardSubTitle,
+          //     ),
+          //     trailing: CupertinoSwitch(
+          //         value: usacAnnouncements,
+          //         activeColor: maroon,
+          //         onChanged: (bool val) {
+          //           setState(() {
+          //             usacAnnouncements = val;
+          //             UsacAnnouncementPref.setPref(val);
+          //           });
+          //           // print(val);
+          //         }),
+          //   ),
+          // ),
+          // Card(
+          //   child: ListTile(
+          //     title: Text(
+          //       "Weather Updates",
+          //       style: cardTitle,
+          //     ),
+          //     subtitle: Text(
+          //       "Inclement weather updates and forecasted weather conditions",
+          //       style: cardSubTitle,
+          //     ),
+          //     isThreeLine: true,
+          //     trailing: CupertinoSwitch(
+          //         value: weatherUpdates,
+          //         activeColor: maroon,
+          //         onChanged: (bool val) {
+          //           setState(() {
+          //             weatherUpdates = val;
+          //             WeatherPref.setPref(val);
+          //           });
+          //           // print(val);
+          //         }),
+          //   ),
+          // ),
+          // Card(
+          //   child: ListTile(
+          //     title: Text(
+          //       "App Updates",
+          //       style: cardTitle,
+          //     ),
+          //     subtitle: Text(
+          //       "Brief messages regarding updates on the app",
+          //       style: cardSubTitle,
+          //     ),
+          //     trailing: CupertinoSwitch(
+          //         value: appUpdates,
+          //         activeColor: maroon,
+          //         onChanged: (bool val) {
+          //           setState(() {
+          //             appUpdates = val;
+          //             AppPref.setPref(val);
+          //           });
+          //         }),
+          //   ),
+          // ),
         ],
       ),
     );
