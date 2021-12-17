@@ -44,6 +44,42 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:716313159337:android:9ea013b8159f922fcf6bb8",
+        "android_client_info": {
+          "package_name": "com.doriansarina.wolfpackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716313159337-gl91hju2jr434dstblrn05m68jb4lvuq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4EuPpQWbDtBfo-1ehuJnziJl-GC2DhOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716313159337-gl91hju2jr434dstblrn05m68jb4lvuq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "716313159337-j5hdnio2sd33m719g9r5desmfhandvet.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.adminapp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:716313159337:android:7b9f6a1b06882948cf6bb8",
         "android_client_info": {
           "package_name": "com.example.adminapp"
