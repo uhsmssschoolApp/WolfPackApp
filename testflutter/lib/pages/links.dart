@@ -38,16 +38,16 @@ class _linksState extends State<links> {
         return true;
       },
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushNamed(context, "/editlinks");
-          },
-          tooltip: "Edit my own links!",
-          child: const Icon(
-            Icons.edit,
-            color: Colors.white,
-          ),
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   onPressed: () {
+        //     Navigator.pushNamed(context, "/editlinks");
+        //   },
+        //   tooltip: "Edit my own links!",
+        //   child: const Icon(
+        //     Icons.edit,
+        //     color: Colors.white,
+        //   ),
+        // ),
         bottomNavigationBar: Nav(),
         appBar: mainAppBar("Links", false),
         body: SingleChildScrollView(
