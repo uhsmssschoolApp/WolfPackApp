@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.doriansarina.uhsapp">
+    package="com.doriansarina.wolfpackapp">
    <application
         android:label="wolfpackapp"
         android:icon="@mipmap/ic_launcher">

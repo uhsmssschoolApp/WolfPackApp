@@ -1,4 +1,4 @@
-package com.doriansarina.uhsapp
+package com.doriansarina.wolfpackapp
 
 import io.flutter.embedding.android.FlutterActivity
 
