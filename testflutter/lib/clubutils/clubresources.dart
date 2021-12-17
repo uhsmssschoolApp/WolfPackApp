@@ -62,7 +62,7 @@ class _ClubResourcesState extends State<ClubResources> {
             child: ListTile(
               onTap: () {
                 launchURL(
-                    "https://docs.google.com/presentation/d/1ancN0wa7SNNb6gozzV5eZJ8Idei7wXz1/edit?usp=sharing&ouid=101102019988373514505&rtpof=true&sd=true");
+                    "https://www.canva.com/design/DAEux9ZTdDQ/kD_m089gOCtUr9lHVFJoOQ/view?utm_content=DAEux9ZTdDQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton");
               },
               leading: Container(
                 height: 35,

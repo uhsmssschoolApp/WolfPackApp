@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/intro/pagefive.dart';
 import 'package:testflutter/intro/pagefour.dart';
 import 'package:testflutter/intro/pageone.dart';
 import 'package:testflutter/intro/pagethree.dart';
@@ -18,6 +19,7 @@ class SecondIntro extends StatelessWidget {
         children: [
           PageThree(),
           PageFour(),
+          PageFive(),
         ],
       ),
     );
