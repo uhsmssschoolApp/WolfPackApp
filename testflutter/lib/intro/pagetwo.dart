@@ -3,6 +3,7 @@ import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/intro/secondpart.dart';
 import 'package:testflutter/pages/home.dart';
 import 'package:testflutter/constructors/alertdialog.dart';
+import 'package:testflutter/pages/links.dart';
 
 class PageTwo extends StatefulWidget {
   const PageTwo({Key? key}) : super(key: key);
@@ -59,7 +60,10 @@ class _PageTwoState extends State<PageTwo> {
                     padding: const EdgeInsets.all(16),
                     alignment: Alignment.bottomLeft,
                     child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          launchURL(
+                              "http://www.yrdsb.ca/schools/unionville.hs/info/Pages/Policies-and-Procedures.aspx");
+                        },
                         child: Text(
                           "View Policy",
                           style: TextStyle(fontFamily: "SFBold", color: maroon),

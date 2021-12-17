@@ -1,4 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:fullscreen/fullscreen.dart';
 import 'package:provider/provider.dart';
@@ -48,6 +49,7 @@ Future<void> init() async {
   await fillList();
   await fillStream();
   await checkInit();
+
 }
 
 // check launch
@@ -77,12 +79,12 @@ Widget initHome() {
 
 // ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
       builder: (context, _) {
         final themeProvider = Provider.of<ThemeProvider>(context);
+
         FirebaseMessaging.instance.requestPermission(); //FCM
 
         return MaterialApp(
