@@ -38,6 +38,7 @@ String guidance =
 String schoolCashOnline = "https://yrdsb.schoolcashonline.com/Home/SignIn";
 String pathwayPlanner = "https://mypathwayplanner.yrdsb.ca/";
 String ouac = "https://www.ouac.on.ca/";
+String ocas = "https://www.ontariocolleges.ca/en";
 String gapps = "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
 String samtheWolf = "https://www.instagram.com/samthewolfofficial/";
 String teacherContact =
@@ -60,7 +61,6 @@ const String libraryResources =
 const String clubCalendar = "https://uhsmssschoolapp.github.io/club-calendar/";
 const String clubCalendarRedirect =
     "https://calendar.google.com/calendar/u/0?cid=dmJxdmhyZDVqanZvMXU2MTlvbHM1M2FmOW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ";
-const String screening =
-    "https://linktr.ee/sli2004";
+const String screening = "https://linktr.ee/sli2004";
 // edge radius
 BorderRadius homeCorners = const BorderRadius.all(Radius.circular(15));

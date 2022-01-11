@@ -79,6 +79,7 @@ class _linksState extends State<links> {
                         pathwayPlanner),
                     linkTile(
                         const Icon(LinksIcon.graduation_cap), "OUAC", ouac),
+                    linkTile(const Icon(Icons.school_outlined),  "OCAS", ocas),
                   ],
                 ),
               ),

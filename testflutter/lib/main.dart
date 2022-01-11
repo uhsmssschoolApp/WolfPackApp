@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
         FirebaseMessaging.instance.requestPermission(); //FCM
 
         return MaterialApp(
-          title: "testing",
+          title: "wolfpackapp",
           themeMode: themeProvider.themeMode,
           // do this later
           theme: MyThemes.lightTheme,
