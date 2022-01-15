@@ -8,6 +8,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:testflutter/linksutil/editutils.dart';
+import 'package:testflutter/pages/links.dart';
+
+final linkText = TextEditingController();
 
 // List<Widget> myLinks = List.empty();
 
@@ -38,16 +41,25 @@ class _EditLinksState extends State<EditLinks> {
                       Container(
                         margin: usualMargin,
                         child: TextField(
+                          controller: linkText,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Add Link',
                             labelStyle: cardTitle,
                           ),
+                          // only works in emulator when u press enter
+                          onSubmitted: (String value) async {
+                            linksList.add(value);
+                            setState(() {});
+                          },
                         ),
                       ),
                       ElevatedButton(
                         
-                        onPressed: () {},
+                        onPressed: () {
+                          linksList.add(linkText.text);
+                          setState(() {});
+                        },
                         child: Text('Save', style: cardSubTitle,),
                       ),
 
@@ -92,14 +104,15 @@ class _EditLinksState extends State<EditLinks> {
                         key: Key(item),
                         background: Container(color: maroon),
                         onDismissed: (direction) {
-                          // Remove the item from the data source.
-
-                          // Then show a snackbar.
+                          print(index);
                           ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text('link deleted!')));
                         },
                         child: ListTile(
                           title: Text(item),
+                          onTap: () {
+                            launchURL(linksList[index]);
+                          },
                         ));
                   }),
             ),
@@ -108,10 +121,6 @@ class _EditLinksState extends State<EditLinks> {
               child: Text("hi"),
             ),
             ElevatedButton(onPressed: () {
-          //     writeToFile("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley");
-          // writeToFile("https://www.839.team/");
-          // parseContents();
-          // printList();
             }, child: Text(""))
           ],
         ),

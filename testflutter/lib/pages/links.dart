@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testflutter/constants/icons.dart';
 import 'package:testflutter/constructors/linktile.dart';
 import 'package:testflutter/constructors/nav.dart';
+import 'package:testflutter/linksutil/editutils.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constructors/appbar.dart';
 import '../constants/consts.dart';
@@ -39,7 +40,8 @@ class _linksState extends State<links> {
       },
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
+          onPressed: () async {
+            
             Navigator.pushNamed(context, "/editlinks");
           },
           tooltip: "Edit my own links!",
