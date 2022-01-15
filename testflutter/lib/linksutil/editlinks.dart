@@ -1,9 +1,15 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 import 'package:testflutter/constants/consts.dart';
 import 'package:testflutter/constructors/appbar.dart';
 
+import 'dart:async';
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:testflutter/linksutil/editutils.dart';
+
 // List<Widget> myLinks = List.empty();
-List<String> myLinks = ["hi", "yo", "no"];
 
 class EditLinks extends StatefulWidget {
   const EditLinks({Key? key}) : super(key: key);
@@ -16,6 +22,48 @@ class _EditLinksState extends State<EditLinks> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet<void>(
+            context: context,
+            builder: (BuildContext context) {
+              return Container(
+                height: 200,
+                color: Colors.white,
+                child: Center(
+                  child: Column(
+                    
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: usualMargin,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Add Link',
+                            labelStyle: cardTitle,
+                          ),
+                        ),
+                      ),
+                      ElevatedButton(
+                        
+                        onPressed: () {},
+                        child: Text('Save', style: cardSubTitle,),
+                      ),
+
+                    ],
+                  )
+                ),
+              );
+            },
+          );
+        },
+        tooltip: "Add a link",
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      ),
       appBar: mainAppBar("Edit Links", true),
       body: SingleChildScrollView(
         child: Column(
@@ -37,9 +85,9 @@ class _EditLinksState extends State<EditLinks> {
             Card(
               child: ListView.builder(
                   shrinkWrap: true,
-                  itemCount: myLinks.length,
+                  itemCount: linksList.length,
                   itemBuilder: (context, index) {
-                    final item = myLinks[index];
+                    final item = linksList[index];
                     return Dismissible(
                         key: Key(item),
                         background: Container(color: maroon),
@@ -58,7 +106,13 @@ class _EditLinksState extends State<EditLinks> {
             Container(
               margin: usualMargin,
               child: Text("hi"),
-            )
+            ),
+            ElevatedButton(onPressed: () {
+          //     writeToFile("https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley");
+          // writeToFile("https://www.839.team/");
+          // parseContents();
+          // printList();
+            }, child: Text(""))
           ],
         ),
       ),

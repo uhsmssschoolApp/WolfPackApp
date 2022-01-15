@@ -1,7 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:fullscreen/fullscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:testflutter/clubutils/clubviewmore.dart';
@@ -16,7 +14,6 @@ import 'package:testflutter/more/notifications.dart';
 import 'package:testflutter/pages/clubs.dart';
 import 'package:testflutter/pages/home.dart';
 import 'package:testflutter/studentutils/usacmessages.dart';
-// import 'package:testflutter/splash.dart';
 import 'firestore.dart';
 import 'more/resources.dart';
 import 'pages/links.dart';
@@ -49,7 +46,6 @@ Future<void> init() async {
   await fillList();
   await fillStream();
   await checkInit();
-
 }
 
 // check launch
