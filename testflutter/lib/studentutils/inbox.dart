@@ -65,7 +65,7 @@ class _inboxState extends State<inbox> {
                       ),
                       onPressed: () {
                         launchURL(
-                            "http://www.yrdsb.ca/schools/unionville.hs/NewsEvents/Pages/Newsletters-2020-2021.aspx");
+                            "http://www.yrdsb.ca/schools/unionville.hs/NewsEvents/Pages/Newsletters.aspx");
                       },
                       child: const Text(
                         "View Latest Newsletter",
@@ -124,7 +124,7 @@ class _inboxState extends State<inbox> {
                       ),
                       onPressed: () {
                         launchURL(
-                            "http://www.yrdsb.ca/schools/unionville.hs/NewsEvents/Pages/Weekly-Bulletins-2020-2021.aspx");
+                            "http://www.yrdsb.ca/schools/unionville.hs/NewsEvents/Pages/Weekly-Bulletins-2016-2017.aspx");
                       },
                       child: const Text(
                         "View Latest Bulletins",
